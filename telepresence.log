@@ -1,0 +1,2294 @@
+   0.0 TEL | Telepresence 0.90 launched at Thu Aug 16 19:13:05 2018
+   0.0 TEL |   /usr/local/bin/telepresence --new-deployment myserver --run-shell
+   0.3 TEL | Context: gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster, namespace: helmon, kubectl_command: kubectl
+   0.3 TEL | [1] Launching: kubectl version --short
+   0.3 TEL | [2] Launching: oc version
+   0.3 TEL | [2] [Errno 2] No such file or directory: 'oc': 'oc'
+   0.3 TEL | [3] Launching: uname -a
+   0.3 TEL | Python 3.7.0 (default, Jul 23 2018, 20:22:55)
+   0.3 TEL | [Clang 9.1.0 (clang-902.0.39.2)]
+   0.3 TEL | [4] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pods telepresence-connectivity-check --ignore-not-found
+   0.3   3 | Darwin ID-IVANWANGSAs-MacBook-Pro.local 17.2.0 Darwin Kernel Version 17.2.0: Fri Sep 29 18:27:05 PDT 2017; root:xnu-4570.20.62~3/RELEASE_X86_64 x86_64
+   0.3 TEL | [3] exit 0
+   0.5   1 | Client Version: v1.11.2
+   0.5   1 | Server Version: v1.9.7-gke.5
+   0.7 TEL | [5] Capturing: ssh -V
+   0.8 TEL | [6] Capturing: which torsocks
+   0.8 TEL | [7] Capturing: which sshfs
+   0.8 TEL | BEGIN SPAN main.py:51(main)
+   2.2 TEL | Scout info: {'latest_version': '0.90', 'application': 'telepresence', 'notices': []}
+   2.2 TEL | BEGIN SPAN proxy.py:150(start_proxy)
+   2.2 TEL | BEGIN SPAN deployment.py:35(create_new_deployment)
+   2.2 TEL | [8] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon delete --ignore-not-found svc,deploy --selector=telepresence=7a590098-077b-45bd-b206-c0e317478b4f
+   2.7 TEL | [9] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon run --restart=Always --limits=cpu=100m,memory=256Mi --requests=cpu=25m,memory=64Mi myserver --image=datawire/telepresence-k8s:0.90 --labels=telepresence=7a590098-077b-45bd-b206-c0e317478b4f
+   3.2 TEL | END SPAN deployment.py:35(create_new_deployment)    0.9s
+   3.2 TEL | BEGIN SPAN remote.py:164(get_remote_info)
+   3.2 TEL | BEGIN SPAN remote.py:82(get_deployment_json)
+   3.2 TEL | [10] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get deployment -o json --export --selector=telepresence=7a590098-077b-45bd-b206-c0e317478b4f
+   3.3 TEL | END SPAN remote.py:82(get_deployment_json)    0.2s
+   3.3 TEL | Searching for Telepresence pod:
+   3.3 TEL |   with name myserver-*
+   3.3 TEL |   with labels {'telepresence': '7a590098-077b-45bd-b206-c0e317478b4f'}
+   3.3 TEL |   with namespace helmon
+   3.3 TEL | [11] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod -o json --export --selector=telepresence=7a590098-077b-45bd-b206-c0e317478b4f
+   3.6 TEL | Checking myserver-56d79f6fbd-265jv
+   3.6 TEL | Looks like we've found our pod!
+   3.6 TEL | BEGIN SPAN remote.py:122(wait_for_pod)
+   3.6 TEL | [12] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   4.1 TEL | [13] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   4.6 TEL | [14] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   5.0 TEL | [15] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   5.4 TEL | [16] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   5.8 TEL | [17] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   6.2 TEL | [18] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   6.6 TEL | [19] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   7.0 TEL | [20] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   7.5 TEL | [21] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   7.9 TEL | [22] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   8.3 TEL | [23] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   8.7 TEL | [24] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   9.1 TEL | [25] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+   9.5 TEL | [26] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  10.0 TEL | [27] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  10.4 TEL | [28] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  10.8 TEL | [29] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  11.2 TEL | [30] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  11.7 TEL | [31] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  12.1 TEL | [32] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  12.5 TEL | [33] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  12.9 TEL | [34] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon get pod myserver-56d79f6fbd-265jv -o json
+  13.1 TEL | END SPAN remote.py:122(wait_for_pod)    9.5s
+  13.1 TEL | END SPAN remote.py:164(get_remote_info)    9.9s
+  13.1 TEL | END SPAN proxy.py:150(start_proxy)   10.8s
+  13.1 TEL | BEGIN SPAN proxy.py:42(connect)
+  13.1 TEL | [35] Launching: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon logs -f myserver-56d79f6fbd-265jv --container myserver
+  13.1 TEL | [36] Launching: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon port-forward myserver-56d79f6fbd-265jv 49409:8022
+  13.1 TEL | [37] Running: ssh -F /dev/null -q -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -p 49409 telepresence@localhost /bin/true
+  13.3 TEL | [37] exit 255 in 0.25 secs.
+  13.6 TEL | [38] Running: ssh -F /dev/null -q -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -p 49409 telepresence@localhost /bin/true
+  13.8  35 | Listening...
+  13.8  35 | 2018-08-16T12:13:17+0000 [-] Loading ./forwarder.py...
+  13.8  35 | 2018-08-16T12:13:19+0000 [-] /etc/resolv.conf changed, reparsing
+  13.8  35 | 2018-08-16T12:13:19+0000 [-] Resolver added ('10.63.240.10', 53) to server list
+  13.8  35 | 2018-08-16T12:13:19+0000 [-] SOCKSv5Factory starting on 9050
+  13.8  35 | 2018-08-16T12:13:19+0000 [socks.SOCKSv5Factory#info] Starting factory <socks.SOCKSv5Factory object at 0x7fec6a257be0>
+  13.8  35 | 2018-08-16T12:13:19+0000 [-] DNSDatagramProtocol starting on 9053
+  13.8  35 | 2018-08-16T12:13:19+0000 [-] Starting protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a257f60>
+  13.8  35 | 2018-08-16T12:13:19+0000 [-] Loaded.
+  13.9  35 | 2018-08-16T12:13:19+0000 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 18.4.0 (/usr/bin/python3.6 3.6.1) starting up.
+  13.9  35 | 2018-08-16T12:13:19+0000 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.epollreactor.EPollReactor.
+  13.9 TEL | [38] exit 255 in 0.30 secs.
+  13.9  36 | Forwarding from 127.0.0.1:49409 -> 8022
+  13.9  36 | Forwarding from [::1]:49409 -> 8022
+  14.1 TEL | [39] Running: ssh -F /dev/null -q -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -p 49409 telepresence@localhost /bin/true
+  14.2  36 | Handling connection for 49409
+  14.9 TEL | [40] Launching: ssh -N -oServerAliveInterval=1 -oServerAliveCountMax=10 -F /dev/null -q -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -p 49409 telepresence@localhost -L127.0.0.1:49422:127.0.0.1:9050 -R9055:127.0.0.1:49423
+  14.9 TEL | END SPAN proxy.py:42(connect)    1.8s
+  14.9 TEL | BEGIN SPAN remote_env.py:46(get_env_variables)
+  14.9 TEL | [41] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon exec myserver-56d79f6fbd-265jv --container myserver -- python3 -c 'import json, os; print(json.dumps(dict(os.environ)))'
+  14.9  36 | Handling connection for 49409
+  16.0 TEL | [41] captured in 1.12 secs.
+  16.0 TEL | END SPAN remote_env.py:46(get_env_variables)    1.1s
+  16.0 TEL | BEGIN SPAN mount.py:36(mount_remote_volumes)
+  16.0 TEL | [42] Capturing: sshfs -p 49409 -F /dev/null -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null telepresence@localhost:/ /tmp/tmpbfsgbjnt
+  16.2  36 | Handling connection for 49409
+  16.4 TEL | END SPAN mount.py:36(mount_remote_volumes)    0.5s
+  20.5 TEL | BEGIN SPAN vpn.py:258(connect_sshuttle)
+  20.5 TEL | BEGIN SPAN vpn.py:84(get_proxy_cidrs)
+  20.5 TEL | END SPAN vpn.py:84(get_proxy_cidrs)    0.0s
+  20.5 TEL | [43] Launching: sshuttle-telepresence -v --dns --method auto -e 'ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -F /dev/null' --to-ns 127.0.0.1:9053 -r telepresence@localhost:49409 10.60.1.0/24 10.60.2.0/24 10.60.0.0/24 10.63.240.0/20
+  20.5 TEL | BEGIN SPAN vpn.py:300(connect_sshuttle,sshuttle-wait)
+  20.5 TEL | [44] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence0'"'"')'
+  20.5  44 | Traceback (most recent call last):
+  20.5  44 |   File "<string>", line 1, in <module>
+  20.5  44 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  20.6 TEL | [44] exit 1 in 0.04 secs.
+  20.6  43 | Starting sshuttle proxy.
+  20.6  43 | firewall manager: Starting firewall with Python version 3.7.0
+  20.7 TEL | [45] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence1'"'"')'
+  20.7  43 | firewall manager: ready method name pf.
+  20.7  43 | IPv6 enabled: True
+  20.7  43 | UDP enabled: False
+  20.7  43 | DNS enabled: True
+  20.7  43 | TCP redirector listening on ('::1', 12300, 0, 0).
+  20.7  43 | TCP redirector listening on ('127.0.0.1', 12300).
+  20.7  43 | DNS listening on ('::1', 12300, 0, 0).
+  20.7  43 | DNS listening on ('127.0.0.1', 12300).
+  20.7  43 | Starting client with Python version 3.7.0
+  20.7  43 | c : connecting to server...
+  20.7  45 | Traceback (most recent call last):
+  20.7  45 |   File "<string>", line 1, in <module>
+  20.7  45 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  20.7 TEL | [45] exit 1 in 0.04 secs.
+  20.7  36 | Handling connection for 49409
+  20.8 TEL | [46] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence2'"'"')'
+  20.8  46 | Traceback (most recent call last):
+  20.8  46 |   File "<string>", line 1, in <module>
+  20.8  46 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  20.8 TEL | [46] exit 1 in 0.04 secs.
+  20.9  43 | Warning: Permanently added '[localhost]:49409' (ECDSA) to the list of known hosts.
+  20.9 TEL | [47] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence3'"'"')'
+  21.0  47 | Traceback (most recent call last):
+  21.0  47 |   File "<string>", line 1, in <module>
+  21.0  47 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  21.0 TEL | [47] exit 1 in 0.04 secs.
+  21.1 TEL | [48] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence4'"'"')'
+  21.1  48 | Traceback (most recent call last):
+  21.1  48 |   File "<string>", line 1, in <module>
+  21.1  48 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  21.1 TEL | [48] exit 1 in 0.04 secs.
+  21.2 TEL | [49] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence5'"'"')'
+  21.3  49 | Traceback (most recent call last):
+  21.3  49 |   File "<string>", line 1, in <module>
+  21.3  49 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  21.3 TEL | [49] exit 1 in 0.04 secs.
+  21.4 TEL | [50] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence6'"'"')'
+  21.4  50 | Traceback (most recent call last):
+  21.4  50 |   File "<string>", line 1, in <module>
+  21.4  50 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  21.4 TEL | [50] exit 1 in 0.05 secs.
+  21.5 TEL | [51] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence7'"'"')'
+  21.6  51 | Traceback (most recent call last):
+  21.6  51 |   File "<string>", line 1, in <module>
+  21.6  51 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  21.6 TEL | [51] exit 1 in 0.06 secs.
+  21.7 TEL | [52] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence8'"'"')'
+  21.7  52 | Traceback (most recent call last):
+  21.7  52 |   File "<string>", line 1, in <module>
+  21.7  52 | socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  21.7 TEL | [52] exit 1 in 0.04 secs.
+  21.7  43 | Starting server with Python version 3.6.1
+  21.7  43 |  s: latency control setting = True
+  21.7  43 |  s: available routes:
+  21.7  43 |  s:   2/10.60.2.0/24
+  21.7  43 | c : Connected.
+  21.7  43 | firewall manager: setting up.
+  21.7  43 | >> pfctl -s Interfaces -i lo -v
+  21.7  43 | >> pfctl -s all
+  21.8  43 | >> pfctl -a sshuttle6-12300 -f /dev/stdin
+  21.8  43 | >> pfctl -E
+  21.8  43 | >> pfctl -s Interfaces -i lo -v
+  21.8  43 | >> pfctl -s all
+  21.8  43 | >> pfctl -a sshuttle-12300 -f /dev/stdin
+  21.8  43 | >> pfctl -E
+  21.8 TEL | [53] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence9'"'"')'
+  21.9  43 | c : DNS request from ('10.30.139.94', 63666) to None: 52 bytes
+  21.9  35 | 2018-08-16T12:13:27+0000 [stdout#info] Set DNS suffix we filter out to: [(b'id', b'seagroup', b'com')]
+  21.9  35 | 2018-08-16T12:13:27+0000 [stdout#info] Result for b'hellotelepresence9.id.seagroup.com' is ['127.0.0.1']
+  22.9 TEL | [54] Capturing: python3 -c 'import socket; socket.gethostbyname('"'"'hellotelepresence10'"'"')'
+  22.9  43 | c : DNS request from ('10.30.139.94', 55200) to None: 53 bytes
+  22.9  43 | c : DNS request from ('10.30.139.94', 1534) to None: 33 bytes
+  23.0  35 | 2018-08-16T12:13:28+0000 [stdout#info] Result for b'hellotelepresence10.id.seagroup.com' is ['127.0.0.1']
+  23.0  35 | 2018-08-16T12:13:29+0000 [stdout#info] A query: b'play.google.com'
+  23.0 TEL | END SPAN vpn.py:300(connect_sshuttle,sshuttle-wait)    2.5s
+  23.0 TEL | END SPAN vpn.py:258(connect_sshuttle)    2.5s
+  23.0 TEL | Everything launched. Waiting to exit...
+  23.1 TEL | BEGIN SPAN cleanup.py:98(wait_for_exit)
+  23.1  35 | 2018-08-16T12:13:29+0000 [stdout#info] Result for b'play.google.com' is ['74.125.24.101', '74.125.24.100', '74.125.24.139', '74.125.24.138', '74.125.24.113', '74.125.24.102']
+  27.2  43 | c : DNS request from ('10.30.139.94', 52111) to None: 32 bytes
+  27.2  35 | 2018-08-16T12:13:33+0000 [stdout#info] A query: b'imap.gmail.com'
+  27.3  35 | 2018-08-16T12:13:33+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.130.109', '74.125.130.108']
+  31.8  43 | c : DNS request from ('10.30.139.94', 31659) to None: 42 bytes
+  31.9  35 | 2018-08-16T12:13:37+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+  31.9  35 | 2018-08-16T12:13:37+0000 [stdout#info] A query: b'taliwang'
+  31.9  35 | 2018-08-16T12:13:37+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+  31.9  43 | c : Accept TCP: 10.30.139.94:49435 -> 10.63.252.208:3000.
+  31.9  43 | c : Accept TCP: 10.30.139.94:49436 -> 10.63.252.208:3000.
+  43.7 TEL | (proxy checking local liveness)
+  43.7  35 | 2018-08-16T12:13:49+0000 [Poll#info] Checkpoint
+  73.7 TEL | (proxy checking local liveness)
+  73.8  35 | 2018-08-16T12:14:19+0000 [Poll#info] Checkpoint
+  90.0  43 | c : DNS request from ('10.30.139.94', 50927) to None: 42 bytes
+  90.0  35 | 2018-08-16T12:14:36+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+  90.1  35 | 2018-08-16T12:14:36+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+ 103.7 TEL | (proxy checking local liveness)
+ 103.7  35 | 2018-08-16T12:14:49+0000 [Poll#info] Checkpoint
+ 124.4  43 | c : DNS request from ('10.30.139.94', 22953) to None: 34 bytes
+ 124.4  35 | 2018-08-16T12:15:10+0000 [stdout#info] A query: b'www.google.co.id'
+ 124.6  43 | c : DNS request from ('10.30.139.94', 54364) to None: 34 bytes
+ 124.6  35 | 2018-08-16T12:15:10+0000 [stdout#info] A query: b'www.google.co.id'
+ 124.6  35 | 2018-08-16T12:15:10+0000 [stdout#info] Result for b'www.google.co.id' is ['74.125.24.94']
+ 124.6  35 | 2018-08-16T12:15:10+0000 [stdout#info] Result for b'www.google.co.id' is ['172.217.160.3']
+ 125.1  43 | c : DNS request from ('10.30.139.94', 35068) to None: 42 bytes
+ 125.1  35 | 2018-08-16T12:15:11+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+ 125.1  35 | 2018-08-16T12:15:11+0000 [stdout#info] A query: b'taliwang'
+ 125.1  35 | 2018-08-16T12:15:11+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+ 125.1  43 | c : Accept TCP: 10.30.139.94:49448 -> 10.63.252.208:3000.
+ 125.1  43 | c : Accept TCP: 10.30.139.94:49449 -> 10.63.252.208:3000.
+ 133.7 TEL | (proxy checking local liveness)
+ 133.7  35 | 2018-08-16T12:15:19+0000 [Poll#info] Checkpoint
+ 159.2  43 |  s: SW#7:10.63.252.208:3000: uwrite: got EPIPE
+ 159.2  43 | c : SW'unknown':Mux#7: deleting (7 remain)
+ 159.2  43 | c : SW#-1:10.30.139.94:49436: deleting (6 remain)
+ 159.4  43 | c : SW#10:10.30.139.94:49435: deleting (5 remain)
+ 159.4  43 | c : SW'unknown':Mux#6: deleting (4 remain)
+ 159.4  43 | c : DNS request from ('10.30.139.94', 46837) to None: 33 bytes
+ 159.5  35 | 2018-08-16T12:15:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 159.6  43 | c : DNS request from ('10.30.139.94', 2068) to None: 33 bytes
+ 159.7  35 | 2018-08-16T12:15:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 160.6  43 | c : DNS request from ('10.30.139.94', 42100) to None: 33 bytes
+ 160.7  35 | 2018-08-16T12:15:46+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 161.0  43 | c : DNS request from ('10.30.139.94', 1830) to None: 33 bytes
+ 161.0  35 | 2018-08-16T12:15:46+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 163.0  43 | c : DNS request from ('10.30.139.94', 64888) to None: 33 bytes
+ 163.0  35 | 2018-08-16T12:15:49+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 163.7 TEL | (proxy checking local liveness)
+ 163.7  35 | 2018-08-16T12:15:49+0000 [Poll#info] Checkpoint
+ 164.0  43 | c : DNS request from ('10.30.139.94', 64888) to None: 33 bytes
+ 164.0  35 | 2018-08-16T12:15:50+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 164.7  35 | 2018-08-16T12:15:50+0000 [stdout#info] getaddrinfo error: [Errno -3] Try again
+ 165.8  35 | 2018-08-16T12:15:51+0000 [stdout#info] getaddrinfo error: [Errno -3] Try again
+ 166.0  35 | 2018-08-16T12:15:52+0000 [stdout#info] getaddrinfo error: [Errno -3] Try again
+ 168.0  35 | 2018-08-16T12:15:54+0000 [stdout#info] getaddrinfo error: [Errno -3] Try again
+ 169.1  35 | 2018-08-16T12:15:55+0000 [stdout#info] getaddrinfo error: [Errno -3] Try again
+ 169.2  43 |  s: SW#-1:10.63.252.208:3000: deleting (7 remain)
+ 169.2  43 |  s: SW#-1:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+ 169.2  43 |  s: SW'unknown':Mux#6: deleting (6 remain)
+ 169.2  43 |  s: SW#-1:10.63.252.208:3000: deleting (5 remain)
+ 169.2  43 |  s: SW'unknown':Mux#7: deleting (4 remain)
+ 169.3  43 |  s: SW#-1:10.63.252.208:3000: deleting (3 remain)
+ 169.3  43 |  s: SW'unknown':Mux#13: deleting (2 remain)
+ 169.9  43 | c : DNS request from ('10.30.139.94', 53493) to None: 43 bytes
+ 169.9  35 | 2018-08-16T12:15:55+0000 [stdout#info] 12 query: b'94.139.30.10.in-addr.arpa'
+ 169.9  35 | 2018-08-16T12:15:55+0000 [DNSDatagramProtocol (UDP)] DNSDatagramProtocol starting on 26995
+ 169.9  35 | 2018-08-16T12:15:55+0000 [DNSDatagramProtocol (UDP)] Starting protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a1d2b38>
+ 170.1  35 | 2018-08-16T12:15:56+0000 [-] (UDP Port 26995 Closed)
+ 170.1  35 | 2018-08-16T12:15:56+0000 [-] Stopping protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a1d2b38>
+ 178.1  43 | c : DNS request from ('10.30.139.94', 37786) to None: 33 bytes
+ 178.1  35 | 2018-08-16T12:16:04+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 178.2  43 | c : DNS request from ('10.30.139.94', 16090) to None: 33 bytes
+ 178.2  35 | 2018-08-16T12:16:04+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 179.2  43 | c : DNS request from ('10.30.139.94', 54471) to None: 33 bytes
+ 179.3  35 | 2018-08-16T12:16:05+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 179.6  43 | c : DNS request from ('10.30.139.94', 35350) to None: 33 bytes
+ 179.6  35 | 2018-08-16T12:16:05+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 179.7  35 | 2018-08-16T12:16:05+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.130.94']
+ 181.2  35 | 2018-08-16T12:16:07+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['172.217.160.3']
+ 181.2  35 | 2018-08-16T12:16:07+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['172.217.160.3']
+ 181.2  35 | 2018-08-16T12:16:07+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.130.94']
+ 193.7 TEL | (proxy checking local liveness)
+ 193.7  35 | 2018-08-16T12:16:19+0000 [Poll#info] Checkpoint
+ 199.2  43 | c : DNS request from ('10.30.139.94', 54403) to None: 34 bytes
+ 199.2  35 | 2018-08-16T12:16:25+0000 [stdout#info] A query: b'swscan.apple.com'
+ 199.3  35 | 2018-08-16T12:16:25+0000 [stdout#info] Result for b'swscan.apple.com' is ['23.15.27.71']
+ 202.4  43 | c : DNS request from ('10.30.139.94', 58153) to None: 33 bytes
+ 202.5  35 | 2018-08-16T12:16:28+0000 [stdout#info] A query: b'swcdn.apple.com'
+ 202.6  35 | 2018-08-16T12:16:28+0000 [stdout#info] Result for b'swcdn.apple.com' is ['23.49.60.136', '23.49.60.176']
+ 207.9  43 | c : DNS request from ('10.30.139.94', 37725) to None: 42 bytes
+ 208.0  35 | 2018-08-16T12:16:34+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+ 208.0  35 | 2018-08-16T12:16:34+0000 [stdout#info] A query: b'taliwang'
+ 208.0  35 | 2018-08-16T12:16:34+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+ 208.0  43 | c : Accept TCP: 10.30.139.94:49465 -> 10.63.252.208:3000.
+ 208.0  43 | c : Accept TCP: 10.30.139.94:49466 -> 10.63.252.208:3000.
+ 223.7 TEL | (proxy checking local liveness)
+ 223.7  35 | 2018-08-16T12:16:49+0000 [Poll#info] Checkpoint
+ 226.1  43 |  s: SW#15:10.63.252.208:3000: uwrite: got EPIPE
+ 231.5  43 | c : Accept TCP: 10.30.139.94:49468 -> 10.63.252.208:3000.
+ 231.5  43 | c : Accept TCP: 10.30.139.94:49469 -> 10.63.252.208:3000.
+ 252.5  43 |  s: SW#12:10.63.252.208:3000: uwrite: got EPIPE
+ 253.7 TEL | (proxy checking local liveness)
+ 253.7  35 | 2018-08-16T12:17:19+0000 [Poll#info] Checkpoint
+ 283.7 TEL | (proxy checking local liveness)
+ 283.7  35 | 2018-08-16T12:17:49+0000 [Poll#info] Checkpoint
+ 301.1  43 | c : DNS request from ('10.30.139.94', 16399) to None: 42 bytes
+ 301.1  43 | c : SW'unknown':Mux#28: deleting (11 remain)
+ 301.1  43 | c : SW#-1:10.30.139.94:49465: deleting (10 remain)
+ 301.1  43 | c : SW'unknown':Mux#29: deleting (9 remain)
+ 301.1  43 | c : SW#-1:10.30.139.94:49466: deleting (8 remain)
+ 301.1  35 | 2018-08-16T12:18:07+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+ 301.1  35 | 2018-08-16T12:18:07+0000 [stdout#info] A query: b'taliwang'
+ 301.1  35 | 2018-08-16T12:18:07+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+ 301.1  43 | c : Accept TCP: 10.30.139.94:49475 -> 10.63.252.208:3000.
+ 301.1  43 | c : Accept TCP: 10.30.139.94:49476 -> 10.63.252.208:3000.
+ 313.8 TEL | (proxy checking local liveness)
+ 313.8  35 | 2018-08-16T12:18:19+0000 [Poll#info] Checkpoint
+ 330.5  43 | c : DNS request from ('10.30.139.94', 55290) to None: 32 bytes
+ 330.5  35 | 2018-08-16T12:18:36+0000 [stdout#info] A query: b'imap.gmail.com'
+ 330.7  35 | 2018-08-16T12:18:36+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.200.109', '74.125.200.108']
+ 338.5  43 | c : DNS request from ('10.30.139.94', 64325) to None: 34 bytes
+ 338.7  35 | 2018-08-16T12:18:44+0000 [stdout#info] A query: b'gs-loc.apple.com'
+ 338.9  35 | 2018-08-16T12:18:44+0000 [stdout#info] Result for b'gs-loc.apple.com' is ['17.167.194.149', '17.167.192.128']
+ 343.7 TEL | (proxy checking local liveness)
+ 343.7  35 | 2018-08-16T12:18:49+0000 [Poll#info] Checkpoint
+ 358.9  43 |  s: SW#17:10.63.252.208:3000: uwrite: got EPIPE
+ 359.0  43 | c : SW#15:10.30.139.94:49468: deleting (11 remain)
+ 359.0  43 | c : SW'unknown':Mux#30: deleting (10 remain)
+ 359.0  43 | c : Accept TCP: 10.30.139.94:49483 -> 10.63.252.208:3000.
+ 359.0  43 | c : Accept TCP: 10.30.139.94:49484 -> 10.63.252.208:3000.
+ 373.7 TEL | (proxy checking local liveness)
+ 373.7  35 | 2018-08-16T12:19:19+0000 [Poll#info] Checkpoint
+ 403.7 TEL | (proxy checking local liveness)
+ 403.7  35 | 2018-08-16T12:19:49+0000 [Poll#info] Checkpoint
+ 428.4  43 |  s: SW#21:10.63.252.208:3000: uwrite: got EPIPE
+ 428.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (17 remain)
+ 428.4  43 |  s: SW#-1:10.63.252.208:3000: error was: [Errno 113] Host is unreachable
+ 428.4  43 |  s: SW'unknown':Mux#28: deleting (16 remain)
+ 428.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (15 remain)
+ 428.4  43 |  s: SW#-1:10.63.252.208:3000: error was: [Errno 113] Host is unreachable
+ 428.4  43 |  s: SW'unknown':Mux#29: deleting (14 remain)
+ 428.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (13 remain)
+ 428.4  43 |  s: SW#-1:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+ 428.4  43 |  s: SW'unknown':Mux#30: deleting (12 remain)
+ 428.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (11 remain)
+ 428.4  43 |  s: SW'unknown':Mux#34: deleting (10 remain)
+ 429.2  43 | c : DNS request from ('10.30.139.94', 39171) to None: 37 bytes
+ 429.2  35 | 2018-08-16T12:20:15+0000 [stdout#info] A query: b'clients4.google.com'
+ 429.3  35 | 2018-08-16T12:20:15+0000 [stdout#info] Result for b'clients4.google.com' is ['172.217.194.138', '172.217.194.100', '172.217.194.139', '172.217.194.102', '172.217.194.113', '172.217.194.101']
+ 433.6 TEL | (proxy checking local liveness)
+ 433.6  35 | 2018-08-16T12:20:19+0000 [Poll#info] Checkpoint
+ 455.7  43 | c : DNS request from ('10.30.139.94', 52037) to None: 42 bytes
+ 455.7  35 | 2018-08-16T12:20:41+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+ 455.8  35 | 2018-08-16T12:20:41+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+ 463.8 TEL | (proxy checking local liveness)
+ 463.8  35 | 2018-08-16T12:20:49+0000 [Poll#info] Checkpoint
+ 486.4  43 |  s: SW#25:10.63.252.208:3000: uwrite: got EPIPE
+ 486.4  43 | c : DNS request from ('10.30.139.94', 41032) to None: 42 bytes
+ 486.5  35 | 2018-08-16T12:21:12+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+ 486.5  35 | 2018-08-16T12:21:12+0000 [stdout#info] A query: b'taliwang'
+ 486.5  35 | 2018-08-16T12:21:12+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+ 486.6  43 | c : Accept TCP: 10.30.139.94:49491 -> 10.63.252.208:3000.
+ 486.6  43 | c : Accept TCP: 10.30.139.94:49492 -> 10.63.252.208:3000.
+ 493.8 TEL | (proxy checking local liveness)
+ 493.8  35 | 2018-08-16T12:21:19+0000 [Poll#info] Checkpoint
+ 497.9  43 | c : DNS request from ('10.30.139.94', 60126) to None: 34 bytes
+ 497.9  43 | c : DNS request from ('10.30.139.94', 58592) to None: 43 bytes
+ 497.9  43 | c : DNS request from ('10.30.139.94', 21538) to None: 33 bytes
+ 498.0  43 | c : DNS request from ('10.30.139.94', 52244) to None: 32 bytes
+ 498.1  35 | 2018-08-16T12:21:24+0000 [stdout#info] A query: b'www.google.co.id'
+ 498.1  35 | 2018-08-16T12:21:24+0000 [stdout#info] A query: b'lh3.googleusercontent.com'
+ 498.1  35 | 2018-08-16T12:21:24+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 498.1  35 | 2018-08-16T12:21:24+0000 [stdout#info] A query: b'www.google.com'
+ 498.4  35 | 2018-08-16T12:21:24+0000 [stdout#info] Result for b'lh3.googleusercontent.com' is ['172.217.194.132']
+ 498.4  35 | 2018-08-16T12:21:24+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.24.94']
+ 498.4  35 | 2018-08-16T12:21:24+0000 [stdout#info] Result for b'www.google.co.id' is ['172.217.194.94']
+ 498.5  35 | 2018-08-16T12:21:24+0000 [stdout#info] Result for b'www.google.com' is ['74.125.24.147', '74.125.24.105', '74.125.24.104', '74.125.24.103', '74.125.24.99', '74.125.24.106']
+ 498.6  43 | c : DNS request from ('10.30.139.94', 33482) to None: 37 bytes
+ 498.7  35 | 2018-08-16T12:21:24+0000 [stdout#info] A query: b'clients5.google.com'
+ 498.8  35 | 2018-08-16T12:21:24+0000 [stdout#info] Result for b'clients5.google.com' is ['172.217.194.102', '172.217.194.101', '172.217.194.139', '172.217.194.138', '172.217.194.113', '172.217.194.100']
+ 499.6  43 | c : DNS request from ('10.30.139.94', 54131) to None: 37 bytes
+ 499.6  43 | c : DNS request from ('10.30.139.94', 7808) to None: 42 bytes
+ 499.6  43 | c : DNS request from ('10.30.139.94', 19459) to None: 34 bytes
+ 499.6  43 | c : SW'unknown':Mux#33: deleting (17 remain)
+ 499.6  43 | c : SW#-1:10.30.139.94:49475: deleting (16 remain)
+ 499.6  43 | c : SW'unknown':Mux#34: deleting (15 remain)
+ 499.6  43 | c : SW#-1:10.30.139.94:49476: deleting (14 remain)
+ 499.6  43 | c : SW'unknown':Mux#37: deleting (13 remain)
+ 499.6  43 | c : SW#-1:10.30.139.94:49483: deleting (12 remain)
+ 499.6  43 | c : SW'unknown':Mux#38: deleting (11 remain)
+ 499.6  43 | c : SW#-1:10.30.139.94:49484: deleting (10 remain)
+ 499.6  43 | c : SW'unknown':Mux#43: deleting (9 remain)
+ 499.6  43 | c : SW#-1:10.30.139.94:49492: deleting (8 remain)
+ 499.6  43 | c : SW#16:10.30.139.94:49469: deleting (7 remain)
+ 499.6  43 | c : SW'unknown':Mux#31: deleting (6 remain)
+ 499.7  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'www.telepresence.io'
+ 499.7  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'www.google-analytics.com'
+ 499.7  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'www.facebook.com'
+ 499.8  43 | c : DNS request from ('10.30.139.94', 63924) to None: 47 bytes
+ 499.8  43 | c : DNS request from ('10.30.139.94', 64845) to None: 42 bytes
+ 499.8  35 | 2018-08-16T12:21:25+0000 [stdout#info] Result for b'www.google-analytics.com' is ['74.125.24.101', '74.125.24.102', '74.125.24.100', '74.125.24.138', '74.125.24.139', '74.125.24.113']
+ 499.8  35 | 2018-08-16T12:21:25+0000 [stdout#info] Result for b'www.facebook.com' is ['157.240.7.38']
+ 499.9  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'd33wubrfki0l68.cloudfront.net'
+ 499.9  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'www.googletagmanager.com'
+ 499.9  43 | c : DNS request from ('10.30.139.94', 51780) to None: 38 bytes
+ 499.9  35 | 2018-08-16T12:21:25+0000 [stdout#info] Result for b'www.googletagmanager.com' is ['172.217.160.8']
+ 499.9  43 | c : DNS request from ('10.30.139.94', 18254) to None: 46 bytes
+ 499.9  35 | 2018-08-16T12:21:25+0000 [stdout#info] Result for b'd33wubrfki0l68.cloudfront.net' is ['54.230.156.203', '54.230.156.240', '54.230.156.150', '54.230.156.54']
+ 499.9  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'connect.facebook.net'
+ 499.9  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'dnn506yrbagrg.cloudfront.net'
+ 500.0  43 | c : DNS request from ('10.30.139.94', 28876) to None: 34 bytes
+ 500.0  43 | c : DNS request from ('10.30.139.94', 42597) to None: 38 bytes
+ 500.0  35 | 2018-08-16T12:21:25+0000 [stdout#info] Result for b'connect.facebook.net' is ['157.240.7.26']
+ 500.0  35 | 2018-08-16T12:21:25+0000 [stdout#info] Result for b'dnn506yrbagrg.cloudfront.net' is ['54.230.156.204', '54.230.156.157', '54.230.156.126', '54.230.156.207']
+ 500.0  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'cdn.pushcrew.com'
+ 500.0  35 | 2018-08-16T12:21:25+0000 [stdout#info] Result for b'www.telepresence.io' is ['159.65.5.64']
+ 500.0  35 | 2018-08-16T12:21:25+0000 [stdout#info] A query: b'sjs.bizographics.com'
+ 500.1  43 | c : DNS request from ('10.30.139.94', 55671) to None: 45 bytes
+ 500.1  35 | 2018-08-16T12:21:26+0000 [stdout#info] Result for b'cdn.pushcrew.com' is ['104.20.55.119', '104.20.54.119']
+ 500.1  35 | 2018-08-16T12:21:26+0000 [stdout#info] A query: b'ocsp.int-x3.letsencrypt.org'
+ 500.1  35 | 2018-08-16T12:21:26+0000 [stdout#info] Result for b'sjs.bizographics.com' is ['104.85.74.110']
+ 500.1  35 | 2018-08-16T12:21:26+0000 [stdout#info] Result for b'ocsp.int-x3.letsencrypt.org' is ['23.49.60.202', '23.49.60.170']
+ 500.6  43 | c : DNS request from ('10.30.139.94', 24002) to None: 37 bytes
+ 500.7  43 | c : DNS request from ('10.30.139.94', 64983) to None: 30 bytes
+ 500.7  35 | 2018-08-16T12:21:26+0000 [stdout#info] A query: b'px.ads.linkedin.com'
+ 500.7  35 | 2018-08-16T12:21:26+0000 [stdout#info] Result for b'px.ads.linkedin.com' is ['103.20.94.5']
+ 500.8  35 | 2018-08-16T12:21:26+0000 [stdout#info] A query: b'pushcrew.com'
+ 500.9  35 | 2018-08-16T12:21:26+0000 [stdout#info] Result for b'pushcrew.com' is ['50.97.50.21']
+ 523.7 TEL | (proxy checking local liveness)
+ 523.7  35 | 2018-08-16T12:21:49+0000 [Poll#info] Checkpoint
+ 553.8 TEL | (proxy checking local liveness)
+ 553.8  35 | 2018-08-16T12:22:19+0000 [Poll#info] Checkpoint
+ 566.2  43 | c : DNS request from ('10.30.139.94', 33743) to None: 42 bytes
+ 566.3  35 | 2018-08-16T12:22:32+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+ 566.9  35 | 2018-08-16T12:22:32+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+ 583.8 TEL | (proxy checking local liveness)
+ 583.8  35 | 2018-08-16T12:22:49+0000 [Poll#info] Checkpoint
+ 597.9  43 | c : DNS request from ('10.30.139.94', 53955) to None: 42 bytes
+ 597.9  43 | c : DNS request from ('10.30.139.94', 55494) to None: 48 bytes
+ 597.9  43 | c : DNS request from ('10.30.139.94', 60149) to None: 44 bytes
+ 598.0  35 | 2018-08-16T12:23:04+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+ 598.0  35 | 2018-08-16T12:23:04+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+ 598.0  35 | 2018-08-16T12:23:04+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+ 598.1  35 | 2018-08-16T12:23:04+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['172.217.160.2']
+ 598.1  35 | 2018-08-16T12:23:04+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['172.217.160.2']
+ 598.1  35 | 2018-08-16T12:23:04+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+ 613.7 TEL | (proxy checking local liveness)
+ 613.7  35 | 2018-08-16T12:23:19+0000 [Poll#info] Checkpoint
+ 628.8  43 | c : DNS request from ('10.30.139.94', 62942) to None: 32 bytes
+ 628.9  35 | 2018-08-16T12:23:34+0000 [stdout#info] A query: b'imap.gmail.com'
+ 629.0  35 | 2018-08-16T12:23:34+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.68.108', '74.125.68.109']
+ 632.2  43 | c : DNS request from ('10.30.139.94', 36971) to None: 33 bytes
+ 632.2  35 | 2018-08-16T12:23:38+0000 [stdout#info] A query: b'play.google.com'
+ 632.2  35 | 2018-08-16T12:23:38+0000 [stdout#info] Result for b'play.google.com' is ['74.125.200.138', '74.125.200.139', '74.125.200.102', '74.125.200.101', '74.125.200.100', '74.125.200.113']
+ 643.7 TEL | (proxy checking local liveness)
+ 643.7  35 | 2018-08-16T12:23:49+0000 [Poll#info] Checkpoint
+ 673.6 TEL | (proxy checking local liveness)
+ 673.6  35 | 2018-08-16T12:24:19+0000 [Poll#info] Checkpoint
+ 696.8  43 | c : DNS request from ('10.30.139.94', 50096) to None: 58 bytes
+ 696.8  35 | 2018-08-16T12:24:42+0000 [stdout#info] 12 query: b'lb._dns-sd._udp.0.139.30.10.in-addr.arpa'
+ 697.0  35 | 2018-08-16T12:24:42+0000 [DNSDatagramProtocol (UDP)] DNSDatagramProtocol starting on 50299
+ 697.0  35 | 2018-08-16T12:24:42+0000 [DNSDatagramProtocol (UDP)] Starting protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a1dffd0>
+ 697.1  35 | 2018-08-16T12:24:43+0000 [-] (UDP Port 50299 Closed)
+ 697.1  35 | 2018-08-16T12:24:43+0000 [-] Stopping protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a1dffd0>
+ 703.7 TEL | (proxy checking local liveness)
+ 703.7  35 | 2018-08-16T12:24:49+0000 [Poll#info] Checkpoint
+ 733.7 TEL | (proxy checking local liveness)
+ 733.7  35 | 2018-08-16T12:25:19+0000 [Poll#info] Checkpoint
+ 759.4  43 | c : DNS request from ('10.30.139.94', 54079) to None: 33 bytes
+ 759.4  35 | 2018-08-16T12:25:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+ 759.5  35 | 2018-08-16T12:25:45+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['172.217.160.35']
+ 763.8 TEL | (proxy checking local liveness)
+ 763.9  35 | 2018-08-16T12:25:49+0000 [Poll#info] Checkpoint
+ 793.7 TEL | (proxy checking local liveness)
+ 793.7  35 | 2018-08-16T12:26:19+0000 [Poll#info] Checkpoint
+ 813.0  43 | c : DNS request from ('10.30.139.94', 55895) to None: 42 bytes
+ 813.0  43 | c : DNS request from ('10.30.139.94', 53826) to None: 44 bytes
+ 813.0  43 | c : DNS request from ('10.30.139.94', 56911) to None: 48 bytes
+ 813.0  35 | 2018-08-16T12:26:38+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+ 813.0  43 | c : DNS request from ('10.30.139.94', 63200) to None: 27 bytes
+ 813.0  35 | 2018-08-16T12:26:39+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+ 813.0  35 | 2018-08-16T12:26:39+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+ 813.0  35 | 2018-08-16T12:26:39+0000 [stdout#info] A query: b'i.scdn.co'
+ 813.1  35 | 2018-08-16T12:26:39+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+ 813.1  35 | 2018-08-16T12:26:39+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['172.217.160.2']
+ 813.1  35 | 2018-08-16T12:26:39+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['172.217.160.2']
+ 813.1  35 | 2018-08-16T12:26:39+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+ 818.1  43 | c : DNS request from ('10.30.139.94', 61929) to None: 42 bytes
+ 818.2  35 | 2018-08-16T12:26:44+0000 [stdout#info] A query: b'audio-sp-sjc.spotify.com'
+ 818.3  35 | 2018-08-16T12:26:44+0000 [stdout#info] Result for b'audio-sp-sjc.spotify.com' is ['193.235.51.113']
+ 823.7 TEL | (proxy checking local liveness)
+ 823.7  35 | 2018-08-16T12:26:49+0000 [Poll#info] Checkpoint
+ 853.8 TEL | (proxy checking local liveness)
+ 853.9  35 | 2018-08-16T12:27:19+0000 [Poll#info] Checkpoint
+ 883.8 TEL | (proxy checking local liveness)
+ 883.8  35 | 2018-08-16T12:27:49+0000 [Poll#info] Checkpoint
+ 913.8 TEL | (proxy checking local liveness)
+ 913.8  35 | 2018-08-16T12:28:19+0000 [Poll#info] Checkpoint
+ 933.4  43 | c : DNS request from ('10.30.139.94', 61296) to None: 32 bytes
+ 934.9  43 | c : DNS request from ('10.30.139.94', 3385) to None: 42 bytes
+ 935.3  35 | 2018-08-16T12:28:39+0000 [stdout#info] A query: b'imap.gmail.com'
+ 935.3  35 | 2018-08-16T12:28:39+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.130.109', '74.125.130.108']
+ 935.3  35 | 2018-08-16T12:28:40+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+ 935.3  35 | 2018-08-16T12:28:41+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+ 939.5  43 | c : DNS request from ('10.30.139.94', 62139) to None: 34 bytes
+ 939.5  43 | c : DNS request from ('10.30.139.94', 64220) to None: 31 bytes
+ 939.7  35 | 2018-08-16T12:28:45+0000 [stdout#info] A query: b'gs-loc.apple.com'
+ 939.7  35 | 2018-08-16T12:28:45+0000 [stdout#info] A query: b'cl2.apple.com'
+ 939.9  35 | 2018-08-16T12:28:45+0000 [stdout#info] Result for b'gs-loc.apple.com' is ['17.167.195.228', '17.167.192.94']
+ 939.9  35 | 2018-08-16T12:28:45+0000 [stdout#info] Result for b'cl2.apple.com' is ['173.222.152.98']
+ 943.7 TEL | (proxy checking local liveness)
+ 943.7  35 | 2018-08-16T12:28:49+0000 [Poll#info] Checkpoint
+1007.3 TEL | (proxy checking local liveness)
+1007.5  35 | 2018-08-16T12:29:53+0000 [Poll#info] Checkpoint
+1033.7 TEL | (proxy checking local liveness)
+1033.7  35 | 2018-08-16T12:30:19+0000 [Poll#info] Checkpoint
+1050.0  43 | c : DNS request from ('10.30.139.94', 56245) to None: 48 bytes
+1050.0  43 | c : DNS request from ('10.30.139.94', 56851) to None: 42 bytes
+1050.0  43 | c : DNS request from ('10.30.139.94', 60651) to None: 44 bytes
+1050.1  35 | 2018-08-16T12:30:36+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+1050.1  35 | 2018-08-16T12:30:36+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+1050.1  35 | 2018-08-16T12:30:36+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+1050.1  35 | 2018-08-16T12:30:36+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.68.154', '74.125.68.156', '74.125.68.157', '74.125.68.155']
+1050.1  35 | 2018-08-16T12:30:36+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+1050.1  35 | 2018-08-16T12:30:36+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['172.217.160.2']
+1059.4  43 | c : DNS request from ('10.30.139.94', 45341) to None: 33 bytes
+1059.6  35 | 2018-08-16T12:30:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+1059.6  35 | 2018-08-16T12:30:45+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.24.94']
+1059.8  43 | c : DNS request from ('10.30.139.94', 16067) to None: 45 bytes
+1059.8  35 | 2018-08-16T12:30:45+0000 [stdout#info] A query: b'safebrowsing.googleapis.com'
+1060.0  35 | 2018-08-16T12:30:45+0000 [stdout#info] Result for b'safebrowsing.googleapis.com' is ['74.125.130.95']
+1063.6 TEL | (proxy checking local liveness)
+1063.6  35 | 2018-08-16T12:30:49+0000 [Poll#info] Checkpoint
+1080.8  43 | c : DNS request from ('10.30.139.94', 56072) to None: 54 bytes
+1080.8  35 | 2018-08-16T12:31:06+0000 [stdout#info] A query: b'googlehosted.l.googleusercontent.com'
+1080.9  35 | 2018-08-16T12:31:06+0000 [stdout#info] Result for b'googlehosted.l.googleusercontent.com' is ['74.125.24.132']
+1093.7 TEL | (proxy checking local liveness)
+1093.7  35 | 2018-08-16T12:31:19+0000 [Poll#info] Checkpoint
+1123.6 TEL | (proxy checking local liveness)
+1123.6  35 | 2018-08-16T12:31:49+0000 [Poll#info] Checkpoint
+1153.7 TEL | (proxy checking local liveness)
+1153.7  35 | 2018-08-16T12:32:19+0000 [Poll#info] Checkpoint
+1172.2  43 | c : DNS request from ('10.30.139.94', 58393) to None: 42 bytes
+1172.2  35 | 2018-08-16T12:32:38+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+1172.3  35 | 2018-08-16T12:32:38+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+1183.6 TEL | (proxy checking local liveness)
+1183.6  35 | 2018-08-16T12:32:49+0000 [Poll#info] Checkpoint
+1213.7 TEL | (proxy checking local liveness)
+1213.7  35 | 2018-08-16T12:33:19+0000 [Poll#info] Checkpoint
+1234.2  43 | c : DNS request from ('10.30.139.94', 28716) to None: 33 bytes
+1234.2  35 | 2018-08-16T12:33:40+0000 [stdout#info] A query: b'play.google.com'
+1234.3  35 | 2018-08-16T12:33:40+0000 [stdout#info] Result for b'play.google.com' is ['74.125.130.102', '74.125.130.101', '74.125.130.113', '74.125.130.139', '74.125.130.100', '74.125.130.138']
+1243.7 TEL | (proxy checking local liveness)
+1243.7  35 | 2018-08-16T12:33:49+0000 [Poll#info] Checkpoint
+1250.0  43 | c : DNS request from ('10.30.139.94', 56184) to None: 32 bytes
+1250.0  35 | 2018-08-16T12:33:55+0000 [stdout#info] A query: b'imap.gmail.com'
+1250.1  35 | 2018-08-16T12:33:56+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.68.109', '74.125.68.108']
+1273.7 TEL | (proxy checking local liveness)
+1273.7  35 | 2018-08-16T12:34:19+0000 [Poll#info] Checkpoint
+1280.1  43 | c : DNS request from ('10.30.139.94', 56783) to None: 48 bytes
+1280.1  43 | c : DNS request from ('10.30.139.94', 52941) to None: 44 bytes
+1280.1  43 | c : DNS request from ('10.30.139.94', 49241) to None: 42 bytes
+1280.1  43 | c : DNS request from ('10.30.139.94', 64821) to None: 27 bytes
+1280.1  35 | 2018-08-16T12:34:26+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+1280.1  35 | 2018-08-16T12:34:26+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+1280.1  35 | 2018-08-16T12:34:26+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+1280.1  35 | 2018-08-16T12:34:26+0000 [stdout#info] A query: b'i.scdn.co'
+1281.1  43 | c : DNS request from ('10.30.139.94', 56783) to None: 48 bytes
+1281.1  43 | c : DNS request from ('10.30.139.94', 52941) to None: 44 bytes
+1281.1  43 | c : DNS request from ('10.30.139.94', 49241) to None: 42 bytes
+1281.1  43 | c : DNS request from ('10.30.139.94', 64821) to None: 27 bytes
+1281.1  35 | 2018-08-16T12:34:27+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+1281.1  35 | 2018-08-16T12:34:27+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+1281.1  35 | 2018-08-16T12:34:27+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+1281.1  35 | 2018-08-16T12:34:27+0000 [stdout#info] A query: b'i.scdn.co'
+1283.0  35 | 2018-08-16T12:34:28+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+1283.0  35 | 2018-08-16T12:34:29+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['172.217.194.156', '172.217.194.157', '172.217.194.154', '172.217.194.155']
+1283.0  35 | 2018-08-16T12:34:29+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['172.217.194.156', '172.217.194.157', '172.217.194.154', '172.217.194.155']
+1283.0  35 | 2018-08-16T12:34:29+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['172.217.160.2']
+1283.0  35 | 2018-08-16T12:34:29+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+1283.1  35 | 2018-08-16T12:34:29+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+1283.1  35 | 2018-08-16T12:34:29+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+1283.1  35 | 2018-08-16T12:34:29+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['172.217.160.2']
+1303.7 TEL | (proxy checking local liveness)
+1303.7  35 | 2018-08-16T12:34:49+0000 [Poll#info] Checkpoint
+1333.8 TEL | (proxy checking local liveness)
+1333.8  35 | 2018-08-16T12:35:19+0000 [Poll#info] Checkpoint
+1363.6 TEL | (proxy checking local liveness)
+1363.6  35 | 2018-08-16T12:35:49+0000 [Poll#info] Checkpoint
+1393.8 TEL | (proxy checking local liveness)
+1393.8  35 | 2018-08-16T12:36:19+0000 [Poll#info] Checkpoint
+1414.7  43 | c : DNS request from ('10.30.139.94', 49333) to None: 36 bytes
+1414.7  43 | c : DNS request from ('10.30.139.94', 51524) to None: 36 bytes
+1414.7  35 | 2018-08-16T12:36:40+0000 [stdout#info] A query: b'update.katalon.com'
+1414.7  35 | 2018-08-16T12:36:40+0000 [stdout#info] AAAA query, sending back A instead: b'update.katalon.com'
+1414.7  35 | 2018-08-16T12:36:40+0000 [stdout#info] A query: b'update.katalon.com'
+1414.8  35 | 2018-08-16T12:36:40+0000 [stdout#info] Result for b'update.katalon.com' is ['34.206.32.97', '52.55.0.50']
+1414.8  35 | 2018-08-16T12:36:40+0000 [stdout#info] Result for b'update.katalon.com' is ['52.55.0.50', '34.206.32.97']
+1423.7 TEL | (proxy checking local liveness)
+1423.7  35 | 2018-08-16T12:36:49+0000 [Poll#info] Checkpoint
+1453.8 TEL | (proxy checking local liveness)
+1453.8  35 | 2018-08-16T12:37:19+0000 [Poll#info] Checkpoint
+1471.7  43 | c : DNS request from ('10.30.139.94', 44277) to None: 42 bytes
+1471.7  35 | 2018-08-16T12:37:37+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+1471.8  35 | 2018-08-16T12:37:37+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+1483.7 TEL | (proxy checking local liveness)
+1483.7  35 | 2018-08-16T12:37:49+0000 [Poll#info] Checkpoint
+1513.7 TEL | (proxy checking local liveness)
+1513.7  35 | 2018-08-16T12:38:19+0000 [Poll#info] Checkpoint
+1530.1  43 | c : DNS request from ('10.30.139.94', 59829) to None: 32 bytes
+1530.1  35 | 2018-08-16T12:38:36+0000 [stdout#info] A query: b'imap.gmail.com'
+1530.2  35 | 2018-08-16T12:38:36+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.24.108', '74.125.24.109']
+1540.5  43 | c : DNS request from ('10.30.139.94', 50373) to None: 34 bytes
+1540.7  35 | 2018-08-16T12:38:46+0000 [stdout#info] A query: b'gs-loc.apple.com'
+1541.0  35 | 2018-08-16T12:38:46+0000 [stdout#info] Result for b'gs-loc.apple.com' is ['17.142.171.10', '17.142.171.11']
+1543.7 TEL | (proxy checking local liveness)
+1543.7  35 | 2018-08-16T12:38:49+0000 [Poll#info] Checkpoint
+1562.3  43 | c : DNS request from ('10.30.139.94', 53097) to None: 48 bytes
+1562.3  43 | c : DNS request from ('10.30.139.94', 61401) to None: 42 bytes
+1562.3  43 | c : DNS request from ('10.30.139.94', 61346) to None: 44 bytes
+1562.3  43 | c : DNS request from ('10.30.139.94', 56172) to None: 27 bytes
+1562.3  35 | 2018-08-16T12:39:08+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+1562.3  35 | 2018-08-16T12:39:08+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+1562.3  35 | 2018-08-16T12:39:08+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+1562.4  35 | 2018-08-16T12:39:08+0000 [stdout#info] A query: b'i.scdn.co'
+1562.4  35 | 2018-08-16T12:39:08+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.200.154', '74.125.200.156', '74.125.200.157', '74.125.200.155']
+1562.4  35 | 2018-08-16T12:39:08+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+1562.4  35 | 2018-08-16T12:39:08+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.130.157', '74.125.130.156', '74.125.130.154', '74.125.130.155']
+1562.4  35 | 2018-08-16T12:39:08+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+1573.8 TEL | (proxy checking local liveness)
+1573.9  35 | 2018-08-16T12:39:19+0000 [Poll#info] Checkpoint
+1603.8 TEL | (proxy checking local liveness)
+1603.8  35 | 2018-08-16T12:39:49+0000 [Poll#info] Checkpoint
+1611.2  43 | c : DNS request from ('10.30.139.94', 2410) to None: 45 bytes
+1611.2  35 | 2018-08-16T12:39:57+0000 [stdout#info] A query: b'safebrowsing.googleapis.com'
+1611.3  35 | 2018-08-16T12:39:57+0000 [stdout#info] Result for b'safebrowsing.googleapis.com' is ['74.125.24.95']
+1633.7 TEL | (proxy checking local liveness)
+1633.8  35 | 2018-08-16T12:40:19+0000 [Poll#info] Checkpoint
+1651.7  43 | c : DNS request from ('10.30.139.94', 42501) to None: 42 bytes
+1651.8  35 | 2018-08-16T12:40:37+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+1651.9  35 | 2018-08-16T12:40:37+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+1659.4  43 | c : DNS request from ('10.30.139.94', 26382) to None: 33 bytes
+1659.4  35 | 2018-08-16T12:40:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+1660.4  43 | c : DNS request from ('10.30.139.94', 60066) to None: 33 bytes
+1660.4  35 | 2018-08-16T12:40:46+0000 [stdout#info] A query: b'ssl.gstatic.com'
+1660.6  43 | c : DNS request from ('10.30.139.94', 62839) to None: 33 bytes
+1660.6  35 | 2018-08-16T12:40:46+0000 [stdout#info] A query: b'ssl.gstatic.com'
+1661.8  35 | 2018-08-16T12:40:47+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.24.94']
+1662.1  43 | c : DNS request from ('10.30.139.94', 17171) to None: 34 bytes
+1662.1  35 | 2018-08-16T12:40:48+0000 [stdout#info] A query: b'drive.google.com'
+1662.2  35 | 2018-08-16T12:40:48+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.24.94']
+1662.3  43 | c : DNS request from ('10.30.139.94', 44174) to None: 34 bytes
+1662.3  35 | 2018-08-16T12:40:48+0000 [stdout#info] A query: b'drive.google.com'
+1663.3  43 | c : DNS request from ('10.30.139.94', 36697) to None: 34 bytes
+1663.3  35 | 2018-08-16T12:40:49+0000 [stdout#info] A query: b'drive.google.com'
+1663.6  43 | c : DNS request from ('10.30.139.94', 61312) to None: 34 bytes
+1663.7  35 | 2018-08-16T12:40:49+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.24.94']
+1663.7  35 | 2018-08-16T12:40:49+0000 [stdout#info] Result for b'drive.google.com' is ['74.125.24.102', '74.125.24.113', '74.125.24.139', '74.125.24.100', '74.125.24.138', '74.125.24.101']
+1663.7  35 | 2018-08-16T12:40:49+0000 [stdout#info] A query: b'drive.google.com'
+1663.7 TEL | (proxy checking local liveness)
+1663.7  35 | 2018-08-16T12:40:49+0000 [Poll#info] Checkpoint
+1663.8  35 | 2018-08-16T12:40:49+0000 [stdout#info] Result for b'drive.google.com' is ['172.217.160.14']
+1663.8  35 | 2018-08-16T12:40:49+0000 [stdout#info] Result for b'drive.google.com' is ['172.217.160.14']
+1664.0  35 | 2018-08-16T12:40:50+0000 [stdout#info] Result for b'drive.google.com' is ['74.125.24.102', '74.125.24.101', '74.125.24.138', '74.125.24.100', '74.125.24.139', '74.125.24.113']
+1679.9  43 | c : DNS request from ('10.30.139.94', 27141) to None: 37 bytes
+1679.9  35 | 2018-08-16T12:41:05+0000 [stdout#info] A query: b'clients4.google.com'
+1680.0  35 | 2018-08-16T12:41:06+0000 [stdout#info] Result for b'clients4.google.com' is ['74.125.130.139', '74.125.130.100', '74.125.130.101', '74.125.130.102', '74.125.130.113', '74.125.130.138']
+1693.7 TEL | (proxy checking local liveness)
+1693.7  35 | 2018-08-16T12:41:19+0000 [Poll#info] Checkpoint
+1704.1  43 | c : DNS request from ('10.30.139.94', 52723) to None: 38 bytes
+1704.2  35 | 2018-08-16T12:41:30+0000 [stdout#info] A query: b'gsp-ssl.ls.apple.com'
+1704.9  35 | 2018-08-16T12:41:30+0000 [stdout#info] Result for b'gsp-ssl.ls.apple.com' is ['17.242.18.66']
+1723.7 TEL | (proxy checking local liveness)
+1723.7  35 | 2018-08-16T12:41:49+0000 [Poll#info] Checkpoint
+1753.7 TEL | (proxy checking local liveness)
+1753.7  35 | 2018-08-16T12:42:19+0000 [Poll#info] Checkpoint
+1754.2  43 | c : DNS request from ('10.30.139.94', 65162) to None: 38 bytes
+1754.2  43 | c : DNS request from ('10.30.139.94', 64654) to None: 38 bytes
+1754.2  35 | 2018-08-16T12:42:20+0000 [stdout#info] A query: b'time-macos.apple.com'
+1754.3  35 | 2018-08-16T12:42:20+0000 [stdout#info] AAAA query, sending back A instead: b'time-macos.apple.com'
+1754.3  35 | 2018-08-16T12:42:20+0000 [stdout#info] A query: b'time-macos.apple.com'
+1754.4  35 | 2018-08-16T12:42:20+0000 [stdout#info] Result for b'time-macos.apple.com' is ['17.253.84.125', '17.253.84.253', '17.253.82.253', '17.253.68.125', '17.253.82.125']
+1754.4  35 | 2018-08-16T12:42:20+0000 [stdout#info] Result for b'time-macos.apple.com' is ['17.253.82.125', '17.253.84.125', '17.253.84.253', '17.253.82.253', '17.253.68.125']
+1761.4  43 | c : DNS request from ('10.30.139.94', 56954) to None: 44 bytes
+1761.4  43 | c : DNS request from ('10.30.139.94', 53505) to None: 48 bytes
+1761.5  43 | c : DNS request from ('10.30.139.94', 61400) to None: 42 bytes
+1761.5  43 | c : DNS request from ('10.30.139.94', 61333) to None: 27 bytes
+1761.5  35 | 2018-08-16T12:42:27+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+1761.5  35 | 2018-08-16T12:42:27+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+1761.5  35 | 2018-08-16T12:42:27+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+1761.6  35 | 2018-08-16T12:42:27+0000 [stdout#info] A query: b'i.scdn.co'
+1761.6  35 | 2018-08-16T12:42:27+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.24.155', '74.125.24.157', '74.125.24.154', '74.125.24.156']
+1761.6  35 | 2018-08-16T12:42:27+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+1761.6  35 | 2018-08-16T12:42:27+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+1761.6  35 | 2018-08-16T12:42:27+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.68.155', '74.125.68.157', '74.125.68.154', '74.125.68.156']
+1765.2  43 | c : DNS request from ('10.30.139.94', 36154) to None: 47 bytes
+1765.2  35 | 2018-08-16T12:42:31+0000 [stdout#info] A query: b'clientservices.googleapis.com'
+1765.3  35 | 2018-08-16T12:42:31+0000 [stdout#info] Result for b'clientservices.googleapis.com' is ['74.125.200.94']
+1783.8 TEL | (proxy checking local liveness)
+1783.9  35 | 2018-08-16T12:42:49+0000 [Poll#info] Checkpoint
+1813.6 TEL | (proxy checking local liveness)
+1813.6  35 | 2018-08-16T12:43:19+0000 [Poll#info] Checkpoint
+1837.4  43 | c : DNS request from ('10.30.139.94', 41018) to None: 42 bytes
+1837.5  35 | 2018-08-16T12:43:43+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+1837.6  35 | 2018-08-16T12:43:43+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+1838.3  43 | c : DNS request from ('10.30.139.94', 59023) to None: 32 bytes
+1838.3  35 | 2018-08-16T12:43:44+0000 [stdout#info] A query: b'imap.gmail.com'
+1838.4  35 | 2018-08-16T12:43:44+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.68.109', '74.125.68.108']
+1843.7 TEL | (proxy checking local liveness)
+1843.7  35 | 2018-08-16T12:43:49+0000 [Poll#info] Checkpoint
+1873.6 TEL | (proxy checking local liveness)
+1873.6  35 | 2018-08-16T12:44:19+0000 [Poll#info] Checkpoint
+1895.0  43 | c : DNS request from ('10.30.139.94', 50563) to None: 40 bytes
+1895.0  35 | 2018-08-16T12:44:41+0000 [stdout#info] A query: b'az764295.vo.msecnd.net'
+1895.1  35 | 2018-08-16T12:44:41+0000 [stdout#info] Result for b'az764295.vo.msecnd.net' is ['117.18.232.200']
+1903.7 TEL | (proxy checking local liveness)
+1903.7  35 | 2018-08-16T12:44:49+0000 [Poll#info] Checkpoint
+1916.8  43 | c : DNS request from ('10.30.139.94', 62343) to None: 49 bytes
+1916.9  35 | 2018-08-16T12:45:02+0000 [stdout#info] A query: b'vscode-update.azurewebsites.net'
+1917.0  35 | 2018-08-16T12:45:02+0000 [stdout#info] Result for b'vscode-update.azurewebsites.net' is ['40.83.182.206']
+1933.7 TEL | (proxy checking local liveness)
+1933.7  35 | 2018-08-16T12:45:19+0000 [Poll#info] Checkpoint
+1953.7  43 | c : DNS request from ('10.30.139.94', 59310) to None: 42 bytes
+1953.7  35 | 2018-08-16T12:45:39+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+1953.8  35 | 2018-08-16T12:45:39+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+1963.7 TEL | (proxy checking local liveness)
+1963.7  35 | 2018-08-16T12:45:49+0000 [Poll#info] Checkpoint
+1993.9 TEL | (proxy checking local liveness)
+1993.9  35 | 2018-08-16T12:46:19+0000 [Poll#info] Checkpoint
+2023.9 TEL | (proxy checking local liveness)
+2024.0  35 | 2018-08-16T12:46:49+0000 [Poll#info] Checkpoint
+2036.0  43 | c : DNS request from ('10.30.139.94', 57563) to None: 44 bytes
+2036.0  43 | c : DNS request from ('10.30.139.94', 53461) to None: 48 bytes
+2036.0  43 | c : DNS request from ('10.30.139.94', 59144) to None: 42 bytes
+2036.0  43 | c : DNS request from ('10.30.139.94', 61572) to None: 27 bytes
+2036.0  35 | 2018-08-16T12:47:02+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+2036.0  35 | 2018-08-16T12:47:02+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+2036.0  35 | 2018-08-16T12:47:02+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+2036.0  35 | 2018-08-16T12:47:02+0000 [stdout#info] A query: b'i.scdn.co'
+2036.1  35 | 2018-08-16T12:47:02+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.130.157', '74.125.130.154', '74.125.130.155', '74.125.130.156']
+2036.1  35 | 2018-08-16T12:47:02+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+2036.1  35 | 2018-08-16T12:47:02+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['172.217.194.154', '172.217.194.155', '172.217.194.157', '172.217.194.156']
+2036.1  35 | 2018-08-16T12:47:02+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+2053.9 TEL | (proxy checking local liveness)
+2053.9  35 | 2018-08-16T12:47:19+0000 [Poll#info] Checkpoint
+2083.8 TEL | (proxy checking local liveness)
+2083.8  35 | 2018-08-16T12:47:49+0000 [Poll#info] Checkpoint
+2113.7 TEL | (proxy checking local liveness)
+2113.7  35 | 2018-08-16T12:48:19+0000 [Poll#info] Checkpoint
+2119.6  43 | c : DNS request from ('10.30.139.94', 52854) to None: 39 bytes
+2119.6  35 | 2018-08-16T12:48:25+0000 [stdout#info] A query: b'update.googleapis.com'
+2119.7  35 | 2018-08-16T12:48:25+0000 [stdout#info] Result for b'update.googleapis.com' is ['172.217.194.94']
+2119.9  43 | c : DNS request from ('10.30.139.94', 9900) to None: 37 bytes
+2120.0  35 | 2018-08-16T12:48:25+0000 [stdout#info] A query: b'redirector.gvt1.com'
+2120.1  35 | 2018-08-16T12:48:26+0000 [stdout#info] Result for b'redirector.gvt1.com' is ['74.125.24.139', '74.125.24.138', '74.125.24.100', '74.125.24.113', '74.125.24.101', '74.125.24.102']
+2120.1  43 | c : DNS request from ('10.30.139.94', 9659) to None: 48 bytes
+2120.1  35 | 2018-08-16T12:48:26+0000 [stdout#info] A query: b'r1---sn-jx25uoxu-jb3l.gvt1.com'
+2120.1  35 | 2018-08-16T12:48:26+0000 [stdout#info] Result for b'r1---sn-jx25uoxu-jb3l.gvt1.com' is ['45.121.219.12']
+2131.7  43 | c : DNS request from ('10.30.139.94', 22097) to None: 42 bytes
+2131.7  35 | 2018-08-16T12:48:37+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+2131.8  35 | 2018-08-16T12:48:37+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+2140.7  43 | c : DNS request from ('10.30.139.94', 63414) to None: 32 bytes
+2140.7  35 | 2018-08-16T12:48:46+0000 [stdout#info] A query: b'imap.gmail.com'
+2140.8  35 | 2018-08-16T12:48:46+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.68.109', '74.125.68.108']
+2141.5  43 | c : DNS request from ('10.30.139.94', 57949) to None: 34 bytes
+2141.7  35 | 2018-08-16T12:48:47+0000 [stdout#info] A query: b'gs-loc.apple.com'
+2142.0  35 | 2018-08-16T12:48:47+0000 [stdout#info] Result for b'gs-loc.apple.com' is ['17.142.171.4', '17.142.171.9']
+2143.7 TEL | (proxy checking local liveness)
+2143.7  35 | 2018-08-16T12:48:49+0000 [Poll#info] Checkpoint
+2173.7 TEL | (proxy checking local liveness)
+2173.7  35 | 2018-08-16T12:49:19+0000 [Poll#info] Checkpoint
+2203.6 TEL | (proxy checking local liveness)
+2203.6  35 | 2018-08-16T12:49:49+0000 [Poll#info] Checkpoint
+2233.7 TEL | (proxy checking local liveness)
+2233.7  35 | 2018-08-16T12:50:19+0000 [Poll#info] Checkpoint
+2259.4  43 | c : DNS request from ('10.30.139.94', 46205) to None: 33 bytes
+2259.5  35 | 2018-08-16T12:50:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+2259.6  35 | 2018-08-16T12:50:45+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['172.217.194.94']
+2263.7 TEL | (proxy checking local liveness)
+2263.7  35 | 2018-08-16T12:50:49+0000 [Poll#info] Checkpoint
+2293.8 TEL | (proxy checking local liveness)
+2293.8  35 | 2018-08-16T12:51:19+0000 [Poll#info] Checkpoint
+2323.7 TEL | (proxy checking local liveness)
+2323.7  35 | 2018-08-16T12:51:49+0000 [Poll#info] Checkpoint
+2324.1  43 | c : DNS request from ('10.30.139.94', 59264) to None: 48 bytes
+2324.1  43 | c : DNS request from ('10.30.139.94', 60984) to None: 42 bytes
+2324.1  43 | c : DNS request from ('10.30.139.94', 51270) to None: 44 bytes
+2324.1  43 | c : DNS request from ('10.30.139.94', 53516) to None: 27 bytes
+2324.1  35 | 2018-08-16T12:51:50+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+2324.1  35 | 2018-08-16T12:51:50+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+2324.1  35 | 2018-08-16T12:51:50+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+2324.1  35 | 2018-08-16T12:51:50+0000 [stdout#info] A query: b'i.scdn.co'
+2324.2  35 | 2018-08-16T12:51:50+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.24.155', '74.125.24.157', '74.125.24.156', '74.125.24.154']
+2324.2  35 | 2018-08-16T12:51:50+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+2324.2  35 | 2018-08-16T12:51:50+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+2324.2  35 | 2018-08-16T12:51:50+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.24.155', '74.125.24.154', '74.125.24.156', '74.125.24.157']
+2353.6 TEL | (proxy checking local liveness)
+2353.6  35 | 2018-08-16T12:52:19+0000 [Poll#info] Checkpoint
+2378.0  43 | c : DNS request from ('10.30.139.94', 25146) to None: 42 bytes
+2378.1  35 | 2018-08-16T12:52:44+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+2378.2  35 | 2018-08-16T12:52:44+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+2383.8 TEL | (proxy checking local liveness)
+2383.8  35 | 2018-08-16T12:52:49+0000 [Poll#info] Checkpoint
+2413.7 TEL | (proxy checking local liveness)
+2413.7  35 | 2018-08-16T12:53:19+0000 [Poll#info] Checkpoint
+2438.2  43 | c : DNS request from ('10.30.139.94', 31233) to None: 33 bytes
+2438.4  35 | 2018-08-16T12:53:44+0000 [stdout#info] A query: b'play.google.com'
+2438.5  35 | 2018-08-16T12:53:44+0000 [stdout#info] Result for b'play.google.com' is ['74.125.130.100', '74.125.130.139', '74.125.130.101', '74.125.130.102', '74.125.130.138', '74.125.130.113']
+2443.6 TEL | (proxy checking local liveness)
+2443.6  35 | 2018-08-16T12:53:49+0000 [Poll#info] Checkpoint
+2444.4  43 | c : DNS request from ('10.30.139.94', 53534) to None: 32 bytes
+2444.5  35 | 2018-08-16T12:53:50+0000 [stdout#info] A query: b'imap.gmail.com'
+2444.6  35 | 2018-08-16T12:53:50+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.24.109', '74.125.24.108']
+2473.8 TEL | (proxy checking local liveness)
+2473.8  35 | 2018-08-16T12:54:19+0000 [Poll#info] Checkpoint
+2496.9  43 | c : DNS request from ('10.30.139.94', 16826) to None: 42 bytes
+2497.0  35 | 2018-08-16T12:54:42+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+2497.1  35 | 2018-08-16T12:54:43+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+2503.7 TEL | (proxy checking local liveness)
+2503.7  35 | 2018-08-16T12:54:49+0000 [Poll#info] Checkpoint
+2533.7 TEL | (proxy checking local liveness)
+2533.7  35 | 2018-08-16T12:55:19+0000 [Poll#info] Checkpoint
+2563.7 TEL | (proxy checking local liveness)
+2563.7  35 | 2018-08-16T12:55:49+0000 [Poll#info] Checkpoint
+2566.5  43 | c : DNS request from ('10.30.139.94', 58809) to None: 54 bytes
+2566.5  35 | 2018-08-16T12:55:52+0000 [stdout#info] A query: b'googlehosted.l.googleusercontent.com'
+2566.6  35 | 2018-08-16T12:55:52+0000 [stdout#info] Result for b'googlehosted.l.googleusercontent.com' is ['74.125.130.132']
+2578.4  43 | c : DNS request from ('10.30.139.94', 11941) to None: 42 bytes
+2578.4  35 | 2018-08-16T12:56:04+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+2578.5  35 | 2018-08-16T12:56:04+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+2582.0  43 | c : DNS request from ('10.30.139.94', 17747) to None: 42 bytes
+2582.0  35 | 2018-08-16T12:56:08+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2582.0  35 | 2018-08-16T12:56:08+0000 [stdout#info] A query: b'taliwang'
+2582.0  35 | 2018-08-16T12:56:08+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2582.0  43 | c : Accept TCP: 10.30.139.94:49671 -> 10.63.252.208:3000.
+2582.0  43 | c : Accept TCP: 10.30.139.94:49672 -> 10.63.252.208:3000.
+2583.0  43 | c : DNS request from ('10.30.139.94', 16863) to None: 35 bytes
+2583.0  35 | 2018-08-16T12:56:09+0000 [stdout#info] A query: b'fonts.gstatic.com'
+2583.0  43 |  s: SW#-1:10.63.252.208:3000: deleting (17 remain)
+2583.0  43 |  s: SW'unknown':Mux#42: deleting (16 remain)
+2583.0  43 |  s: SW#-1:10.63.252.208:3000: deleting (15 remain)
+2583.1  43 |  s: SW'unknown':Mux#43: deleting (14 remain)
+2583.1  35 | 2018-08-16T12:56:09+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.24.94']
+2583.3  43 | c : DNS request from ('10.30.139.94', 39714) to None: 37 bytes
+2583.3  35 | 2018-08-16T12:56:09+0000 [stdout#info] A query: b'clients4.google.com'
+2583.4  35 | 2018-08-16T12:56:09+0000 [stdout#info] Result for b'clients4.google.com' is ['172.217.27.110']
+2583.4  43 | c : DNS request from ('10.30.139.94', 13057) to None: 42 bytes
+2583.4  35 | 2018-08-16T12:56:09+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2583.4  35 | 2018-08-16T12:56:09+0000 [stdout#info] A query: b'taliwang'
+2583.4  35 | 2018-08-16T12:56:09+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2583.4  43 | c : Accept TCP: 10.30.139.94:49675 -> 10.63.252.208:3000.
+2583.4  43 | c : SW#18:10.30.139.94:49491: deleting (11 remain)
+2583.4  43 | c : SW'unknown':Mux#42: deleting (10 remain)
+2583.4  43 | c : DNS request from ('10.30.139.94', 62635) to None: 37 bytes
+2583.5  35 | 2018-08-16T12:56:09+0000 [stdout#info] A query: b'accounts.google.com'
+2583.5  35 | 2018-08-16T12:56:09+0000 [stdout#info] Result for b'accounts.google.com' is ['74.125.130.84']
+2583.9  43 | c : DNS request from ('10.30.139.94', 59184) to None: 48 bytes
+2583.9  43 | c : DNS request from ('10.30.139.94', 56671) to None: 44 bytes
+2583.9  43 | c : DNS request from ('10.30.139.94', 58632) to None: 42 bytes
+2583.9  43 | c : DNS request from ('10.30.139.94', 53354) to None: 27 bytes
+2583.9  35 | 2018-08-16T12:56:09+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+2583.9  35 | 2018-08-16T12:56:09+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+2583.9  35 | 2018-08-16T12:56:09+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+2584.0  35 | 2018-08-16T12:56:09+0000 [stdout#info] A query: b'i.scdn.co'
+2584.0  35 | 2018-08-16T12:56:09+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.130.155', '74.125.130.157', '74.125.130.156', '74.125.130.154']
+2584.0  35 | 2018-08-16T12:56:10+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+2584.0  35 | 2018-08-16T12:56:10+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.68.155', '74.125.68.157', '74.125.68.154', '74.125.68.156']
+2584.1  35 | 2018-08-16T12:56:10+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+2586.7  43 | c : DNS request from ('10.30.139.94', 35211) to None: 33 bytes
+2586.7  35 | 2018-08-16T12:56:12+0000 [stdout#info] A query: b'ssl.gstatic.com'
+2586.8  35 | 2018-08-16T12:56:12+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.130.94']
+2587.4  43 | c : DNS request from ('10.30.139.94', 4794) to None: 38 bytes
+2587.4  35 | 2018-08-16T12:56:13+0000 [stdout#info] A query: b'accounts.youtube.com'
+2587.5  35 | 2018-08-16T12:56:13+0000 [stdout#info] Result for b'accounts.youtube.com' is ['74.125.130.138', '74.125.130.100', '74.125.130.113', '74.125.130.139', '74.125.130.101', '74.125.130.102']
+2588.9  43 | c : DNS request from ('10.30.139.94', 28757) to None: 41 bytes
+2588.9  35 | 2018-08-16T12:56:14+0000 [stdout#info] Updated query of type 1 from b'rendang.id.seagroup.com' to b'rendang'
+2588.9  35 | 2018-08-16T12:56:14+0000 [stdout#info] A query: b'rendang'
+2589.0  35 | 2018-08-16T12:56:14+0000 [stdout#info] Result for b'rendang.id.seagroup.com' is ['10.63.244.87']
+2589.0  43 | c : Accept TCP: 10.30.139.94:49682 -> 10.63.244.87:8080.
+2589.0  43 |  s: SW'unknown':Mux#149: deleting (17 remain)
+2589.0  43 |  s: SW#33:10.63.252.208:3000: deleting (16 remain)
+2593.6  43 | c : Accept TCP: 10.30.139.94:49683 -> 10.63.244.87:8080.
+2593.7 TEL | (proxy checking local liveness)
+2593.7  35 | 2018-08-16T12:56:19+0000 [Poll#info] Checkpoint
+2600.2  43 | c : Accept TCP: 10.30.139.94:49686 -> 10.63.244.87:8080.
+2609.4  43 | c : Accept TCP: 10.30.139.94:49687 -> 10.63.252.208:3000.
+2609.4  43 | c : SW'unknown':Mux#163: deleting (17 remain)
+2609.4  43 | c : SW#-1:10.30.139.94:49682: deleting (16 remain)
+2609.4  43 | c : SW'unknown':Mux#164: deleting (15 remain)
+2609.4  43 | c : SW#-1:10.30.139.94:49683: deleting (14 remain)
+2609.4  43 | c : SW#10:10.30.139.94:49671: deleting (13 remain)
+2609.4  43 | c : SW'unknown':Mux#149: deleting (12 remain)
+2609.4  43 | c : SW#12:10.30.139.94:49672: deleting (11 remain)
+2609.4  43 | c : SW'unknown':Mux#150: deleting (10 remain)
+2621.0  43 | c : Accept TCP: 10.30.139.94:49691 -> 10.63.252.208:3000.
+2623.7 TEL | (proxy checking local liveness)
+2623.8  35 | 2018-08-16T12:56:49+0000 [Poll#info] Checkpoint
+2651.9  43 | c : DNS request from ('10.30.139.94', 53793) to None: 42 bytes
+2652.0  35 | 2018-08-16T12:57:17+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2652.0  35 | 2018-08-16T12:57:17+0000 [stdout#info] A query: b'taliwang'
+2652.0  35 | 2018-08-16T12:57:18+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2653.7 TEL | (proxy checking local liveness)
+2653.7  35 | 2018-08-16T12:57:19+0000 [Poll#info] Checkpoint
+2661.3  43 | c : Accept TCP: 10.30.139.94:49790 -> 10.63.252.208:3000.
+2683.1  43 | c : DNS request from ('10.30.139.94', 64419) to None: 47 bytes
+2683.1  35 | 2018-08-16T12:57:49+0000 [stdout#info] A query: b'pagead2.googlesyndication.com'
+2683.2  35 | 2018-08-16T12:57:49+0000 [stdout#info] Result for b'pagead2.googlesyndication.com' is ['172.217.160.34']
+2683.7 TEL | (proxy checking local liveness)
+2683.7  35 | 2018-08-16T12:57:49+0000 [Poll#info] Checkpoint
+2684.4  43 |  s: SW#-1:10.63.244.87:8080: deleting (25 remain)
+2684.4  43 |  s: SW'unknown':Mux#164: deleting (24 remain)
+2684.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (23 remain)
+2684.4  43 |  s: SW'unknown':Mux#166: deleting (22 remain)
+2684.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (21 remain)
+2684.4  43 |  s: SW'unknown':Mux#167: deleting (20 remain)
+2693.8  43 | c : DNS request from ('10.30.139.94', 54134) to None: 41 bytes
+2693.8  43 | c : SW'unknown':Mux#167: deleting (13 remain)
+2693.8  43 | c : SW#-1:10.30.139.94:49691: deleting (12 remain)
+2693.8  43 | c : SW'unknown':Mux#169: deleting (11 remain)
+2693.8  43 | c : SW#-1:10.30.139.94:49790: deleting (10 remain)
+2693.8  35 | 2018-08-16T12:57:59+0000 [stdout#info] Updated query of type 1 from b'rendang.id.seagroup.com' to b'rendang'
+2693.8  35 | 2018-08-16T12:57:59+0000 [stdout#info] A query: b'rendang'
+2693.8  35 | 2018-08-16T12:57:59+0000 [stdout#info] Result for b'rendang.id.seagroup.com' is ['10.63.244.87']
+2693.8  43 | c : Accept TCP: 10.30.139.94:49899 -> 10.63.244.87:8080.
+2693.9  43 | c : Accept TCP: 10.30.139.94:49900 -> 10.63.244.87:8080.
+2701.5  43 | c : Accept TCP: 10.30.139.94:49929 -> 10.63.244.87:8080.
+2704.9  43 | c : DNS request from ('10.30.139.94', 19928) to None: 42 bytes
+2705.0  35 | 2018-08-16T12:58:10+0000 [stdout#info] A query: b'analytics.getpostman.com'
+2705.1  35 | 2018-08-16T12:58:11+0000 [stdout#info] Result for b'analytics.getpostman.com' is ['54.230.159.180', '54.230.159.157', '54.230.159.10', '54.230.159.107']
+2707.4  43 | c : DNS request from ('10.30.139.94', 29492) to None: 54 bytes
+2707.4  35 | 2018-08-16T12:58:13+0000 [stdout#info] A query: b'chrome-devtools-frontend.appspot.com'
+2707.5  35 | 2018-08-16T12:58:13+0000 [stdout#info] Result for b'chrome-devtools-frontend.appspot.com' is ['172.217.194.153']
+2713.8 TEL | (proxy checking local liveness)
+2713.8  35 | 2018-08-16T12:58:19+0000 [Poll#info] Checkpoint
+2722.9  43 | c : DNS request from ('10.30.139.94', 25795) to None: 42 bytes
+2722.9  35 | 2018-08-16T12:58:28+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2723.0  35 | 2018-08-16T12:58:29+0000 [stdout#info] A query: b'taliwang'
+2723.0  35 | 2018-08-16T12:58:29+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2723.0  43 | c : SW'unknown':Mux#173: deleting (15 remain)
+2723.0  43 | c : SW#-1:10.30.139.94:49900: deleting (14 remain)
+2723.0  43 | c : SW'unknown':Mux#174: deleting (13 remain)
+2723.0  43 | c : SW#-1:10.30.139.94:49929: deleting (12 remain)
+2723.0  43 | c : Accept TCP: 10.30.139.94:50007 -> 10.63.252.208:3000.
+2723.0  43 | c : Accept TCP: 10.30.139.94:50008 -> 10.63.252.208:3000.
+2723.2  43 |  s: SW#-1:10.63.244.87:8080: deleting (29 remain)
+2723.2  43 |  s: SW'unknown':Mux#173: deleting (28 remain)
+2723.2  43 |  s: SW#-1:10.63.244.87:8080: deleting (27 remain)
+2723.3  43 | c : DNS request from ('10.30.139.94', 51965) to None: 35 bytes
+2723.3  43 |  s: SW'unknown':Mux#174: deleting (26 remain)
+2723.3  43 |  s: SW'unknown':Mux#169: deleting (25 remain)
+2723.3  43 |  s: SW#13:10.63.252.208:3000: deleting (24 remain)
+2723.3  35 | 2018-08-16T12:58:29+0000 [stdout#info] A query: b'fonts.gstatic.com'
+2723.3  35 | 2018-08-16T12:58:29+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.130.94']
+2723.9  43 | c : DNS request from ('10.30.139.94', 44693) to None: 42 bytes
+2724.0  35 | 2018-08-16T12:58:29+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2724.0  35 | 2018-08-16T12:58:29+0000 [stdout#info] A query: b'taliwang'
+2724.0  35 | 2018-08-16T12:58:29+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2724.0  43 | c : Accept TCP: 10.30.139.94:50010 -> 10.63.252.208:3000.
+2726.8  43 | c : DNS request from ('10.30.139.94', 64472) to None: 32 bytes
+2726.8  35 | 2018-08-16T12:58:32+0000 [stdout#info] A query: b'imap.gmail.com'
+2726.9  35 | 2018-08-16T12:58:32+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.130.108', '74.125.130.109']
+2734.5  43 | c : Accept TCP: 10.30.139.94:50048 -> 10.63.252.208:3000.
+2734.5  43 | c : Accept TCP: 10.30.139.94:50049 -> 10.63.252.208:3000.
+2734.5  43 | c : DNS request from ('10.30.139.94', 33516) to None: 38 bytes
+2734.5  35 | 2018-08-16T12:58:40+0000 [stdout#info] A query: b'fonts.googleapis.com'
+2734.5  43 |  s: SW'unknown':Mux#178: deleting (29 remain)
+2734.5  43 |  s: SW#17:10.63.252.208:3000: deleting (28 remain)
+2734.6  35 | 2018-08-16T12:58:40+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+2735.1  43 | c : SW#13:10.30.139.94:49448: deleting (21 remain)
+2735.1  43 | c : SW'unknown':Mux#12: deleting (20 remain)
+2735.1  43 | c : SW'unknown':Mux#13: deleting (19 remain)
+2735.1  43 | c : SW#14:10.30.139.94:49449: deleting (18 remain)
+2735.1  43 | c : SW#-1:10.30.139.94:49675: deleting (17 remain)
+2735.1  43 | c : SW'unknown':Mux#154: deleting (16 remain)
+2735.1  43 | c : SW'unknown':Mux#166: deleting (15 remain)
+2735.1  43 | c : SW#19:10.30.139.94:49687: deleting (14 remain)
+2735.1  43 | c : SW#12:10.30.139.94:50007: deleting (13 remain)
+2735.1  43 | c : SW'unknown':Mux#178: deleting (12 remain)
+2735.1  43 | c : SW'unknown':Mux#179: deleting (11 remain)
+2735.1  43 | c : SW#16:10.30.139.94:50008: deleting (10 remain)
+2735.1  43 | c : SW'unknown':Mux#182: deleting (9 remain)
+2735.1  43 | c : SW#17:10.30.139.94:50010: deleting (8 remain)
+2735.1  43 | c : DNS request from ('10.30.139.94', 55811) to None: 42 bytes
+2735.2  35 | 2018-08-16T12:58:41+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2735.2  35 | 2018-08-16T12:58:41+0000 [stdout#info] A query: b'taliwang'
+2735.2  35 | 2018-08-16T12:58:41+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2735.2  43 | c : Accept TCP: 10.30.139.94:50056 -> 10.63.252.208:3000.
+2735.2  43 |  s: SW'unknown':Mux#179: deleting (29 remain)
+2735.3  43 |  s: SW#20:10.63.252.208:3000: deleting (28 remain)
+2735.3  43 |  s: SW'unknown':Mux#182: deleting (27 remain)
+2735.3  43 |  s: SW#11:10.63.252.208:3000: deleting (26 remain)
+2742.5  43 | c : DNS request from ('10.30.139.94', 49807) to None: 34 bytes
+2742.7  35 | 2018-08-16T12:58:48+0000 [stdout#info] A query: b'gs-loc.apple.com'
+2743.4  35 | 2018-08-16T12:58:49+0000 [stdout#info] Result for b'gs-loc.apple.com' is ['17.142.171.4', '17.142.171.9']
+2743.7 TEL | (proxy checking local liveness)
+2743.7  35 | 2018-08-16T12:58:49+0000 [Poll#info] Checkpoint
+2757.5  43 | c : Accept TCP: 10.30.139.94:50135 -> 10.63.252.208:3000.
+2757.5  43 | c : Accept TCP: 10.30.139.94:50136 -> 10.63.252.208:3000.
+2757.6  43 | c : SW#20:10.30.139.94:50048: deleting (13 remain)
+2757.6  43 | c : SW'unknown':Mux#184: deleting (12 remain)
+2758.2  43 | c : DNS request from ('10.30.139.94', 46227) to None: 42 bytes
+2758.2  35 | 2018-08-16T12:59:04+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2758.2  35 | 2018-08-16T12:59:04+0000 [stdout#info] A query: b'taliwang'
+2758.3  35 | 2018-08-16T12:59:04+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2758.3  43 | c : Accept TCP: 10.30.139.94:50144 -> 10.63.252.208:3000.
+2758.3  43 | c : SW#21:10.30.139.94:50049: deleting (13 remain)
+2758.3  43 | c : SW'unknown':Mux#185: deleting (12 remain)
+2758.3  43 | c : SW#12:10.30.139.94:50056: deleting (11 remain)
+2758.3  43 | c : SW#12:10.30.139.94:50056: error was: nowrite: [Errno 57] Socket is not connected
+2758.3  43 | c : SW'unknown':Mux#188: deleting (10 remain)
+2758.3  43 |  s: SW'unknown':Mux#184: deleting (31 remain)
+2758.3  43 |  s: SW#6:10.63.252.208:3000: deleting (30 remain)
+2758.3  43 |  s: SW'unknown':Mux#185: deleting (29 remain)
+2758.3  43 |  s: SW#10:10.63.252.208:3000: deleting (28 remain)
+2758.3  43 |  s: SW'unknown':Mux#188: deleting (27 remain)
+2758.3  43 |  s: SW#15:10.63.252.208:3000: deleting (26 remain)
+2767.0  43 | c : Accept TCP: 10.30.139.94:50173 -> 10.63.252.208:3000.
+2767.1  43 | c : SW#13:10.30.139.94:50135: deleting (11 remain)
+2767.1  43 | c : SW'unknown':Mux#190: deleting (10 remain)
+2767.7  43 | c : DNS request from ('10.30.139.94', 9076) to None: 42 bytes
+2767.7  35 | 2018-08-16T12:59:13+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2767.7  35 | 2018-08-16T12:59:13+0000 [stdout#info] A query: b'taliwang'
+2767.7  35 | 2018-08-16T12:59:13+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2767.8  43 | c : Accept TCP: 10.30.139.94:50178 -> 10.63.252.208:3000.
+2767.8  43 |  s: SW'unknown':Mux#190: deleting (29 remain)
+2767.8  43 |  s: SW#13:10.63.252.208:3000: deleting (28 remain)
+2773.7 TEL | (proxy checking local liveness)
+2773.7  35 | 2018-08-16T12:59:19+0000 [Poll#info] Checkpoint
+2803.7 TEL | (proxy checking local liveness)
+2803.7  35 | 2018-08-16T12:59:49+0000 [Poll#info] Checkpoint
+2812.5  43 | c : DNS request from ('10.30.139.94', 48748) to None: 41 bytes
+2812.6  35 | 2018-08-16T12:59:58+0000 [stdout#info] Updated query of type 1 from b'rendang.id.seagroup.com' to b'rendang'
+2812.6  35 | 2018-08-16T12:59:58+0000 [stdout#info] A query: b'rendang'
+2812.6  35 | 2018-08-16T12:59:58+0000 [stdout#info] Result for b'rendang.id.seagroup.com' is ['10.63.244.87']
+2812.6  43 | c : Accept TCP: 10.30.139.94:50329 -> 10.63.244.87:8080.
+2813.6  43 | c : Accept TCP: 10.30.139.94:50334 -> 10.63.244.87:8080.
+2814.4  43 | c : SW'unknown':Mux#198: deleting (15 remain)
+2814.4  43 | c : SW#-1:10.30.139.94:50329: deleting (14 remain)
+2814.4  43 | c : Accept TCP: 10.30.139.94:50335 -> 10.63.244.87:8080.
+2815.4  43 | c : Accept TCP: 10.30.139.94:50340 -> 10.63.244.87:8080.
+2815.5  43 |  s: SW'unknown':Mux#12: deleting (33 remain)
+2815.5  43 |  s: SW#12:10.63.252.208:3000: deleting (32 remain)
+2815.6  43 |  s: SW#12:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+2815.6  43 |  s: SW'unknown':Mux#33: deleting (31 remain)
+2815.6  43 |  s: SW#21:10.63.252.208:3000: deleting (30 remain)
+2815.6  43 |  s: SW#21:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+2815.6  43 |  s: SW'unknown':Mux#37: deleting (29 remain)
+2815.6  43 |  s: SW#25:10.63.252.208:3000: deleting (28 remain)
+2815.6  43 |  s: SW#25:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+2815.6  43 |  s: SW'unknown':Mux#38: deleting (27 remain)
+2815.6  43 |  s: SW#26:10.63.252.208:3000: deleting (26 remain)
+2815.6  43 |  s: SW'unknown':Mux#31: deleting (25 remain)
+2815.6  43 |  s: SW#18:10.63.252.208:3000: deleting (24 remain)
+2815.6  43 |  s: SW#34:10.63.252.208:3000: deleting (23 remain)
+2815.6  43 |  s: SW'unknown':Mux#150: deleting (22 remain)
+2815.6  43 |  s: SW#8:10.63.252.208:3000: deleting (21 remain)
+2815.6  43 |  s: SW'unknown':Mux#154: deleting (20 remain)
+2815.6  43 |  s: SW'unknown':Mux#163: deleting (19 remain)
+2815.6  43 |  s: SW#19:10.63.244.87:8080: deleting (18 remain)
+2815.6  43 |  s: SW#17:10.63.252.208:3000: deleting (17 remain)
+2815.6  43 |  s: SW'unknown':Mux#193: deleting (16 remain)
+2815.6  43 |  s: SW#-1:10.63.244.87:8080: deleting (15 remain)
+2815.6  43 |  s: SW'unknown':Mux#198: deleting (14 remain)
+2815.6  43 |  s: SW#-1:10.63.244.87:8080: deleting (13 remain)
+2815.6  43 |  s: SW'unknown':Mux#199: deleting (12 remain)
+2816.8  43 | c : Accept TCP: 10.30.139.94:50345 -> 10.63.244.87:8080.
+2816.9  43 | c : SW'unknown':Mux#200: deleting (19 remain)
+2816.9  43 | c : SW#-1:10.30.139.94:50335: deleting (18 remain)
+2816.9  43 | c : SW'unknown':Mux#201: deleting (17 remain)
+2816.9  43 | c : SW#-1:10.30.139.94:50340: deleting (16 remain)
+2816.9  43 | c : SW#17:10.30.139.94:50334: deleting (15 remain)
+2816.9  43 | c : SW'unknown':Mux#199: deleting (14 remain)
+2821.8  43 | c : Accept TCP: 10.30.139.94:50362 -> 10.63.244.87:8080.
+2822.5  43 | c : Accept TCP: 10.30.139.94:50367 -> 10.63.244.87:8080.
+2833.6 TEL | (proxy checking local liveness)
+2833.6  35 | 2018-08-16T13:00:19+0000 [Poll#info] Checkpoint
+2859.5  43 | c : SW'unknown':Mux#203: deleting (17 remain)
+2859.5  43 | c : SW#-1:10.30.139.94:50362: deleting (16 remain)
+2859.5  43 | c : SW#20:10.30.139.94:50345: deleting (15 remain)
+2859.5  43 | c : SW'unknown':Mux#202: deleting (14 remain)
+2859.5  43 | c : DNS request from ('10.30.139.94', 17589) to None: 33 bytes
+2859.5  35 | 2018-08-16T13:00:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+2859.5  35 | 2018-08-16T13:00:45+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.130.94']
+2859.5  43 |  s: SW'unknown':Mux#191: deleting (19 remain)
+2859.5  43 |  s: SW#14:10.63.252.208:3000: deleting (18 remain)
+2863.6 TEL | (proxy checking local liveness)
+2863.6  35 | 2018-08-16T13:00:49+0000 [Poll#info] Checkpoint
+2869.6  43 | c : Accept TCP: 10.30.139.94:50527 -> 10.63.244.87:8080.
+2869.7  43 |  s: SW#-1:10.63.244.87:8080: deleting (19 remain)
+2869.7  43 |  s: SW'unknown':Mux#202: deleting (18 remain)
+2869.7  43 |  s: SW#-1:10.63.244.87:8080: deleting (17 remain)
+2869.7  43 |  s: SW'unknown':Mux#203: deleting (16 remain)
+2869.7  43 |  s: SW#-1:10.63.244.87:8080: deleting (15 remain)
+2869.7  43 |  s: SW'unknown':Mux#204: deleting (14 remain)
+2869.7  43 |  s: SW'unknown':Mux#200: deleting (13 remain)
+2869.7  43 |  s: SW#16:10.63.244.87:8080: deleting (12 remain)
+2869.7  43 |  s: SW'unknown':Mux#201: deleting (11 remain)
+2869.7  43 |  s: SW#20:10.63.244.87:8080: deleting (10 remain)
+2869.7  43 |  s: SW'unknown':Mux#194: deleting (9 remain)
+2869.7  43 |  s: SW#6:10.63.252.208:3000: deleting (8 remain)
+2870.6  43 | c : Accept TCP: 10.30.139.94:50532 -> 10.63.244.87:8080.
+2880.0  43 | c : DNS request from ('10.30.139.94', 54370) to None: 27 bytes
+2880.0  35 | 2018-08-16T13:01:05+0000 [stdout#info] A query: b'i.scdn.co'
+2880.1  35 | 2018-08-16T13:01:06+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+2888.4  43 | c : DNS request from ('10.30.139.94', 51269) to None: 42 bytes
+2888.4  43 | c : DNS request from ('10.30.139.94', 41367) to None: 38 bytes
+2888.4  43 | c : DNS request from ('10.30.139.94', 7100) to None: 35 bytes
+2888.4  43 | c : SW'unknown':Mux#206: deleting (17 remain)
+2888.4  43 | c : SW#-1:10.30.139.94:50527: deleting (16 remain)
+2888.4  43 | c : SW#17:10.30.139.94:50367: deleting (15 remain)
+2888.4  43 | c : SW'unknown':Mux#204: deleting (14 remain)
+2888.5  35 | 2018-08-16T13:01:14+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2888.5  35 | 2018-08-16T13:01:14+0000 [stdout#info] A query: b'taliwang'
+2888.5  35 | 2018-08-16T13:01:14+0000 [stdout#info] A query: b'fonts.googleapis.com'
+2888.5  35 | 2018-08-16T13:01:14+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2888.5  35 | 2018-08-16T13:01:14+0000 [stdout#info] A query: b'fonts.gstatic.com'
+2888.5  43 | c : Accept TCP: 10.30.139.94:50586 -> 10.63.252.208:3000.
+2888.5  43 | c : Accept TCP: 10.30.139.94:50587 -> 10.63.252.208:3000.
+2888.6  35 | 2018-08-16T13:01:14+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+2888.6  35 | 2018-08-16T13:01:14+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['172.217.194.94']
+2888.8  43 | c : SW#13:10.30.139.94:50178: deleting (17 remain)
+2888.8  43 | c : SW'unknown':Mux#196: deleting (16 remain)
+2888.9  43 | c : DNS request from ('10.30.139.94', 25197) to None: 42 bytes
+2888.9  35 | 2018-08-16T13:01:14+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+2888.9  35 | 2018-08-16T13:01:14+0000 [stdout#info] A query: b'taliwang'
+2888.9  35 | 2018-08-16T13:01:14+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+2888.9  43 | c : Accept TCP: 10.30.139.94:50589 -> 10.63.252.208:3000.
+2888.9  43 |  s: SW'unknown':Mux#206: deleting (15 remain)
+2888.9  43 |  s: SW#13:10.63.244.87:8080: deleting (14 remain)
+2888.9  43 |  s: SW'unknown':Mux#196: deleting (13 remain)
+2888.9  43 |  s: SW#11:10.63.252.208:3000: deleting (12 remain)
+2893.7 TEL | (proxy checking local liveness)
+2893.7  35 | 2018-08-16T13:01:19+0000 [Poll#info] Checkpoint
+2907.4  43 | c : Accept TCP: 10.30.139.94:50594 -> 10.63.252.208:3000.
+2923.7 TEL | (proxy checking local liveness)
+2923.8  35 | 2018-08-16T13:01:49+0000 [Poll#info] Checkpoint
+2930.7  43 | c : DNS request from ('10.30.139.94', 60599) to None: 43 bytes
+2931.1  35 | 2018-08-16T13:01:56+0000 [stdout#info] A query: b'vortex.data.microsoft.com'
+2931.1  35 | 2018-08-16T13:01:57+0000 [stdout#info] Result for b'vortex.data.microsoft.com' is ['40.77.226.250']
+2941.3  43 | c : DNS request from ('10.30.139.94', 51380) to None: 43 bytes
+2941.4  35 | 2018-08-16T13:02:07+0000 [stdout#info] A query: b'vortex.data.microsoft.com'
+2941.6  35 | 2018-08-16T13:02:07+0000 [stdout#info] Result for b'vortex.data.microsoft.com' is ['40.77.226.250']
+2951.0  43 | c : DNS request from ('10.30.139.94', 53118) to None: 41 bytes
+2951.2  35 | 2018-08-16T13:02:17+0000 [stdout#info] A query: b'gspe35-ssl.ls.apple.com'
+2951.5  35 | 2018-08-16T13:02:17+0000 [stdout#info] Result for b'gspe35-ssl.ls.apple.com' is ['118.215.102.194']
+2953.8 TEL | (proxy checking local liveness)
+2953.8  35 | 2018-08-16T13:02:19+0000 [Poll#info] Checkpoint
+2964.6  43 | c : DNS request from ('10.30.139.94', 54258) to None: 43 bytes
+2964.6  43 | c : SW#16:10.30.139.94:50586: deleting (19 remain)
+2964.6  43 | c : SW'unknown':Mux#212: deleting (18 remain)
+2964.7  35 | 2018-08-16T13:02:30+0000 [stdout#info] A query: b'vortex.data.microsoft.com'
+2964.8  35 | 2018-08-16T13:02:30+0000 [stdout#info] Result for b'vortex.data.microsoft.com' is ['40.77.226.250']
+2982.5  43 | c : DNS request from ('10.30.139.94', 52923) to None: 43 bytes
+2982.7  35 | 2018-08-16T13:02:48+0000 [stdout#info] A query: b'vortex.data.microsoft.com'
+2982.8  35 | 2018-08-16T13:02:48+0000 [stdout#info] Result for b'vortex.data.microsoft.com' is ['40.77.226.250']
+2983.7 TEL | (proxy checking local liveness)
+2983.7  35 | 2018-08-16T13:02:49+0000 [Poll#info] Checkpoint
+3002.5  43 | c : DNS request from ('10.30.139.94', 15269) to None: 33 bytes
+3002.5  43 | c : DNS request from ('10.30.139.94', 8403) to None: 37 bytes
+3002.5  35 | 2018-08-16T13:03:08+0000 [stdout#info] A query: b'www.gstatic.com'
+3002.6  43 |  s: SW'unknown':Mux#212: deleting (13 remain)
+3002.6  43 |  s: SW#15:10.63.252.208:3000: deleting (12 remain)
+3002.6  43 |  s: SW'unknown':Mux#213: deleting (11 remain)
+3002.6  43 |  s: SW#16:10.63.252.208:3000: deleting (10 remain)
+3002.6  43 |  s: SW'unknown':Mux#165: deleting (9 remain)
+3002.6  43 |  s: SW#7:10.63.244.87:8080: deleting (8 remain)
+3002.6  35 | 2018-08-16T13:03:08+0000 [stdout#info] A query: b'accounts.google.com'
+3002.6  35 | 2018-08-16T13:03:08+0000 [stdout#info] Result for b'accounts.google.com' is ['74.125.130.84']
+3002.7  35 | 2018-08-16T13:03:08+0000 [stdout#info] Result for b'www.gstatic.com' is ['172.217.194.94']
+3002.7  43 | c : DNS request from ('10.30.139.94', 59433) to None: 42 bytes
+3002.7  35 | 2018-08-16T13:03:08+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3002.7  35 | 2018-08-16T13:03:08+0000 [stdout#info] A query: b'taliwang'
+3002.7  35 | 2018-08-16T13:03:08+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3002.7  43 | c : Accept TCP: 10.30.139.94:50936 -> 10.63.252.208:3000.
+3002.7  43 | c : Accept TCP: 10.30.139.94:50937 -> 10.63.252.208:3000.
+3003.4  43 | c : SW'unknown':Mux#191: deleting (21 remain)
+3003.4  43 | c : SW#14:10.30.139.94:50136: deleting (20 remain)
+3003.4  43 | c : SW#15:10.30.139.94:50144: deleting (19 remain)
+3003.4  43 | c : SW'unknown':Mux#193: deleting (18 remain)
+3003.4  43 | c : SW'unknown':Mux#194: deleting (17 remain)
+3003.4  43 | c : SW#12:10.30.139.94:50173: deleting (16 remain)
+3003.4  43 | c : SW'unknown':Mux#213: deleting (15 remain)
+3003.4  43 | c : SW#17:10.30.139.94:50587: deleting (14 remain)
+3003.4  43 | c : SW#18:10.30.139.94:49686: deleting (13 remain)
+3003.4  43 | c : SW'unknown':Mux#165: deleting (12 remain)
+3003.5  43 | c : DNS request from ('10.30.139.94', 47623) to None: 38 bytes
+3003.5  35 | 2018-08-16T13:03:09+0000 [stdout#info] A query: b'fonts.googleapis.com'
+3003.5  35 | 2018-08-16T13:03:09+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+3003.6  43 | c : DNS request from ('10.30.139.94', 25539) to None: 35 bytes
+3003.6  35 | 2018-08-16T13:03:09+0000 [stdout#info] A query: b'fonts.gstatic.com'
+3003.8  35 | 2018-08-16T13:03:09+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.200.94']
+3005.3  43 | c : DNS request from ('10.30.139.94', 37255) to None: 33 bytes
+3005.4  35 | 2018-08-16T13:03:11+0000 [stdout#info] A query: b'apis.google.com'
+3005.5  35 | 2018-08-16T13:03:11+0000 [stdout#info] Result for b'apis.google.com' is ['172.217.194.100', '172.217.194.101', '172.217.194.139', '172.217.194.113', '172.217.194.138', '172.217.194.102']
+3005.5  43 | c : DNS request from ('10.30.139.94', 42844) to None: 42 bytes
+3005.6  35 | 2018-08-16T13:03:11+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3005.6  35 | 2018-08-16T13:03:11+0000 [stdout#info] A query: b'taliwang'
+3005.6  35 | 2018-08-16T13:03:11+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3005.6  43 | c : Accept TCP: 10.30.139.94:50953 -> 10.63.252.208:3000.
+3006.0  43 | c : DNS request from ('10.30.139.94', 18479) to None: 33 bytes
+3006.1  35 | 2018-08-16T13:03:12+0000 [stdout#info] A query: b'ssl.gstatic.com'
+3006.2  35 | 2018-08-16T13:03:12+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.130.94']
+3006.8  43 | c : DNS request from ('10.30.139.94', 17749) to None: 32 bytes
+3006.8  35 | 2018-08-16T13:03:12+0000 [stdout#info] A query: b'www.google.com'
+3006.9  35 | 2018-08-16T13:03:12+0000 [stdout#info] Result for b'www.google.com' is ['74.125.130.104', '74.125.130.105', '74.125.130.106', '74.125.130.103', '74.125.130.147', '74.125.130.99']
+3007.4  43 | c : DNS request from ('10.30.139.94', 50957) to None: 38 bytes
+3007.4  43 | c : DNS request from ('10.30.139.94', 13339) to None: 33 bytes
+3007.4  35 | 2018-08-16T13:03:13+0000 [stdout#info] A query: b'accounts.youtube.com'
+3007.4  35 | 2018-08-16T13:03:13+0000 [stdout#info] A query: b'play.google.com'
+3007.5  35 | 2018-08-16T13:03:13+0000 [stdout#info] Result for b'accounts.youtube.com' is ['74.125.24.113', '74.125.24.100', '74.125.24.139', '74.125.24.101', '74.125.24.138', '74.125.24.102']
+3007.5  35 | 2018-08-16T13:03:13+0000 [stdout#info] Result for b'play.google.com' is ['74.125.130.102', '74.125.130.100', '74.125.130.138', '74.125.130.113', '74.125.130.101', '74.125.130.139']
+3013.7 TEL | (proxy checking local liveness)
+3013.7  35 | 2018-08-16T13:03:19+0000 [Poll#info] Checkpoint
+3023.0  43 | c : DNS request from ('10.30.139.94', 64421) to None: 39 bytes
+3023.1  35 | 2018-08-16T13:03:29+0000 [stdout#info] A query: b'accounts.google.co.id'
+3023.4  35 | 2018-08-16T13:03:29+0000 [stdout#info] Result for b'accounts.google.co.id' is ['172.217.194.94']
+3024.7  43 | c : DNS request from ('10.30.139.94', 40316) to None: 41 bytes
+3024.7  43 |  s: SW'unknown':Mux#225: deleting (13 remain)
+3024.7  43 |  s: SW#11:10.63.252.208:3000: deleting (12 remain)
+3024.7  35 | 2018-08-16T13:03:30+0000 [stdout#info] Updated query of type 1 from b'rendang.id.seagroup.com' to b'rendang'
+3024.7  35 | 2018-08-16T13:03:30+0000 [stdout#info] A query: b'rendang'
+3024.7  35 | 2018-08-16T13:03:30+0000 [stdout#info] Result for b'rendang.id.seagroup.com' is ['10.63.244.87']
+3024.8  43 | c : Accept TCP: 10.30.139.94:51029 -> 10.63.244.87:8080.
+3026.2  43 | c : DNS request from ('10.30.139.94', 54776) to None: 32 bytes
+3026.2  35 | 2018-08-16T13:03:32+0000 [stdout#info] A query: b'imap.gmail.com'
+3026.3  35 | 2018-08-16T13:03:32+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.130.108', '74.125.130.109']
+3039.2  43 | c : DNS request from ('10.30.139.94', 29530) to None: 33 bytes
+3039.3  43 |  s: SW'unknown':Mux#216: deleting (13 remain)
+3039.3  43 |  s: SW#8:10.63.252.208:3000: deleting (12 remain)
+3039.4  35 | 2018-08-16T13:03:45+0000 [stdout#info] A query: b'play.google.com'
+3039.5  35 | 2018-08-16T13:03:45+0000 [stdout#info] Result for b'play.google.com' is ['172.217.194.101', '172.217.194.138', '172.217.194.100', '172.217.194.102', '172.217.194.113', '172.217.194.139']
+3043.6 TEL | (proxy checking local liveness)
+3043.6  35 | 2018-08-16T13:03:49+0000 [Poll#info] Checkpoint
+3056.7  43 | c : SW#20:10.30.139.94:50594: deleting (15 remain)
+3056.7  43 | c : SW'unknown':Mux#216: deleting (14 remain)
+3056.7  43 | c : SW#10:10.30.139.94:49899: deleting (13 remain)
+3056.7  43 | c : SW'unknown':Mux#172: deleting (12 remain)
+3073.7 TEL | (proxy checking local liveness)
+3073.7  35 | 2018-08-16T13:04:19+0000 [Poll#info] Checkpoint
+3103.7 TEL | (proxy checking local liveness)
+3103.7  35 | 2018-08-16T13:04:49+0000 [Poll#info] Checkpoint
+3114.1  43 | c : DNS request from ('10.30.139.94', 63413) to None: 43 bytes
+3114.1  35 | 2018-08-16T13:05:00+0000 [stdout#info] A query: b'vortex.data.microsoft.com'
+3114.2  35 | 2018-08-16T13:05:00+0000 [stdout#info] Result for b'vortex.data.microsoft.com' is ['111.221.29.254']
+3130.5  43 | c : DNS request from ('10.30.139.94', 50096) to None: 58 bytes
+3130.5  35 | 2018-08-16T13:05:16+0000 [stdout#info] 12 query: b'lb._dns-sd._udp.0.139.30.10.in-addr.arpa'
+3130.5  43 | c : DNS request from ('10.30.139.94', 19562) to None: 33 bytes
+3130.5  43 | c : DNS request from ('10.30.139.94', 41729) to None: 37 bytes
+3130.5  35 | 2018-08-16T13:05:16+0000 [DNSDatagramProtocol (UDP)] DNSDatagramProtocol starting on 11671
+3130.5  35 | 2018-08-16T13:05:16+0000 [DNSDatagramProtocol (UDP)] Starting protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a1f0198>
+3130.5  35 | 2018-08-16T13:05:16+0000 [stdout#info] A query: b'www.gstatic.com'
+3130.5  35 | 2018-08-16T13:05:16+0000 [stdout#info] A query: b'accounts.google.com'
+3130.7  43 | c : DNS request from ('10.30.139.94', 10651) to None: 42 bytes
+3130.8  35 | 2018-08-16T13:05:16+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3130.8  35 | 2018-08-16T13:05:16+0000 [stdout#info] A query: b'taliwang'
+3130.8  35 | 2018-08-16T13:05:16+0000 [-] (UDP Port 11671 Closed)
+3130.8  35 | 2018-08-16T13:05:16+0000 [-] Stopping protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a1f0198>
+3130.8  35 | 2018-08-16T13:05:16+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3130.8  43 | c : Accept TCP: 10.30.139.94:51400 -> 10.63.252.208:3000.
+3130.8  43 | c : Accept TCP: 10.30.139.94:51401 -> 10.63.252.208:3000.
+3130.9  35 | 2018-08-16T13:05:16+0000 [stdout#info] Result for b'accounts.google.com' is ['74.125.130.84']
+3130.9  35 | 2018-08-16T13:05:16+0000 [stdout#info] Result for b'www.gstatic.com' is ['172.217.194.94']
+3133.6 TEL | (proxy checking local liveness)
+3133.6  35 | 2018-08-16T13:05:19+0000 [Poll#info] Checkpoint
+3141.7  43 | c : DNS request from ('10.30.139.94', 47902) to None: 32 bytes
+3141.7  35 | 2018-08-16T13:05:27+0000 [stdout#info] A query: b'www.google.com'
+3141.8  35 | 2018-08-16T13:05:27+0000 [stdout#info] Result for b'www.google.com' is ['172.217.160.36']
+3141.9  43 | c : DNS request from ('10.30.139.94', 41134) to None: 33 bytes
+3141.9  35 | 2018-08-16T13:05:27+0000 [stdout#info] A query: b'ssl.gstatic.com'
+3141.9  35 | 2018-08-16T13:05:27+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.24.94']
+3142.6  43 | c : DNS request from ('10.30.139.94', 29966) to None: 33 bytes
+3142.6  35 | 2018-08-16T13:05:28+0000 [stdout#info] A query: b'apis.google.com'
+3142.7  35 | 2018-08-16T13:05:28+0000 [stdout#info] Result for b'apis.google.com' is ['74.125.130.138', '74.125.130.139', '74.125.130.101', '74.125.130.100', '74.125.130.113', '74.125.130.102']
+3150.4  43 | c : DNS request from ('10.30.139.94', 13057) to None: 34 bytes
+3150.5  35 | 2018-08-16T13:05:36+0000 [stdout#info] A query: b'www.google.co.id'
+3150.6  35 | 2018-08-16T13:05:36+0000 [stdout#info] Result for b'www.google.co.id' is ['216.58.203.227']
+3150.6  43 | c : SW'unknown':Mux#246: deleting (15 remain)
+3150.6  43 | c : SW#-1:10.30.139.94:51400: deleting (14 remain)
+3150.6  43 | c : SW'unknown':Mux#247: deleting (13 remain)
+3150.6  43 | c : SW#-1:10.30.139.94:51401: deleting (12 remain)
+3150.6  43 | c : SW#13:10.30.139.94:50589: deleting (11 remain)
+3150.6  43 | c : SW'unknown':Mux#215: deleting (10 remain)
+3150.6  43 | c : SW#14:10.30.139.94:51029: deleting (9 remain)
+3150.6  43 | c : SW'unknown':Mux#238: deleting (8 remain)
+3151.1  43 | c : DNS request from ('10.30.139.94', 53760) to None: 42 bytes
+3151.1  43 | c : DNS request from ('10.30.139.94', 46171) to None: 38 bytes
+3151.1  43 | c : DNS request from ('10.30.139.94', 50033) to None: 35 bytes
+3151.2  35 | 2018-08-16T13:05:37+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3151.2  35 | 2018-08-16T13:05:37+0000 [stdout#info] A query: b'taliwang'
+3151.2  35 | 2018-08-16T13:05:37+0000 [stdout#info] A query: b'fonts.googleapis.com'
+3151.2  35 | 2018-08-16T13:05:37+0000 [stdout#info] A query: b'fonts.gstatic.com'
+3151.2  35 | 2018-08-16T13:05:37+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3151.2  43 | c : Accept TCP: 10.30.139.94:51480 -> 10.63.252.208:3000.
+3151.2  43 | c : Accept TCP: 10.30.139.94:51481 -> 10.63.252.208:3000.
+3151.3  35 | 2018-08-16T13:05:37+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+3151.3  35 | 2018-08-16T13:05:37+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.200.94']
+3159.4  43 | c : DNS request from ('10.30.139.94', 62642) to None: 33 bytes
+3159.5  35 | 2018-08-16T13:05:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+3159.6  35 | 2018-08-16T13:05:45+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.130.94']
+3163.8 TEL | (proxy checking local liveness)
+3163.8  35 | 2018-08-16T13:05:49+0000 [Poll#info] Checkpoint
+3166.0  43 | c : DNS request from ('10.30.139.94', 54380) to None: 42 bytes
+3166.0  43 | c : DNS request from ('10.30.139.94', 64231) to None: 48 bytes
+3166.0  43 | c : DNS request from ('10.30.139.94', 53776) to None: 44 bytes
+3166.1  35 | 2018-08-16T13:05:52+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+3166.1  43 |  s: SW#-1:10.63.244.87:8080: deleting (19 remain)
+3166.1  43 |  s: SW'unknown':Mux#238: deleting (18 remain)
+3166.1  43 |  s: SW#-1:10.63.252.208:3000: deleting (17 remain)
+3166.1  43 |  s: SW'unknown':Mux#246: deleting (16 remain)
+3166.1  43 |  s: SW#-1:10.63.252.208:3000: deleting (15 remain)
+3166.1  35 | 2018-08-16T13:05:52+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+3166.1  43 |  s: SW'unknown':Mux#247: deleting (14 remain)
+3166.1  35 | 2018-08-16T13:05:52+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+3166.2  35 | 2018-08-16T13:05:52+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+3166.2  35 | 2018-08-16T13:05:52+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.68.154', '74.125.68.157', '74.125.68.156', '74.125.68.155']
+3166.2  35 | 2018-08-16T13:05:52+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['172.217.27.98']
+3193.7 TEL | (proxy checking local liveness)
+3193.7  35 | 2018-08-16T13:06:19+0000 [Poll#info] Checkpoint
+3210.6  43 | c : DNS request from ('10.30.139.94', 12529) to None: 42 bytes
+3210.7  35 | 2018-08-16T13:06:36+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+3210.8  35 | 2018-08-16T13:06:36+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+3212.2  43 | c : DNS request from ('10.30.139.94', 14468) to None: 42 bytes
+3212.3  35 | 2018-08-16T13:06:38+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3212.3  35 | 2018-08-16T13:06:38+0000 [stdout#info] A query: b'taliwang'
+3212.3  35 | 2018-08-16T13:06:38+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3214.7  43 | c : DNS request from ('10.30.139.94', 52918) to None: 36 bytes
+3214.7  43 | c : DNS request from ('10.30.139.94', 50991) to None: 36 bytes
+3214.7  35 | 2018-08-16T13:06:40+0000 [stdout#info] A query: b'update.katalon.com'
+3214.8  35 | 2018-08-16T13:06:40+0000 [stdout#info] AAAA query, sending back A instead: b'update.katalon.com'
+3214.8  35 | 2018-08-16T13:06:40+0000 [stdout#info] A query: b'update.katalon.com'
+3214.9  35 | 2018-08-16T13:06:40+0000 [stdout#info] Result for b'update.katalon.com' is ['52.55.0.50', '34.206.32.97']
+3214.9  35 | 2018-08-16T13:06:40+0000 [stdout#info] Result for b'update.katalon.com' is ['34.206.32.97', '52.55.0.50']
+3223.6 TEL | (proxy checking local liveness)
+3223.6  35 | 2018-08-16T13:06:49+0000 [Poll#info] Checkpoint
+3226.5  43 | c : Accept TCP: 10.30.139.94:51727 -> 10.63.252.208:3000.
+3226.5  43 | c : SW'unknown':Mux#231: deleting (13 remain)
+3226.5  43 | c : SW#12:10.30.139.94:50953: deleting (12 remain)
+3226.5  43 | c : SW'unknown':Mux#256: deleting (11 remain)
+3226.5  43 | c : SW#-1:10.30.139.94:51481: deleting (10 remain)
+3226.5  43 | c : SW#16:10.30.139.94:50936: deleting (9 remain)
+3226.5  43 | c : SW'unknown':Mux#225: deleting (8 remain)
+3226.5  43 | c : SW#21:10.30.139.94:50937: deleting (7 remain)
+3226.5  43 | c : SW'unknown':Mux#226: deleting (6 remain)
+3253.7 TEL | (proxy checking local liveness)
+3253.7  35 | 2018-08-16T13:07:19+0000 [Poll#info] Checkpoint
+3276.2  43 | c : DNS request from ('10.30.139.94', 53240) to None: 49 bytes
+3276.3  35 | 2018-08-16T13:07:42+0000 [stdout#info] Updated query of type 12 from b'lb._dns-sd._udp.id.seagroup.com' to b'lb._dns-sd._udp'
+3276.3  35 | 2018-08-16T13:07:42+0000 [stdout#info] 12 query: b'lb._dns-sd._udp'
+3276.3  35 | 2018-08-16T13:07:42+0000 [DNSDatagramProtocol (UDP)] DNSDatagramProtocol starting on 48876
+3276.3  35 | 2018-08-16T13:07:42+0000 [DNSDatagramProtocol (UDP)] Starting protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a12c908>
+3276.3  35 | 2018-08-16T13:07:42+0000 [stdout#info] Failed to lookup b'lb._dns-sd._udp' due to [Failure instance: Traceback (failure with no frames): <class 'twisted.names.error.DNSNameError'>: <Message id=2791 rCode=3 maxSize=0 flags=answer,recDes,recAv queries=[Query('lb._dns-sd._udp', 12, 1)] authority=[<RR name= type=SOA class=IN ttl=53833s auth=False>]>
+3276.3  35 | 2018-08-16T13:07:42+0000 [stdout#info] ], falling back to b'lb._dns-sd._udp.id.seagroup.com'
+3276.3  35 | 2018-08-16T13:07:42+0000 [DNSDatagramProtocol (UDP)] DNSDatagramProtocol starting on 28318
+3276.3  35 | 2018-08-16T13:07:42+0000 [DNSDatagramProtocol (UDP)] Starting protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a12ce48>
+3276.3  35 | 2018-08-16T13:07:42+0000 [-] (UDP Port 48876 Closed)
+3276.3  35 | 2018-08-16T13:07:42+0000 [-] Stopping protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a12c908>
+3276.4  35 | 2018-08-16T13:07:42+0000 [-] (UDP Port 28318 Closed)
+3276.4  35 | 2018-08-16T13:07:42+0000 [-] Stopping protocol <twisted.names.dns.DNSDatagramProtocol object at 0x7fec6a12ce48>
+3278.6  43 |  s: SW#20:10.63.252.208:3000: uwrite: got EPIPE
+3278.7  43 | c : DNS request from ('10.30.139.94', 5408) to None: 42 bytes
+3278.7  43 | c : DNS request from ('10.30.139.94', 64819) to None: 38 bytes
+3278.7  43 | c : DNS request from ('10.30.139.94', 61922) to None: 35 bytes
+3278.7  35 | 2018-08-16T13:07:44+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3278.7  35 | 2018-08-16T13:07:44+0000 [stdout#info] A query: b'taliwang'
+3278.7  35 | 2018-08-16T13:07:44+0000 [stdout#info] A query: b'fonts.googleapis.com'
+3278.7  35 | 2018-08-16T13:07:44+0000 [stdout#info] A query: b'fonts.gstatic.com'
+3278.7  35 | 2018-08-16T13:07:44+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3278.7  43 | c : Accept TCP: 10.30.139.94:51908 -> 10.63.252.208:3000.
+3278.7  35 | 2018-08-16T13:07:44+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+3278.7  35 | 2018-08-16T13:07:44+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.130.94']
+3283.6  43 | c : Accept TCP: 10.30.139.94:51926 -> 10.63.252.208:3000.
+3283.7 TEL | (proxy checking local liveness)
+3283.7  35 | 2018-08-16T13:07:49+0000 [Poll#info] Checkpoint
+3289.7  43 | c : DNS request from ('10.30.139.94', 32954) to None: 37 bytes
+3289.7  35 | 2018-08-16T13:07:55+0000 [stdout#info] A query: b'clients4.google.com'
+3289.8  35 | 2018-08-16T13:07:55+0000 [stdout#info] Result for b'clients4.google.com' is ['74.125.130.113', '74.125.130.101', '74.125.130.100', '74.125.130.138', '74.125.130.139', '74.125.130.102']
+3309.8  43 | c : Accept TCP: 10.30.139.94:52018 -> 10.63.252.208:3000.
+3313.8 TEL | (proxy checking local liveness)
+3313.8  35 | 2018-08-16T13:08:19+0000 [Poll#info] Checkpoint
+3325.9  43 | c : DNS request from ('10.30.139.94', 58571) to None: 41 bytes
+3325.9  35 | 2018-08-16T13:08:31+0000 [stdout#info] A query: b'spclient.wg.spotify.com'
+3326.0  35 | 2018-08-16T13:08:32+0000 [stdout#info] Result for b'spclient.wg.spotify.com' is ['35.186.224.62']
+3329.5  43 | c : DNS request from ('10.30.139.94', 55941) to None: 32 bytes
+3329.5  35 | 2018-08-16T13:08:35+0000 [stdout#info] A query: b'imap.gmail.com'
+3329.6  35 | 2018-08-16T13:08:35+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.68.108', '74.125.68.109']
+3332.2  43 | c : SW#10:10.30.139.94:51480: deleting (11 remain)
+3332.2  43 | c : SW'unknown':Mux#255: deleting (10 remain)
+3333.1  43 | c : Accept TCP: 10.30.139.94:52099 -> 10.63.252.208:3000.
+3333.5  43 | c : DNS request from ('10.30.139.94', 19022) to None: 42 bytes
+3333.5  35 | 2018-08-16T13:08:39+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+3333.6  35 | 2018-08-16T13:08:39+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+3343.4  43 | c : DNS request from ('10.30.139.94', 52875) to None: 34 bytes
+3343.6 TEL | (proxy checking local liveness)
+3343.6  35 | 2018-08-16T13:08:49+0000 [stdout#info] A query: b'gs-loc.apple.com'
+3343.7  35 | 2018-08-16T13:08:49+0000 [Poll#info] Checkpoint
+3343.7  35 | 2018-08-16T13:08:49+0000 [stdout#info] Result for b'gs-loc.apple.com' is ['17.134.127.250', '17.134.127.249']
+3344.4  43 | c : DNS request from ('10.30.139.94', 34999) to None: 35 bytes
+3344.4  35 | 2018-08-16T13:08:50+0000 [stdout#info] A query: b'0.docs.google.com'
+3344.5  35 | 2018-08-16T13:08:50+0000 [stdout#info] Result for b'0.docs.google.com' is ['172.217.194.189']
+3345.1  43 | c : DNS request from ('10.30.139.94', 8059) to None: 33 bytes
+3345.1  43 |  s: SW'unknown':Mux#256: deleting (23 remain)
+3345.1  35 | 2018-08-16T13:08:51+0000 [stdout#info] A query: b'play.google.com'
+3345.1  43 |  s: SW#21:10.63.252.208:3000: deleting (22 remain)
+3345.2  35 | 2018-08-16T13:08:51+0000 [stdout#info] Result for b'play.google.com' is ['74.125.130.139', '74.125.130.113', '74.125.130.138', '74.125.130.101', '74.125.130.100', '74.125.130.102']
+3353.8  43 |  s: SW#14:10.63.252.208:3000: uwrite: got EPIPE
+3373.6 TEL | (proxy checking local liveness)
+3373.6  35 | 2018-08-16T13:09:19+0000 [Poll#info] Checkpoint
+3387.0  43 | c : DNS request from ('10.30.139.94', 12824) to None: 42 bytes
+3387.0  43 | c : DNS request from ('10.30.139.94', 8563) to None: 38 bytes
+3387.0  43 | c : DNS request from ('10.30.139.94', 16532) to None: 35 bytes
+3387.0  35 | 2018-08-16T13:09:33+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3387.0  35 | 2018-08-16T13:09:33+0000 [stdout#info] A query: b'taliwang'
+3387.0  35 | 2018-08-16T13:09:33+0000 [stdout#info] A query: b'fonts.googleapis.com'
+3387.0  35 | 2018-08-16T13:09:33+0000 [stdout#info] A query: b'fonts.gstatic.com'
+3387.0  35 | 2018-08-16T13:09:33+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3387.0  43 | c : Accept TCP: 10.30.139.94:52288 -> 10.63.252.208:3000.
+3387.0  35 | 2018-08-16T13:09:33+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+3387.1  35 | 2018-08-16T13:09:33+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.130.94']
+3387.8  43 | c : DNS request from ('10.30.139.94', 60210) to None: 42 bytes
+3387.8  43 | c : DNS request from ('10.30.139.94', 64061) to None: 48 bytes
+3387.8  43 | c : DNS request from ('10.30.139.94', 52453) to None: 44 bytes
+3387.8  35 | 2018-08-16T13:09:33+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+3387.8  35 | 2018-08-16T13:09:33+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+3387.8  43 | c : SW#14:10.30.139.94:51727: deleting (13 remain)
+3387.8  43 | c : SW'unknown':Mux#265: deleting (12 remain)
+3387.8  35 | 2018-08-16T13:09:33+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+3387.8  43 | c : DNS request from ('10.30.139.94', 57780) to None: 27 bytes
+3387.9  35 | 2018-08-16T13:09:33+0000 [stdout#info] A query: b'i.scdn.co'
+3387.9  35 | 2018-08-16T13:09:33+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.200.154', '74.125.200.156', '74.125.200.157', '74.125.200.155']
+3387.9  35 | 2018-08-16T13:09:33+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+3387.9  35 | 2018-08-16T13:09:33+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.24.157', '74.125.24.156', '74.125.24.155', '74.125.24.154']
+3387.9  35 | 2018-08-16T13:09:33+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+3388.1  43 | c : Accept TCP: 10.30.139.94:52296 -> 10.63.252.208:3000.
+3392.0  43 | c : Accept TCP: 10.30.139.94:52313 -> 10.63.252.208:3000.
+3394.3  43 | c : DNS request from ('10.30.139.94', 36834) to None: 45 bytes
+3394.3  35 | 2018-08-16T13:09:40+0000 [stdout#info] A query: b'safebrowsing.googleapis.com'
+3394.4  35 | 2018-08-16T13:09:40+0000 [stdout#info] Result for b'safebrowsing.googleapis.com' is ['74.125.130.95']
+3403.8 TEL | (proxy checking local liveness)
+3403.8  35 | 2018-08-16T13:09:49+0000 [Poll#info] Checkpoint
+3405.9  43 |  s: SW#26:10.63.252.208:3000: uwrite: got EPIPE
+3411.0  43 |  s: SW#27:10.63.252.208:3000: uwrite: got EPIPE
+3418.3  43 | c : DNS request from ('10.30.139.94', 53899) to None: 36 bytes
+3418.3  43 | c : SW#13:10.30.139.94:51926: deleting (15 remain)
+3418.3  43 | c : SW'unknown':Mux#271: deleting (14 remain)
+3418.3  43 | c : DNS request from ('10.30.139.94', 57218) to None: 36 bytes
+3418.3  35 | 2018-08-16T13:10:04+0000 [stdout#info] A query: b'www.googleapis.com'
+3418.3  35 | 2018-08-16T13:10:04+0000 [stdout#info] AAAA query, sending back A instead: b'www.googleapis.com'
+3418.3  35 | 2018-08-16T13:10:04+0000 [stdout#info] A query: b'www.googleapis.com'
+3418.3  35 | 2018-08-16T13:10:04+0000 [stdout#info] Result for b'www.googleapis.com' is ['74.125.24.95', '172.217.194.95', '74.125.68.95']
+3418.3  35 | 2018-08-16T13:10:04+0000 [stdout#info] Result for b'www.googleapis.com' is ['172.217.194.95']
+3418.6  43 | c : DNS request from ('10.30.139.94', 52700) to None: 33 bytes
+3418.6  43 | c : DNS request from ('10.30.139.94', 53848) to None: 33 bytes
+3418.7  35 | 2018-08-16T13:10:04+0000 [stdout#info] A query: b'csi.gstatic.com'
+3418.7  35 | 2018-08-16T13:10:04+0000 [stdout#info] AAAA query, sending back A instead: b'csi.gstatic.com'
+3418.7  35 | 2018-08-16T13:10:04+0000 [stdout#info] A query: b'csi.gstatic.com'
+3418.8  35 | 2018-08-16T13:10:04+0000 [stdout#info] Result for b'csi.gstatic.com' is ['64.233.161.120', '64.233.161.94', '64.233.171.120', '64.233.171.94', '74.125.28.120', '74.125.28.94', '74.125.200.120', '74.125.200.94', '74.125.23.120', '74.125.23.94', '108.177.12.120', '108.177.12.94', '74.125.126.120', '74.125.126.94', '64.233.184.120', '64.233.184.94']
+3418.8  35 | 2018-08-16T13:10:04+0000 [stdout#info] Result for b'csi.gstatic.com' is ['64.233.184.94', '64.233.161.120', '64.233.161.94', '64.233.171.120', '64.233.171.94', '74.125.28.120', '74.125.28.94', '74.125.200.120', '74.125.200.94', '74.125.23.120', '74.125.23.94', '108.177.12.120', '108.177.12.94', '74.125.126.120', '74.125.126.94', '64.233.184.120']
+3420.3  43 | c : DNS request from ('10.30.139.94', 52606) to None: 51 bytes
+3420.3  43 | c : DNS request from ('10.30.139.94', 58433) to None: 51 bytes
+3420.3  35 | 2018-08-16T13:10:06+0000 [stdout#info] A query: b'ssl-google-analytics.l.google.com'
+3420.3  35 | 2018-08-16T13:10:06+0000 [stdout#info] AAAA query, sending back A instead: b'ssl-google-analytics.l.google.com'
+3420.3  35 | 2018-08-16T13:10:06+0000 [stdout#info] A query: b'ssl-google-analytics.l.google.com'
+3420.4  35 | 2018-08-16T13:10:06+0000 [stdout#info] Result for b'ssl-google-analytics.l.google.com' is ['216.58.203.232']
+3420.4  35 | 2018-08-16T13:10:06+0000 [stdout#info] Result for b'ssl-google-analytics.l.google.com' is ['172.217.27.8']
+3420.5  43 | c : DNS request from ('10.30.139.94', 52593) to None: 37 bytes
+3420.5  43 | c : DNS request from ('10.30.139.94', 53239) to None: 37 bytes
+3420.5  35 | 2018-08-16T13:10:06+0000 [stdout#info] A query: b'play.googleapis.com'
+3420.5  35 | 2018-08-16T13:10:06+0000 [stdout#info] AAAA query, sending back A instead: b'play.googleapis.com'
+3420.5  35 | 2018-08-16T13:10:06+0000 [stdout#info] A query: b'play.googleapis.com'
+3420.5  35 | 2018-08-16T13:10:06+0000 [stdout#info] Result for b'play.googleapis.com' is ['74.125.24.95', '172.217.194.95']
+3420.5  35 | 2018-08-16T13:10:06+0000 [stdout#info] Result for b'play.googleapis.com' is ['172.217.194.95', '74.125.24.95']
+3420.5  43 | c : SW#12:10.30.139.94:51908: deleting (13 remain)
+3420.5  43 | c : SW'unknown':Mux#270: deleting (12 remain)
+3432.6  43 | c : Accept TCP: 10.30.139.94:52455 -> 10.63.252.208:3000.
+3432.6  43 | c : Accept TCP: 10.30.139.94:52456 -> 10.63.252.208:3000.
+3433.8 TEL | (proxy checking local liveness)
+3433.8  35 | 2018-08-16T13:10:19+0000 [Poll#info] Checkpoint
+3437.5  43 |  s: SW#29:10.63.252.208:3000: uwrite: got EPIPE
+3463.5  43 |  s: SW#32:10.63.252.208:3000: uwrite: got EPIPE
+3464.1 TEL | (proxy checking local liveness)
+3464.2  35 | 2018-08-16T13:10:50+0000 [Poll#info] Checkpoint
+3464.4  43 | c : DNS request from ('10.30.139.94', 34450) to None: 42 bytes
+3464.5  35 | 2018-08-16T13:10:50+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3464.5  35 | 2018-08-16T13:10:50+0000 [stdout#info] A query: b'taliwang'
+3465.4  43 | c : DNS request from ('10.30.139.94', 42197) to None: 42 bytes
+3465.5  35 | 2018-08-16T13:10:51+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3465.5  35 | 2018-08-16T13:10:51+0000 [stdout#info] A query: b'taliwang'
+3465.5  35 | 2018-08-16T13:10:51+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3465.6  43 | c : Accept TCP: 10.30.139.94:52570 -> 10.63.252.208:3000.
+3466.2  35 | 2018-08-16T13:10:52+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3474.8  43 | c : DNS request from ('10.30.139.94', 56398) to None: 32 bytes
+3474.8  35 | 2018-08-16T13:11:00+0000 [stdout#info] A query: b'api.segment.io'
+3474.9  35 | 2018-08-16T13:11:00+0000 [stdout#info] Result for b'api.segment.io' is ['52.88.28.138', '52.88.153.42', '54.148.40.191', '54.186.141.213', '52.40.130.186', '54.186.165.208', '54.149.158.181', '54.149.59.26']
+3483.9  43 |  s: SW#25:10.63.252.208:3000: uwrite: got EPIPE
+3483.9  43 | c : Accept TCP: 10.30.139.94:52636 -> 10.63.252.208:3000.
+3484.0  43 | c : Accept TCP: 10.30.139.94:52637 -> 10.63.252.208:3000.
+3484.0  43 | c : DNS request from ('10.30.139.94', 57403) to None: 38 bytes
+3484.0  43 | c : DNS request from ('10.30.139.94', 1876) to None: 35 bytes
+3484.0  35 | 2018-08-16T13:11:10+0000 [stdout#info] A query: b'fonts.googleapis.com'
+3484.0  35 | 2018-08-16T13:11:10+0000 [stdout#info] A query: b'fonts.gstatic.com'
+3484.1  35 | 2018-08-16T13:11:10+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+3484.1  35 | 2018-08-16T13:11:10+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.130.94']
+3493.7 TEL | (proxy checking local liveness)
+3493.7  35 | 2018-08-16T13:11:19+0000 [Poll#info] Checkpoint
+3514.2  43 |  s: SW#11:10.63.252.208:3000: uwrite: got EPIPE
+3515.4  43 |  s: SW#22:10.63.252.208:3000: uwrite: got EPIPE
+3515.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (37 remain)
+3515.4  43 |  s: SW#-1:10.63.252.208:3000: error was: uread: [Errno 104] Connection reset by peer
+3515.4  43 |  s: SW'unknown':Mux#300: deleting (36 remain)
+3515.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (35 remain)
+3515.4  43 |  s: SW#-1:10.63.252.208:3000: error was: [Errno 113] Host is unreachable
+3515.4  43 |  s: SW'unknown':Mux#304: deleting (34 remain)
+3517.1  43 | c : SW#14:10.30.139.94:52296: deleting (21 remain)
+3517.1  43 | c : SW'unknown':Mux#289: deleting (20 remain)
+3517.1  43 | c : Accept TCP: 10.30.139.94:52748 -> 10.63.252.208:3000.
+3517.1  43 | c : SW'unknown':Mux#300: deleting (21 remain)
+3517.1  43 | c : SW#-1:10.30.139.94:52455: deleting (20 remain)
+3517.1  43 | c : SW'unknown':Mux#301: deleting (19 remain)
+3517.1  43 | c : SW#-1:10.30.139.94:52456: deleting (18 remain)
+3517.1  43 | c : SW'unknown':Mux#304: deleting (17 remain)
+3517.1  43 | c : SW#-1:10.30.139.94:52570: deleting (16 remain)
+3517.1  43 | c : SW#15:10.30.139.94:52018: deleting (15 remain)
+3517.1  43 | c : SW'unknown':Mux#273: deleting (14 remain)
+3517.1  43 | c : SW#10:10.30.139.94:52099: deleting (13 remain)
+3517.1  43 | c : SW'unknown':Mux#276: deleting (12 remain)
+3517.1  43 | c : SW#16:10.30.139.94:52288: deleting (11 remain)
+3517.1  43 | c : SW'unknown':Mux#284: deleting (10 remain)
+3517.1  43 | c : Accept TCP: 10.30.139.94:52749 -> 10.63.252.208:3000.
+3519.5  43 |  s: SW#23:10.63.252.208:3000: uwrite: got EPIPE
+3523.8 TEL | (proxy checking local liveness)
+3523.8  35 | 2018-08-16T13:11:49+0000 [Poll#info] Checkpoint
+3532.6  43 | c : DNS request from ('10.30.139.94', 60225) to None: 38 bytes
+3532.6  43 | c : SW#17:10.30.139.94:52313: deleting (11 remain)
+3532.6  43 | c : SW'unknown':Mux#290: deleting (10 remain)
+3532.6  43 | c : DNS request from ('10.30.139.94', 65077) to None: 38 bytes
+3532.7  35 | 2018-08-16T13:11:58+0000 [stdout#info] A query: b'time-macos.apple.com'
+3532.8  35 | 2018-08-16T13:11:58+0000 [stdout#info] AAAA query, sending back A instead: b'time-macos.apple.com'
+3532.8  35 | 2018-08-16T13:11:58+0000 [stdout#info] A query: b'time-macos.apple.com'
+3533.1  35 | 2018-08-16T13:11:59+0000 [stdout#info] Result for b'time-macos.apple.com' is ['17.253.68.125', '17.253.84.253', '17.253.82.253', '17.253.82.125', '17.253.84.125']
+3533.1  35 | 2018-08-16T13:11:59+0000 [stdout#info] Result for b'time-macos.apple.com' is ['17.253.68.125', '17.253.84.253', '17.253.82.253', '17.253.82.125', '17.253.84.125']
+3535.2  43 |  s: SW#7:10.63.252.208:3000: uwrite: got EPIPE
+3535.2  43 | c : DNS request from ('10.30.139.94', 27046) to None: 42 bytes
+3535.2  35 | 2018-08-16T13:12:01+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3535.2  35 | 2018-08-16T13:12:01+0000 [stdout#info] A query: b'taliwang'
+3535.3  35 | 2018-08-16T13:12:01+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3535.3  43 | c : Accept TCP: 10.30.139.94:52811 -> 10.63.252.208:3000.
+3543.3  43 | c : DNS request from ('10.30.139.94', 44470) to None: 42 bytes
+3543.4  35 | 2018-08-16T13:12:09+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+3543.5  35 | 2018-08-16T13:12:09+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+3544.1  43 | c : DNS request from ('10.30.139.94', 28437) to None: 33 bytes
+3544.1  35 | 2018-08-16T13:12:10+0000 [stdout#info] A query: b'docs.google.com'
+3544.2  35 | 2018-08-16T13:12:10+0000 [stdout#info] Result for b'docs.google.com' is ['74.125.130.139', '74.125.130.113', '74.125.130.100', '74.125.130.102', '74.125.130.138', '74.125.130.101']
+3553.8 TEL | (proxy checking local liveness)
+3553.9  35 | 2018-08-16T13:12:19+0000 [Poll#info] Checkpoint
+3565.1  43 | c : DNS request from ('10.30.139.94', 33866) to None: 47 bytes
+3565.2  35 | 2018-08-16T13:12:31+0000 [stdout#info] A query: b'clientservices.googleapis.com'
+3565.3  35 | 2018-08-16T13:12:31+0000 [stdout#info] Result for b'clientservices.googleapis.com' is ['74.125.130.94']
+3583.7 TEL | (proxy checking local liveness)
+3583.7  35 | 2018-08-16T13:12:49+0000 [Poll#info] Checkpoint
+3608.8  43 | c : DNS request from ('10.30.139.94', 55720) to None: 42 bytes
+3608.8  43 | c : DNS request from ('10.30.139.94', 58521) to None: 48 bytes
+3608.8  43 | c : DNS request from ('10.30.139.94', 56666) to None: 44 bytes
+3608.8  35 | 2018-08-16T13:13:14+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+3608.8  43 | c : DNS request from ('10.30.139.94', 53556) to None: 27 bytes
+3608.9  35 | 2018-08-16T13:13:14+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+3608.9  35 | 2018-08-16T13:13:14+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+3608.9  35 | 2018-08-16T13:13:14+0000 [stdout#info] A query: b'i.scdn.co'
+3609.0  35 | 2018-08-16T13:13:14+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.24.155', '74.125.24.154', '74.125.24.157', '74.125.24.156']
+3609.0  35 | 2018-08-16T13:13:14+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.130.155', '74.125.130.157', '74.125.130.156', '74.125.130.154']
+3609.0  35 | 2018-08-16T13:13:14+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+3609.0  35 | 2018-08-16T13:13:15+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+3611.3  43 |  s: SW#31:10.63.252.208:3000: uwrite: got EPIPE
+3613.7 TEL | (proxy checking local liveness)
+3613.7  35 | 2018-08-16T13:13:19+0000 [Poll#info] Checkpoint
+3636.2  43 | c : DNS request from ('10.30.139.94', 63303) to None: 32 bytes
+3636.2  43 | c : SW'unknown':Mux#311: deleting (11 remain)
+3636.2  43 | c : SW#-1:10.30.139.94:52749: deleting (10 remain)
+3636.2  43 | c : SW#21:10.30.139.94:52637: deleting (9 remain)
+3636.2  43 | c : SW'unknown':Mux#307: deleting (8 remain)
+3636.2  43 | c : SW#20:10.30.139.94:52636: deleting (7 remain)
+3636.2  43 | c : SW'unknown':Mux#306: deleting (6 remain)
+3636.2  35 | 2018-08-16T13:13:42+0000 [stdout#info] A query: b'imap.gmail.com'
+3636.3  35 | 2018-08-16T13:13:42+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.24.108', '74.125.24.109']
+3641.3  43 | c : DNS request from ('10.30.139.94', 8256) to None: 33 bytes
+3641.3  35 | 2018-08-16T13:13:47+0000 [stdout#info] A query: b'play.google.com'
+3641.4  35 | 2018-08-16T13:13:47+0000 [stdout#info] Result for b'play.google.com' is ['74.125.130.102', '74.125.130.100', '74.125.130.101', '74.125.130.138', '74.125.130.113', '74.125.130.139']
+3643.6 TEL | (proxy checking local liveness)
+3643.6  35 | 2018-08-16T13:13:49+0000 [Poll#info] Checkpoint
+3662.1  43 | c : DNS request from ('10.30.139.94', 42678) to None: 42 bytes
+3662.1  43 | c : DNS request from ('10.30.139.94', 50552) to None: 38 bytes
+3662.1  43 | c : DNS request from ('10.30.139.94', 8911) to None: 35 bytes
+3662.1  35 | 2018-08-16T13:14:08+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3662.1  35 | 2018-08-16T13:14:08+0000 [stdout#info] A query: b'taliwang'
+3662.1  35 | 2018-08-16T13:14:08+0000 [stdout#info] A query: b'fonts.googleapis.com'
+3662.1  35 | 2018-08-16T13:14:08+0000 [stdout#info] A query: b'fonts.gstatic.com'
+3662.1  35 | 2018-08-16T13:14:08+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3662.1  43 | c : Accept TCP: 10.30.139.94:53250 -> 10.63.252.208:3000.
+3662.1  43 | c : Accept TCP: 10.30.139.94:53251 -> 10.63.252.208:3000.
+3662.2  35 | 2018-08-16T13:14:08+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.130.94']
+3662.2  35 | 2018-08-16T13:14:08+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+3662.6  43 |  s: SW#21:10.63.252.208:3000: uwrite: got EPIPE
+3664.4  43 | c : Accept TCP: 10.30.139.94:53260 -> 10.63.252.208:3000.
+3667.1  43 | c : Accept TCP: 10.30.139.94:53269 -> 10.63.252.208:3000.
+3669.0  43 | c : Accept TCP: 10.30.139.94:53278 -> 10.63.252.208:3000.
+3669.0  43 |  s: SW#7:10.63.252.208:3000: deleting (47 remain)
+3669.0  43 |  s: SW#7:10.63.252.208:3000: error was: [Errno 113] Host is unreachable
+3669.0  43 |  s: SW'unknown':Mux#310: deleting (46 remain)
+3673.8 TEL | (proxy checking local liveness)
+3673.9  35 | 2018-08-16T13:14:19+0000 [Poll#info] Checkpoint
+3677.0  43 | c : DNS request from ('10.30.139.94', 49641) to None: 32 bytes
+3677.0  35 | 2018-08-16T13:14:22+0000 [stdout#info] A query: b'imap.gmail.com'
+3677.1  35 | 2018-08-16T13:14:23+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.200.109', '74.125.200.108']
+3692.2  43 | c : Accept TCP: 10.30.139.94:53359 -> 10.63.252.208:3000.
+3692.2  43 | c : SW#12:10.30.139.94:52811: deleting (17 remain)
+3692.2  43 | c : SW'unknown':Mux#315: deleting (16 remain)
+3692.2  43 | c : Accept TCP: 10.30.139.94:53360 -> 10.63.252.208:3000.
+3703.7 TEL | (proxy checking local liveness)
+3703.7  35 | 2018-08-16T13:14:49+0000 [Poll#info] Checkpoint
+3733.7 TEL | (proxy checking local liveness)
+3733.7  35 | 2018-08-16T13:15:19+0000 [Poll#info] Checkpoint
+3734.8  43 | c : DNS request from ('10.30.139.94', 49283) to None: 54 bytes
+3734.8  43 | c : SW#17:10.30.139.94:53278: deleting (17 remain)
+3734.8  43 | c : SW'unknown':Mux#332: deleting (16 remain)
+3734.8  35 | 2018-08-16T13:15:20+0000 [stdout#info] A query: b'googlehosted.l.googleusercontent.com'
+3734.9  35 | 2018-08-16T13:15:20+0000 [stdout#info] Result for b'googlehosted.l.googleusercontent.com' is ['172.217.27.97']
+3759.7  43 | c : DNS request from ('10.30.139.94', 17611) to None: 33 bytes
+3759.7  35 | 2018-08-16T13:15:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+3759.8  35 | 2018-08-16T13:15:45+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.24.94']
+3763.6 TEL | (proxy checking local liveness)
+3763.6  35 | 2018-08-16T13:15:49+0000 [Poll#info] Checkpoint
+3789.4  43 |  s: SW#43:10.63.252.208:3000: uwrite: got EPIPE
+3789.4  43 |  s: SW#44:10.63.252.208:3000: uwrite: got EPIPE
+3791.9  43 |  s: SW#45:10.63.252.208:3000: uwrite: got EPIPE
+3793.6 TEL | (proxy checking local liveness)
+3793.6  35 | 2018-08-16T13:16:19+0000 [Poll#info] Checkpoint
+3794.4  43 |  s: SW#46:10.63.252.208:3000: uwrite: got EPIPE
+3802.3  43 | c : SW#16:10.30.139.94:53269: deleting (15 remain)
+3802.3  43 | c : SW'unknown':Mux#331: deleting (14 remain)
+3802.3  43 | c : DNS request from ('10.30.139.94', 9551) to None: 42 bytes
+3802.3  43 | c : DNS request from ('10.30.139.94', 48716) to None: 38 bytes
+3802.3  43 | c : DNS request from ('10.30.139.94', 64247) to None: 35 bytes
+3802.3  35 | 2018-08-16T13:16:28+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+3802.4  35 | 2018-08-16T13:16:28+0000 [stdout#info] A query: b'taliwang'
+3802.4  35 | 2018-08-16T13:16:28+0000 [stdout#info] A query: b'fonts.googleapis.com'
+3802.4  35 | 2018-08-16T13:16:28+0000 [stdout#info] A query: b'fonts.gstatic.com'
+3802.4  35 | 2018-08-16T13:16:28+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+3802.4  43 | c : Accept TCP: 10.30.139.94:53693 -> 10.63.252.208:3000.
+3802.4  43 | c : Accept TCP: 10.30.139.94:53694 -> 10.63.252.208:3000.
+3802.5  35 | 2018-08-16T13:16:28+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.24.95']
+3802.5  35 | 2018-08-16T13:16:28+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.200.94']
+3802.5  43 | c : DNS request from ('10.30.139.94', 16445) to None: 35 bytes
+3802.5  35 | 2018-08-16T13:16:28+0000 [stdout#info] A query: b'fonts.gstatic.com'
+3802.6  35 | 2018-08-16T13:16:28+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.200.94']
+3819.7  43 |  s: SW#16:10.63.252.208:3000: uwrite: got EPIPE
+3823.8 TEL | (proxy checking local liveness)
+3823.8  35 | 2018-08-16T13:16:49+0000 [Poll#info] Checkpoint
+3849.6  43 | c : Accept TCP: 10.30.139.94:53854 -> 10.63.252.208:3000.
+3849.6  43 | c : Accept TCP: 10.30.139.94:53855 -> 10.63.252.208:3000.
+3849.6  43 | c : SW'unknown':Mux#335: deleting (21 remain)
+3849.6  43 | c : SW#-1:10.30.139.94:53360: deleting (20 remain)
+3849.6  43 | c : SW#13:10.30.139.94:53251: deleting (19 remain)
+3849.6  43 | c : SW'unknown':Mux#329: deleting (18 remain)
+3849.6  43 | c : SW#10:10.30.139.94:53250: deleting (17 remain)
+3849.6  43 | c : SW'unknown':Mux#328: deleting (16 remain)
+3849.6  43 | c : SW#15:10.30.139.94:53260: deleting (15 remain)
+3849.6  43 | c : SW'unknown':Mux#330: deleting (14 remain)
+3849.6  43 | c : SW#18:10.30.139.94:53359: deleting (13 remain)
+3849.6  43 | c : SW'unknown':Mux#334: deleting (12 remain)
+3851.4  43 | c : DNS request from ('10.30.139.94', 65468) to None: 48 bytes
+3851.4  43 | c : SW#17:10.30.139.94:53694: deleting (11 remain)
+3851.4  43 | c : SW'unknown':Mux#342: deleting (10 remain)
+3851.4  43 | c : DNS request from ('10.30.139.94', 60654) to None: 42 bytes
+3851.4  43 | c : DNS request from ('10.30.139.94', 65035) to None: 44 bytes
+3851.5  43 | c : DNS request from ('10.30.139.94', 54030) to None: 27 bytes
+3851.5  35 | 2018-08-16T13:17:17+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+3851.5  35 | 2018-08-16T13:17:17+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+3851.5  35 | 2018-08-16T13:17:17+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+3851.5  35 | 2018-08-16T13:17:17+0000 [stdout#info] A query: b'i.scdn.co'
+3851.6  35 | 2018-08-16T13:17:17+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.130.155', '74.125.130.157', '74.125.130.156', '74.125.130.154']
+3851.6  35 | 2018-08-16T13:17:17+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+3851.6  35 | 2018-08-16T13:17:17+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+3851.6  43 |  s: SW#-1:10.63.252.208:3000: deleting (59 remain)
+3851.6  43 |  s: SW'unknown':Mux#332: deleting (58 remain)
+3851.6  35 | 2018-08-16T13:17:17+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.130.154', '74.125.130.156', '74.125.130.157', '74.125.130.155']
+3851.6  43 |  s: SW#-1:10.63.252.208:3000: deleting (57 remain)
+3851.6  43 |  s: SW'unknown':Mux#335: deleting (56 remain)
+3853.6 TEL | (proxy checking local liveness)
+3853.6  35 | 2018-08-16T13:17:19+0000 [Poll#info] Checkpoint
+3856.5  43 | c : DNS request from ('10.30.139.94', 40139) to None: 34 bytes
+3856.5  43 | c : DNS request from ('10.30.139.94', 50951) to None: 43 bytes
+3856.5  43 | c : DNS request from ('10.30.139.94', 15410) to None: 33 bytes
+3856.5  43 | c : DNS request from ('10.30.139.94', 46878) to None: 32 bytes
+3856.5  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b'www.google.co.id'
+3856.6  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b'lh3.googleusercontent.com'
+3856.6  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b'ssl.gstatic.com'
+3856.6  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b'www.google.com'
+3856.7  43 | c : DNS request from ('10.30.139.94', 13302) to None: 34 bytes
+3856.7  43 | c : DNS request from ('10.30.139.94', 4123) to None: 43 bytes
+3856.7  43 | c : DNS request from ('10.30.139.94', 31382) to None: 33 bytes
+3856.7  43 | c : DNS request from ('10.30.139.94', 48717) to None: 32 bytes
+3856.8  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b'www.google.co.id'
+3856.8  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b'lh3.googleusercontent.com'
+3856.8  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b'ssl.gstatic.com'
+3856.8  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b'www.google.com'
+3856.8  43 | c : DNS request from ('10.30.139.94', 62605) to None: 42 bytes
+3856.8  35 | 2018-08-16T13:17:22+0000 [stdout#info] A query: b's2.googleusercontent.com'
+3856.8  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b'lh3.googleusercontent.com' is ['172.217.27.97']
+3856.8  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b'www.google.com' is ['74.125.24.103', '74.125.24.106', '74.125.24.99', '74.125.24.105', '74.125.24.147', '74.125.24.104']
+3856.8  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b'lh3.googleusercontent.com' is ['74.125.130.132']
+3856.9  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['172.217.194.94']
+3856.9  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b'www.google.co.id' is ['74.125.130.94']
+3856.9  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['172.217.194.94']
+3856.9  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b'www.google.co.id' is ['74.125.130.94']
+3856.9  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b'www.google.com' is ['74.125.130.103', '74.125.130.105', '74.125.130.106', '74.125.130.147', '74.125.130.99', '74.125.130.104']
+3856.9  35 | 2018-08-16T13:17:22+0000 [stdout#info] Result for b's2.googleusercontent.com' is ['74.125.68.132']
+3857.2  43 | c : DNS request from ('10.30.139.94', 43802) to None: 32 bytes
+3857.2  35 | 2018-08-16T13:17:23+0000 [stdout#info] A query: b'ogs.google.com'
+3857.3  35 | 2018-08-16T13:17:23+0000 [stdout#info] Result for b'ogs.google.com' is ['74.125.130.113', '74.125.130.102', '74.125.130.139', '74.125.130.100', '74.125.130.138', '74.125.130.101']
+3859.7  43 | c : DNS request from ('10.30.139.94', 38183) to None: 33 bytes
+3859.7  43 | c : DNS request from ('10.30.139.94', 55671) to None: 33 bytes
+3859.7  43 | c : DNS request from ('10.30.139.94', 4526) to None: 33 bytes
+3859.8  35 | 2018-08-16T13:17:25+0000 [stdout#info] A query: b'id.google.co.id'
+3859.8  35 | 2018-08-16T13:17:25+0000 [stdout#info] A query: b'www.gstatic.com'
+3859.8  35 | 2018-08-16T13:17:25+0000 [stdout#info] A query: b'apis.google.com'
+3859.9  35 | 2018-08-16T13:17:25+0000 [stdout#info] Result for b'www.gstatic.com' is ['172.217.194.94']
+3859.9  35 | 2018-08-16T13:17:25+0000 [stdout#info] Result for b'id.google.co.id' is ['172.217.194.94']
+3859.9  35 | 2018-08-16T13:17:25+0000 [stdout#info] Result for b'apis.google.com' is ['74.125.68.138', '74.125.68.102', '74.125.68.101', '74.125.68.100', '74.125.68.113', '74.125.68.139']
+3860.6  43 | c : Accept TCP: 10.30.139.94:53901 -> 10.63.252.208:3000.
+3860.6  43 |  s: SW#53:10.63.252.208:3000: uwrite: got EPIPE
+3861.2  43 | c : DNS request from ('10.30.139.94', 29882) to None: 36 bytes
+3861.2  35 | 2018-08-16T13:17:27+0000 [stdout#info] A query: b'www.googleapis.com'
+3861.3  35 | 2018-08-16T13:17:27+0000 [stdout#info] Result for b'www.googleapis.com' is ['74.125.68.95', '172.217.194.95', '216.58.221.74', '74.125.24.95']
+3862.9  43 | c : DNS request from ('10.30.139.94', 62004) to None: 35 bytes
+3862.9  35 | 2018-08-16T13:17:28+0000 [stdout#info] A query: b'www.w3schools.com'
+3863.0  35 | 2018-08-16T13:17:28+0000 [stdout#info] Result for b'www.w3schools.com' is ['192.229.179.87']
+3863.1  43 | c : DNS request from ('10.30.139.94', 29127) to None: 43 bytes
+3863.1  43 | c : DNS request from ('10.30.139.94', 39805) to None: 38 bytes
+3863.2  35 | 2018-08-16T13:17:29+0000 [stdout#info] A query: b'www.googletagservices.com'
+3863.2  35 | 2018-08-16T13:17:29+0000 [stdout#info] A query: b'translate.google.com'
+3863.3  35 | 2018-08-16T13:17:29+0000 [stdout#info] Result for b'translate.google.com' is ['74.125.24.138', '74.125.24.113', '74.125.24.100', '74.125.24.139', '74.125.24.101', '74.125.24.102']
+3863.3  35 | 2018-08-16T13:17:29+0000 [stdout#info] Result for b'www.googletagservices.com' is ['74.125.130.155', '74.125.130.157', '74.125.130.156', '74.125.130.154']
+3863.4  43 | c : DNS request from ('10.30.139.94', 4346) to None: 42 bytes
+3863.4  43 | c : DNS request from ('10.30.139.94', 6236) to None: 41 bytes
+3863.4  43 | c : DNS request from ('10.30.139.94', 56560) to None: 37 bytes
+3863.4  43 | c : DNS request from ('10.30.139.94', 18986) to None: 42 bytes
+3863.4  43 | c : DNS request from ('10.30.139.94', 6149) to None: 32 bytes
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] A query: b'www.google-analytics.com'
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] A query: b'stats.g.doubleclick.net'
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] A query: b'clients1.google.com'
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] A query: b'translate.googleapis.com'
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] A query: b'cse.google.com'
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] Result for b'stats.g.doubleclick.net' is ['74.125.24.156', '74.125.24.157', '74.125.24.154', '74.125.24.155']
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] Result for b'www.google-analytics.com' is ['74.125.24.100', '74.125.24.102', '74.125.24.138', '74.125.24.113', '74.125.24.139', '74.125.24.101']
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] Result for b'clients1.google.com' is ['172.217.160.14']
+3863.4  35 | 2018-08-16T13:17:29+0000 [stdout#info] Result for b'translate.googleapis.com' is ['172.217.194.95']
+3863.5  35 | 2018-08-16T13:17:29+0000 [stdout#info] Result for b'cse.google.com' is ['74.125.24.101', '74.125.24.113', '74.125.24.100', '74.125.24.138', '74.125.24.139', '74.125.24.102']
+3883.8 TEL | (proxy checking local liveness)
+3883.8  35 | 2018-08-16T13:17:49+0000 [Poll#info] Checkpoint
+3886.2  43 | c : DNS request from ('10.30.139.94', 62326) to None: 48 bytes
+3886.3  35 | 2018-08-16T13:17:52+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+3886.4  35 | 2018-08-16T13:17:52+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['172.217.194.157', '172.217.194.154', '172.217.194.155', '172.217.194.156']
+3886.4  43 |  s: SW'unknown':Mux#231: deleting (57 remain)
+3886.4  43 |  s: SW#13:10.63.252.208:3000: deleting (56 remain)
+3886.4  43 |  s: SW'unknown':Mux#255: deleting (55 remain)
+3886.4  43 |  s: SW#20:10.63.252.208:3000: deleting (54 remain)
+3886.4  43 |  s: SW#20:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW#14:10.63.252.208:3000: deleting (53 remain)
+3886.4  43 |  s: SW#14:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#265: deleting (52 remain)
+3886.4  43 |  s: SW'unknown':Mux#270: deleting (51 remain)
+3886.4  43 |  s: SW#26:10.63.252.208:3000: deleting (50 remain)
+3886.4  43 |  s: SW#26:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#271: deleting (49 remain)
+3886.4  43 |  s: SW#27:10.63.252.208:3000: deleting (48 remain)
+3886.4  43 |  s: SW#27:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#273: deleting (47 remain)
+3886.4  43 |  s: SW#29:10.63.252.208:3000: deleting (46 remain)
+3886.4  43 |  s: SW#29:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#276: deleting (45 remain)
+3886.4  43 |  s: SW#32:10.63.252.208:3000: deleting (44 remain)
+3886.4  43 |  s: SW#32:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#284: deleting (43 remain)
+3886.4  43 |  s: SW#11:10.63.252.208:3000: deleting (42 remain)
+3886.4  43 |  s: SW#11:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#289: deleting (41 remain)
+3886.4  43 |  s: SW#22:10.63.252.208:3000: deleting (40 remain)
+3886.4  43 |  s: SW#22:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#290: deleting (39 remain)
+3886.4  43 |  s: SW#23:10.63.252.208:3000: deleting (38 remain)
+3886.4  43 |  s: SW#23:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#306: deleting (37 remain)
+3886.4  43 |  s: SW#31:10.63.252.208:3000: deleting (36 remain)
+3886.4  43 |  s: SW#31:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#307: deleting (35 remain)
+3886.4  43 |  s: SW#33:10.63.252.208:3000: deleting (34 remain)
+3886.4  43 |  s: SW'unknown':Mux#301: deleting (33 remain)
+3886.4  43 |  s: SW#19:10.63.252.208:3000: deleting (32 remain)
+3886.4  43 |  s: SW#19:10.63.252.208:3000: error was: uread: [Errno 104] Connection reset by peer
+3886.4  43 |  s: SW'unknown':Mux#328: deleting (31 remain)
+3886.4  43 |  s: SW#43:10.63.252.208:3000: deleting (30 remain)
+3886.4  43 |  s: SW#43:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#329: deleting (29 remain)
+3886.4  43 |  s: SW#44:10.63.252.208:3000: deleting (28 remain)
+3886.4  43 |  s: SW#44:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#330: deleting (27 remain)
+3886.4  43 |  s: SW#45:10.63.252.208:3000: deleting (26 remain)
+3886.4  43 |  s: SW#45:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#331: deleting (25 remain)
+3886.4  43 |  s: SW#46:10.63.252.208:3000: deleting (24 remain)
+3886.4  43 |  s: SW#46:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#311: deleting (23 remain)
+3886.4  43 |  s: SW#8:10.63.252.208:3000: deleting (22 remain)
+3886.4  43 |  s: SW#8:10.63.252.208:3000: error was: [Errno 113] Host is unreachable
+3886.4  43 |  s: SW'unknown':Mux#315: deleting (21 remain)
+3886.4  43 |  s: SW#21:10.63.252.208:3000: deleting (20 remain)
+3886.4  43 |  s: SW#21:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#344: deleting (19 remain)
+3886.4  43 |  s: SW#40:10.63.252.208:3000: deleting (18 remain)
+3886.4  43 |  s: SW'unknown':Mux#345: deleting (17 remain)
+3886.4  43 |  s: SW#41:10.63.252.208:3000: deleting (16 remain)
+3886.4  43 |  s: SW'unknown':Mux#334: deleting (15 remain)
+3886.4  43 |  s: SW#16:10.63.252.208:3000: deleting (14 remain)
+3886.4  43 |  s: SW#16:10.63.252.208:3000: error was: [Errno 110] Operation timed out
+3886.4  43 |  s: SW'unknown':Mux#342: deleting (13 remain)
+3886.4  43 |  s: SW#38:10.63.252.208:3000: deleting (12 remain)
+3886.4  43 |  s: SW#-1:10.63.252.208:3000: deleting (11 remain)
+3886.4  43 |  s: SW#-1:10.63.252.208:3000: error was: [Errno 111] Connection refused
+3886.4  43 |  s: SW'unknown':Mux#363: deleting (10 remain)
+3886.4  43 |  s: SW'unknown':Mux#172: deleting (9 remain)
+3886.4  43 |  s: SW#9:10.63.244.87:8080: deleting (8 remain)
+3919.7 TEL | (proxy checking local liveness)
+3919.7  35 | 2018-08-16T13:18:25+0000 [Poll#info] Checkpoint
+3929.9  43 |  s: SW#37:10.63.252.208:3000: uwrite: got EPIPE
+3943.6 TEL | (proxy checking local liveness)
+3943.6  35 | 2018-08-16T13:18:49+0000 [Poll#info] Checkpoint
+3973.9 TEL | (proxy checking local liveness)
+3973.9  35 | 2018-08-16T13:19:19+0000 [Poll#info] Checkpoint
+3982.2  43 | c : DNS request from ('10.30.139.94', 50932) to None: 32 bytes
+3982.2  35 | 2018-08-16T13:19:28+0000 [stdout#info] A query: b'imap.gmail.com'
+3982.3  35 | 2018-08-16T13:19:28+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.68.108', '74.125.68.109']
+4003.7 TEL | (proxy checking local liveness)
+4003.8  35 | 2018-08-16T13:19:49+0000 [Poll#info] Checkpoint
+4013.5  43 | c : DNS request from ('10.30.139.94', 2601) to None: 42 bytes
+4013.5  43 | c : DNS request from ('10.30.139.94', 47928) to None: 38 bytes
+4013.5  43 | c : DNS request from ('10.30.139.94', 4857) to None: 35 bytes
+4013.6  35 | 2018-08-16T13:19:59+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4013.6  35 | 2018-08-16T13:19:59+0000 [stdout#info] A query: b'taliwang'
+4013.6  35 | 2018-08-16T13:19:59+0000 [stdout#info] A query: b'fonts.googleapis.com'
+4013.6  35 | 2018-08-16T13:19:59+0000 [stdout#info] A query: b'fonts.gstatic.com'
+4013.6  35 | 2018-08-16T13:19:59+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4013.6  43 | c : Accept TCP: 10.30.139.94:54432 -> 10.63.252.208:3000.
+4013.6  43 | c : Accept TCP: 10.30.139.94:54433 -> 10.63.252.208:3000.
+4013.6  43 | c : SW'unknown':Mux#363: deleting (15 remain)
+4013.6  43 | c : SW#-1:10.30.139.94:53901: deleting (14 remain)
+4013.6  43 | c : SW#21:10.30.139.94:53855: deleting (13 remain)
+4013.6  43 | c : SW'unknown':Mux#345: deleting (12 remain)
+4013.6  43 | c : SW#20:10.30.139.94:53854: deleting (11 remain)
+4013.6  43 | c : SW'unknown':Mux#344: deleting (10 remain)
+4013.6  43 | c : SW#16:10.30.139.94:53693: deleting (9 remain)
+4013.6  43 | c : SW'unknown':Mux#341: deleting (8 remain)
+4013.7  35 | 2018-08-16T13:19:59+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+4013.7  35 | 2018-08-16T13:19:59+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.24.94']
+4033.6 TEL | (proxy checking local liveness)
+4033.6  35 | 2018-08-16T13:20:19+0000 [Poll#info] Checkpoint
+4054.3  43 | c : DNS request from ('10.30.139.94', 29786) to None: 42 bytes
+4054.3  35 | 2018-08-16T13:20:40+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+4054.3  35 | 2018-08-16T13:20:40+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+4059.4  43 | c : DNS request from ('10.30.139.94', 63848) to None: 33 bytes
+4059.5  35 | 2018-08-16T13:20:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+4059.6  35 | 2018-08-16T13:20:45+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.68.94']
+4059.7  43 | c : DNS request from ('10.30.139.94', 35750) to None: 41 bytes
+4059.7  35 | 2018-08-16T13:20:45+0000 [stdout#info] Updated query of type 1 from b'rendang.id.seagroup.com' to b'rendang'
+4059.8  35 | 2018-08-16T13:20:45+0000 [stdout#info] A query: b'rendang'
+4059.8  35 | 2018-08-16T13:20:45+0000 [stdout#info] Result for b'rendang.id.seagroup.com' is ['10.63.244.87']
+4059.8  43 |  s: SW'unknown':Mux#207: deleting (11 remain)
+4059.8  43 |  s: SW#6:10.63.244.87:8080: deleting (10 remain)
+4059.8  43 | c : Accept TCP: 10.30.139.94:54592 -> 10.63.244.87:8080.
+4061.6  43 | c : Accept TCP: 10.30.139.94:54601 -> 10.63.244.87:8080.
+4063.8 TEL | (proxy checking local liveness)
+4063.8  35 | 2018-08-16T13:20:49+0000 [Poll#info] Checkpoint
+4064.9  43 | c : Accept TCP: 10.30.139.94:54615 -> 10.63.252.208:3000.
+4064.9  43 | c : Accept TCP: 10.30.139.94:54616 -> 10.63.252.208:3000.
+4066.3  43 | c : Accept TCP: 10.30.139.94:54621 -> 10.63.252.208:3000.
+4075.7  43 | c : DNS request from ('10.30.139.94', 65256) to None: 35 bytes
+4075.7  35 | 2018-08-16T13:21:01+0000 [stdout#info] A query: b'fonts.gstatic.com'
+4075.8  35 | 2018-08-16T13:21:01+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.24.94']
+4075.8  43 | c : SW'unknown':Mux#383: deleting (17 remain)
+4075.8  43 | c : SW#-1:10.30.139.94:54592: deleting (16 remain)
+4075.8  43 | c : SW'unknown':Mux#384: deleting (15 remain)
+4075.8  43 | c : SW#-1:10.30.139.94:54601: deleting (14 remain)
+4075.8  43 | c : SW'unknown':Mux#385: deleting (13 remain)
+4075.8  43 | c : SW#-1:10.30.139.94:54615: deleting (12 remain)
+4075.8  43 | c : SW#19:10.30.139.94:50532: deleting (11 remain)
+4075.8  43 | c : SW'unknown':Mux#207: deleting (10 remain)
+4077.0  43 | c : DNS request from ('10.30.139.94', 44560) to None: 42 bytes
+4077.0  35 | 2018-08-16T13:21:02+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4077.0  35 | 2018-08-16T13:21:02+0000 [stdout#info] A query: b'taliwang'
+4077.0  35 | 2018-08-16T13:21:03+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4077.0  43 |  s: SW#-1:10.63.252.208:3000: deleting (19 remain)
+4077.0  43 |  s: SW'unknown':Mux#379: deleting (18 remain)
+4077.1  43 |  s: SW#-1:10.63.244.87:8080: deleting (17 remain)
+4077.1  43 |  s: SW'unknown':Mux#383: deleting (16 remain)
+4077.1  43 |  s: SW#-1:10.63.244.87:8080: deleting (15 remain)
+4077.1  43 |  s: SW'unknown':Mux#384: deleting (14 remain)
+4077.1  43 |  s: SW#-1:10.63.252.208:3000: deleting (13 remain)
+4077.1  43 |  s: SW'unknown':Mux#385: deleting (12 remain)
+4078.0  43 | c : DNS request from ('10.30.139.94', 64349) to None: 42 bytes
+4078.1  35 | 2018-08-16T13:21:04+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4078.1  35 | 2018-08-16T13:21:04+0000 [stdout#info] A query: b'taliwang'
+4078.1  35 | 2018-08-16T13:21:04+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4078.1  43 | c : Accept TCP: 10.30.139.94:54661 -> 10.63.252.208:3000.
+4085.9  43 | c : DNS request from ('10.30.139.94', 27765) to None: 42 bytes
+4085.9  35 | 2018-08-16T13:21:11+0000 [stdout#info] A query: b'analytics.getpostman.com'
+4086.0  35 | 2018-08-16T13:21:11+0000 [stdout#info] Result for b'analytics.getpostman.com' is ['54.230.159.157', '54.230.159.10', '54.230.159.180', '54.230.159.107']
+4093.6 TEL | (proxy checking local liveness)
+4093.6  35 | 2018-08-16T13:21:19+0000 [Poll#info] Checkpoint
+4103.8  43 | c : DNS request from ('10.30.139.94', 61467) to None: 35 bytes
+4103.8  43 | c : DNS request from ('10.30.139.94', 41681) to None: 42 bytes
+4103.8  43 | c : DNS request from ('10.30.139.94', 12101) to None: 38 bytes
+4103.8  35 | 2018-08-16T13:21:29+0000 [stdout#info] A query: b'www.w3schools.com'
+4103.9  35 | 2018-08-16T13:21:29+0000 [stdout#info] A query: b'www.google-analytics.com'
+4103.9  35 | 2018-08-16T13:21:29+0000 [stdout#info] A query: b'translate.google.com'
+4104.0  43 | c : DNS request from ('10.30.139.94', 59707) to None: 32 bytes
+4104.0  35 | 2018-08-16T13:21:29+0000 [stdout#info] Result for b'www.google-analytics.com' is ['74.125.130.101', '74.125.130.139', '74.125.130.100', '74.125.130.138', '74.125.130.113', '74.125.130.102']
+4104.0  35 | 2018-08-16T13:21:29+0000 [stdout#info] A query: b'www.google.com'
+4104.0  35 | 2018-08-16T13:21:29+0000 [stdout#info] Result for b'translate.google.com' is ['74.125.130.139', '74.125.130.113', '74.125.130.100', '74.125.130.102', '74.125.130.101', '74.125.130.138']
+4104.0  43 | c : DNS request from ('10.30.139.94', 22341) to None: 41 bytes
+4104.0  35 | 2018-08-16T13:21:30+0000 [stdout#info] A query: b'stats.g.doubleclick.net'
+4104.1  43 | c : DNS request from ('10.30.139.94', 63953) to None: 35 bytes
+4104.1  35 | 2018-08-16T13:21:30+0000 [stdout#info] Result for b'www.google.com' is ['74.125.130.105', '74.125.130.99', '74.125.130.147', '74.125.130.104', '74.125.130.106', '74.125.130.103']
+4104.1  35 | 2018-08-16T13:21:30+0000 [stdout#info] Result for b'stats.g.doubleclick.net' is ['74.125.24.157', '74.125.24.156', '74.125.24.155', '74.125.24.154']
+4104.1  35 | 2018-08-16T13:21:30+0000 [stdout#info] A query: b'www.w3schools.com'
+4104.1  43 | c : DNS request from ('10.30.139.94', 22864) to None: 42 bytes
+4104.1  43 | c : DNS request from ('10.30.139.94', 24375) to None: 32 bytes
+4104.1  35 | 2018-08-16T13:21:30+0000 [stdout#info] A query: b'translate.googleapis.com'
+4104.1  35 | 2018-08-16T13:21:30+0000 [stdout#info] Result for b'www.w3schools.com' is ['192.229.179.87']
+4104.1  35 | 2018-08-16T13:21:30+0000 [stdout#info] A query: b'cse.google.com'
+4104.2  35 | 2018-08-16T13:21:30+0000 [stdout#info] Result for b'translate.googleapis.com' is ['74.125.130.95']
+4104.2  35 | 2018-08-16T13:21:30+0000 [stdout#info] Result for b'cse.google.com' is ['172.217.27.110']
+4104.2  35 | 2018-08-16T13:21:30+0000 [stdout#info] Result for b'www.w3schools.com' is ['192.229.179.87']
+4104.3  43 | c : DNS request from ('10.30.139.94', 53799) to None: 36 bytes
+4104.4  35 | 2018-08-16T13:21:30+0000 [stdout#info] A query: b'www.googleapis.com'
+4104.4  43 | c : DNS request from ('10.30.139.94', 52884) to None: 37 bytes
+4104.4  35 | 2018-08-16T13:21:30+0000 [stdout#info] Result for b'www.googleapis.com' is ['172.217.194.95', '172.217.26.74', '74.125.24.95', '74.125.130.95']
+4104.4  35 | 2018-08-16T13:21:30+0000 [stdout#info] A query: b'clients1.google.com'
+4104.4  35 | 2018-08-16T13:21:30+0000 [stdout#info] Result for b'clients1.google.com' is ['172.217.160.14']
+4105.0  43 | c : SW#17:10.30.139.94:54616: deleting (11 remain)
+4105.0  43 | c : SW'unknown':Mux#386: deleting (10 remain)
+4105.0  43 | c : DNS request from ('10.30.139.94', 30066) to None: 34 bytes
+4105.0  43 | c : DNS request from ('10.30.139.94', 28049) to None: 43 bytes
+4105.0  43 | c : DNS request from ('10.30.139.94', 14147) to None: 48 bytes
+4105.0  35 | 2018-08-16T13:21:30+0000 [stdout#info] A query: b'www.google.co.id'
+4105.0  35 | 2018-08-16T13:21:31+0000 [stdout#info] A query: b'www.googletagservices.com'
+4105.0  35 | 2018-08-16T13:21:31+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+4105.1  35 | 2018-08-16T13:21:31+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.130.156', '74.125.130.155', '74.125.130.154', '74.125.130.157']
+4105.1  35 | 2018-08-16T13:21:31+0000 [stdout#info] Result for b'www.googletagservices.com' is ['74.125.200.154', '74.125.200.155', '74.125.200.157', '74.125.200.156']
+4105.1  35 | 2018-08-16T13:21:31+0000 [stdout#info] Result for b'www.google.co.id' is ['74.125.24.94']
+4107.6  43 | c : DNS request from ('10.30.139.94', 3643) to None: 33 bytes
+4107.6  35 | 2018-08-16T13:21:33+0000 [stdout#info] A query: b'www.gstatic.com'
+4107.7  35 | 2018-08-16T13:21:33+0000 [stdout#info] Result for b'www.gstatic.com' is ['172.217.194.94']
+4117.7  43 | c : DNS request from ('10.30.139.94', 51215) to None: 48 bytes
+4117.7  43 | c : DNS request from ('10.30.139.94', 55683) to None: 42 bytes
+4117.7  43 | c : DNS request from ('10.30.139.94', 53161) to None: 44 bytes
+4117.7  35 | 2018-08-16T13:21:43+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+4117.7  35 | 2018-08-16T13:21:43+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+4117.7  35 | 2018-08-16T13:21:43+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+4117.8  35 | 2018-08-16T13:21:43+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.130.157', '74.125.130.156', '74.125.130.154', '74.125.130.155']
+4117.8  35 | 2018-08-16T13:21:43+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.130.157', '74.125.130.154', '74.125.130.155', '74.125.130.156']
+4117.8  35 | 2018-08-16T13:21:43+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+4123.7 TEL | (proxy checking local liveness)
+4123.7  35 | 2018-08-16T13:21:49+0000 [Poll#info] Checkpoint
+4128.6  43 | c : DNS request from ('10.30.139.94', 55673) to None: 37 bytes
+4128.7  35 | 2018-08-16T13:21:54+0000 [stdout#info] A query: b'api.smoot.apple.com'
+4128.8  35 | 2018-08-16T13:21:54+0000 [stdout#info] Result for b'api.smoot.apple.com' is ['17.252.233.246']
+4128.8  43 | c : DNS request from ('10.30.139.94', 52857) to None: 29 bytes
+4128.8  35 | 2018-08-16T13:21:54+0000 [stdout#info] A query: b'g.symcd.com'
+4128.9  35 | 2018-08-16T13:21:54+0000 [stdout#info] Result for b'g.symcd.com' is ['23.51.43.27']
+4136.9  43 | c : DNS request from ('10.30.139.94', 35187) to None: 43 bytes
+4136.9  43 | c : DNS request from ('10.30.139.94', 61404) to None: 33 bytes
+4136.9  35 | 2018-08-16T13:22:02+0000 [stdout#info] A query: b'lh3.googleusercontent.com'
+4136.9  35 | 2018-08-16T13:22:02+0000 [stdout#info] A query: b'ssl.gstatic.com'
+4137.0  35 | 2018-08-16T13:22:02+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.68.94']
+4137.0  35 | 2018-08-16T13:22:02+0000 [stdout#info] Result for b'lh3.googleusercontent.com' is ['74.125.130.132']
+4140.9  43 |  s: SW#8:10.63.252.208:3000: uwrite: got EPIPE
+4142.5  43 | c : DNS request from ('10.30.139.94', 24803) to None: 42 bytes
+4142.5  43 | c : SW#12:10.30.139.94:54432: deleting (9 remain)
+4142.5  43 | c : SW'unknown':Mux#378: deleting (8 remain)
+4142.5  35 | 2018-08-16T13:22:08+0000 [stdout#info] A query: b'notifications.google.com'
+4142.6  35 | 2018-08-16T13:22:08+0000 [stdout#info] Result for b'notifications.google.com' is ['74.125.24.100', '74.125.24.139', '74.125.24.113', '74.125.24.101', '74.125.24.138', '74.125.24.102']
+4143.2  43 | c : DNS request from ('10.30.139.94', 16670) to None: 33 bytes
+4143.3  35 | 2018-08-16T13:22:09+0000 [stdout#info] A query: b'apis.google.com'
+4143.4  35 | 2018-08-16T13:22:09+0000 [stdout#info] Result for b'apis.google.com' is ['74.125.200.102', '74.125.200.113', '74.125.200.100', '74.125.200.101', '74.125.200.139', '74.125.200.138']
+4146.9  43 | c : DNS request from ('10.30.139.94', 39604) to None: 44 bytes
+4146.9  35 | 2018-08-16T13:22:12+0000 [stdout#info] A query: b'encrypted-tbn0.gstatic.com'
+4147.2  43 | c : DNS request from ('10.30.139.94', 38441) to None: 44 bytes
+4147.2  35 | 2018-08-16T13:22:13+0000 [stdout#info] Result for b'encrypted-tbn0.gstatic.com' is ['74.125.24.101', '74.125.24.138', '74.125.24.113', '74.125.24.100', '74.125.24.102', '74.125.24.139']
+4147.2  35 | 2018-08-16T13:22:13+0000 [stdout#info] A query: b'encrypted-tbn0.gstatic.com'
+4147.2  35 | 2018-08-16T13:22:13+0000 [stdout#info] Result for b'encrypted-tbn0.gstatic.com' is ['74.125.130.102', '74.125.130.139', '74.125.130.100', '74.125.130.138', '74.125.130.101', '74.125.130.113']
+4147.8  43 | c : DNS request from ('10.30.139.94', 53663) to None: 36 bytes
+4147.8  35 | 2018-08-16T13:22:13+0000 [stdout#info] A query: b'www.googleapis.com'
+4147.9  35 | 2018-08-16T13:22:13+0000 [stdout#info] Result for b'www.googleapis.com' is ['172.217.194.95', '74.125.68.95']
+4153.8 TEL | (proxy checking local liveness)
+4153.8  35 | 2018-08-16T13:22:19+0000 [Poll#info] Checkpoint
+4157.1  43 | c : DNS request from ('10.30.139.94', 63078) to None: 46 bytes
+4157.1  35 | 2018-08-16T13:22:23+0000 [stdout#info] A query: b'smp-device-content.apple.com'
+4157.3  35 | 2018-08-16T13:22:23+0000 [stdout#info] Result for b'smp-device-content.apple.com' is ['23.199.155.37']
+4164.1  43 | c : DNS request from ('10.30.139.94', 20806) to None: 42 bytes
+4164.1  35 | 2018-08-16T13:22:30+0000 [stdout#info] A query: b'mattermost.garenanow.com'
+4164.2  35 | 2018-08-16T13:22:30+0000 [stdout#info] Result for b'mattermost.garenanow.com' is ['203.117.172.148']
+4183.6 TEL | (proxy checking local liveness)
+4183.6  35 | 2018-08-16T13:22:49+0000 [Poll#info] Checkpoint
+4213.7 TEL | (proxy checking local liveness)
+4213.7  35 | 2018-08-16T13:23:19+0000 [Poll#info] Checkpoint
+4236.0  43 | c : DNS request from ('10.30.139.94', 57437) to None: 34 bytes
+4236.1  35 | 2018-08-16T13:23:42+0000 [stdout#info] A query: b'setup.icloud.com'
+4236.2  35 | 2018-08-16T13:23:42+0000 [stdout#info] Result for b'setup.icloud.com' is ['17.248.154.136', '17.248.154.238', '17.248.154.174', '17.248.154.111', '17.248.154.110', '17.248.154.211', '17.248.154.80', '17.248.154.82']
+4243.8 TEL | (proxy checking local liveness)
+4243.8  35 | 2018-08-16T13:23:49+0000 [Poll#info] Checkpoint
+4253.2  43 | c : SW#14:10.30.139.94:52748: deleting (7 remain)
+4253.2  43 | c : SW'unknown':Mux#310: deleting (6 remain)
+4253.2  43 | c : SW#13:10.30.139.94:54433: deleting (5 remain)
+4253.2  43 | c : SW'unknown':Mux#379: deleting (4 remain)
+4253.2  43 | c : SW#18:10.30.139.94:54621: deleting (3 remain)
+4253.2  43 | c : SW'unknown':Mux#387: deleting (2 remain)
+4273.7 TEL | (proxy checking local liveness)
+4273.7  35 | 2018-08-16T13:24:19+0000 [Poll#info] Checkpoint
+4278.9  43 | c : DNS request from ('10.30.139.94', 58986) to None: 32 bytes
+4278.9  35 | 2018-08-16T13:24:24+0000 [stdout#info] A query: b'imap.gmail.com'
+4279.0  35 | 2018-08-16T13:24:25+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.68.108', '74.125.68.109']
+4287.6  43 | c : DNS request from ('10.30.139.94', 13348) to None: 34 bytes
+4287.6  43 | c : DNS request from ('10.30.139.94', 60877) to None: 43 bytes
+4287.6  43 | c : DNS request from ('10.30.139.94', 28040) to None: 33 bytes
+4287.6  35 | 2018-08-16T13:24:33+0000 [stdout#info] A query: b'www.google.co.id'
+4287.6  35 | 2018-08-16T13:24:33+0000 [stdout#info] A query: b'lh3.googleusercontent.com'
+4287.6  35 | 2018-08-16T13:24:33+0000 [stdout#info] A query: b'ssl.gstatic.com'
+4287.7  35 | 2018-08-16T13:24:33+0000 [stdout#info] Result for b'www.google.co.id' is ['74.125.130.94']
+4287.7  35 | 2018-08-16T13:24:33+0000 [stdout#info] Result for b'lh3.googleusercontent.com' is ['172.217.194.132']
+4287.7  35 | 2018-08-16T13:24:33+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['74.125.130.94']
+4303.7 TEL | (proxy checking local liveness)
+4303.7  35 | 2018-08-16T13:24:49+0000 [Poll#info] Checkpoint
+4333.7 TEL | (proxy checking local liveness)
+4333.7  35 | 2018-08-16T13:25:19+0000 [Poll#info] Checkpoint
+4359.4  43 | c : DNS request from ('10.30.139.94', 44708) to None: 33 bytes
+4359.5  35 | 2018-08-16T13:25:45+0000 [stdout#info] A query: b'ssl.gstatic.com'
+4359.6  35 | 2018-08-16T13:25:45+0000 [stdout#info] Result for b'ssl.gstatic.com' is ['172.217.26.67']
+4363.7 TEL | (proxy checking local liveness)
+4363.7  35 | 2018-08-16T13:25:49+0000 [Poll#info] Checkpoint
+4377.2  43 | c : DNS request from ('10.30.139.94', 56735) to None: 48 bytes
+4377.2  43 | c : DNS request from ('10.30.139.94', 58882) to None: 42 bytes
+4377.2  43 | c : DNS request from ('10.30.139.94', 63207) to None: 44 bytes
+4377.4  35 | 2018-08-16T13:26:03+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+4377.4  35 | 2018-08-16T13:26:03+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+4377.4  35 | 2018-08-16T13:26:03+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+4377.4  35 | 2018-08-16T13:26:03+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+4377.5  35 | 2018-08-16T13:26:03+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['74.125.130.156', '74.125.130.155', '74.125.130.154', '74.125.130.157']
+4377.5  35 | 2018-08-16T13:26:03+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.200.157', '74.125.200.154', '74.125.200.155', '74.125.200.156']
+4381.9  43 | c : DNS request from ('10.30.139.94', 13123) to None: 42 bytes
+4381.9  43 | c : DNS request from ('10.30.139.94', 10649) to None: 38 bytes
+4382.0  35 | 2018-08-16T13:26:07+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4382.0  35 | 2018-08-16T13:26:07+0000 [stdout#info] A query: b'taliwang'
+4382.0  35 | 2018-08-16T13:26:07+0000 [stdout#info] A query: b'fonts.googleapis.com'
+4382.0  35 | 2018-08-16T13:26:07+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4382.0  43 | c : Accept TCP: 10.30.139.94:55686 -> 10.63.252.208:3000.
+4382.0  43 | c : Accept TCP: 10.30.139.94:55687 -> 10.63.252.208:3000.
+4382.0  35 | 2018-08-16T13:26:08+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+4382.2  43 | c : DNS request from ('10.30.139.94', 43760) to None: 35 bytes
+4382.2  35 | 2018-08-16T13:26:08+0000 [stdout#info] A query: b'fonts.gstatic.com'
+4382.2  35 | 2018-08-16T13:26:08+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.200.94']
+4382.8  43 | c : DNS request from ('10.30.139.94', 43767) to None: 42 bytes
+4382.8  35 | 2018-08-16T13:26:08+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4382.8  35 | 2018-08-16T13:26:08+0000 [stdout#info] A query: b'taliwang'
+4382.8  35 | 2018-08-16T13:26:08+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4382.8  43 | c : Accept TCP: 10.30.139.94:55693 -> 10.63.252.208:3000.
+4393.7 TEL | (proxy checking local liveness)
+4393.7  35 | 2018-08-16T13:26:19+0000 [Poll#info] Checkpoint
+4423.6 TEL | (proxy checking local liveness)
+4423.6  35 | 2018-08-16T13:26:49+0000 [Poll#info] Checkpoint
+4448.5  43 | c : DNS request from ('10.30.139.94', 9873) to None: 42 bytes
+4448.5  35 | 2018-08-16T13:27:14+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4448.5  35 | 2018-08-16T13:27:14+0000 [stdout#info] A query: b'taliwang'
+4448.6  35 | 2018-08-16T13:27:14+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4453.8 TEL | (proxy checking local liveness)
+4453.9  35 | 2018-08-16T13:27:19+0000 [Poll#info] Checkpoint
+4459.4  43 | c : Accept TCP: 10.30.139.94:55942 -> 10.63.252.208:3000.
+4483.7 TEL | (proxy checking local liveness)
+4483.7  35 | 2018-08-16T13:27:49+0000 [Poll#info] Checkpoint
+4505.8  43 | c : Accept TCP: 10.30.139.94:55944 -> 10.63.252.208:3000.
+4505.8  43 | c : DNS request from ('10.30.139.94', 45142) to None: 38 bytes
+4505.8  43 | c : DNS request from ('10.30.139.94', 48627) to None: 35 bytes
+4505.8  43 | c : SW'unknown':Mux#436: deleting (11 remain)
+4505.8  43 | c : SW#-1:10.30.139.94:55693: deleting (10 remain)
+4505.8  43 | c : SW#10:10.30.139.94:54661: deleting (9 remain)
+4505.8  43 | c : SW#10:10.30.139.94:54661: error was: nowrite: [Errno 57] Socket is not connected
+4505.8  43 | c : SW'unknown':Mux#391: deleting (8 remain)
+4505.8  43 | c : SW#13:10.30.139.94:55687: deleting (7 remain)
+4505.8  43 | c : SW'unknown':Mux#433: deleting (6 remain)
+4505.8  43 | c : SW#12:10.30.139.94:55686: deleting (5 remain)
+4505.8  43 | c : SW'unknown':Mux#432: deleting (4 remain)
+4505.8  35 | 2018-08-16T13:28:11+0000 [stdout#info] A query: b'fonts.googleapis.com'
+4505.8  35 | 2018-08-16T13:28:11+0000 [stdout#info] A query: b'fonts.gstatic.com'
+4505.9  35 | 2018-08-16T13:28:11+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['172.217.194.95']
+4505.9  35 | 2018-08-16T13:28:11+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.130.94']
+4513.6 TEL | (proxy checking local liveness)
+4513.6  35 | 2018-08-16T13:28:19+0000 [Poll#info] Checkpoint
+4516.8  43 | c : DNS request from ('10.30.139.94', 38900) to None: 42 bytes
+4516.8  35 | 2018-08-16T13:28:22+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4516.8  35 | 2018-08-16T13:28:22+0000 [stdout#info] A query: b'taliwang'
+4516.8  35 | 2018-08-16T13:28:22+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4516.8  43 | c : Accept TCP: 10.30.139.94:55953 -> 10.63.252.208:3000.
+4531.5  43 | c : Accept TCP: 10.30.139.94:56003 -> 10.63.252.208:3000.
+4531.5  43 |  s: SW#-1:10.63.252.208:3000: deleting (27 remain)
+4531.5  43 |  s: SW'unknown':Mux#432: deleting (26 remain)
+4531.5  43 |  s: SW#-1:10.63.252.208:3000: deleting (25 remain)
+4531.5  43 |  s: SW'unknown':Mux#433: deleting (24 remain)
+4531.5  43 |  s: SW#-1:10.63.252.208:3000: deleting (23 remain)
+4531.5  43 |  s: SW'unknown':Mux#436: deleting (22 remain)
+4531.9  43 | c : Accept TCP: 10.30.139.94:56006 -> 10.63.252.208:3000.
+4543.8 TEL | (proxy checking local liveness)
+4543.9  35 | 2018-08-16T13:28:49+0000 [Poll#info] Checkpoint
+4555.6  43 | c : Accept TCP: 10.30.139.94:56091 -> 10.63.252.208:3000.
+4573.6 TEL | (proxy checking local liveness)
+4573.6  35 | 2018-08-16T13:29:19+0000 [Poll#info] Checkpoint
+4579.6  43 | c : DNS request from ('10.30.139.94', 60490) to None: 32 bytes
+4579.6  35 | 2018-08-16T13:29:25+0000 [stdout#info] A query: b'imap.gmail.com'
+4579.7  35 | 2018-08-16T13:29:25+0000 [stdout#info] Result for b'imap.gmail.com' is ['74.125.130.108', '74.125.130.109']
+4580.2  43 | c : DNS request from ('10.30.139.94', 4483) to None: 42 bytes
+4580.2  43 | c : DNS request from ('10.30.139.94', 40610) to None: 38 bytes
+4580.2  43 | c : DNS request from ('10.30.139.94', 57048) to None: 35 bytes
+4580.3  35 | 2018-08-16T13:29:26+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4580.3  35 | 2018-08-16T13:29:26+0000 [stdout#info] A query: b'taliwang'
+4580.3  35 | 2018-08-16T13:29:26+0000 [stdout#info] A query: b'fonts.googleapis.com'
+4580.3  35 | 2018-08-16T13:29:26+0000 [stdout#info] A query: b'fonts.gstatic.com'
+4580.3  35 | 2018-08-16T13:29:26+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4580.3  43 | c : Accept TCP: 10.30.139.94:56176 -> 10.63.252.208:3000.
+4580.4  35 | 2018-08-16T13:29:26+0000 [stdout#info] Result for b'fonts.gstatic.com' is ['74.125.24.94']
+4580.4  35 | 2018-08-16T13:29:26+0000 [stdout#info] Result for b'fonts.googleapis.com' is ['74.125.130.95']
+4586.8  43 |  s: SW#20:10.63.252.208:3000: uwrite: got EPIPE
+4589.7  43 | c : DNS request from ('10.30.139.94', 63346) to None: 48 bytes
+4589.7  43 | c : SW#15:10.30.139.94:55942: deleting (13 remain)
+4589.7  43 | c : SW'unknown':Mux#438: deleting (12 remain)
+4589.7  43 | c : DNS request from ('10.30.139.94', 55672) to None: 44 bytes
+4589.7  43 | c : DNS request from ('10.30.139.94', 54246) to None: 42 bytes
+4589.8  43 | c : DNS request from ('10.30.139.94', 49390) to None: 27 bytes
+4589.8  35 | 2018-08-16T13:29:35+0000 [stdout#info] A query: b'securepubads.g.doubleclick.net'
+4589.8  35 | 2018-08-16T13:29:35+0000 [stdout#info] A query: b'adeventtracker.spotify.com'
+4589.8  35 | 2018-08-16T13:29:35+0000 [stdout#info] A query: b'pubads.g.doubleclick.net'
+4589.8  35 | 2018-08-16T13:29:35+0000 [stdout#info] A query: b'i.scdn.co'
+4589.9  35 | 2018-08-16T13:29:35+0000 [stdout#info] Result for b'pubads.g.doubleclick.net' is ['74.125.130.156', '74.125.130.154', '74.125.130.157', '74.125.130.155']
+4589.9  35 | 2018-08-16T13:29:35+0000 [stdout#info] Result for b'i.scdn.co' is ['151.101.8.246']
+4589.9  35 | 2018-08-16T13:29:35+0000 [stdout#info] Result for b'securepubads.g.doubleclick.net' is ['172.217.194.157', '172.217.194.156', '172.217.194.154', '172.217.194.155']
+4589.9  35 | 2018-08-16T13:29:35+0000 [stdout#info] Result for b'adeventtracker.spotify.com' is ['104.199.240.211']
+4594.0  43 | c : DNS request from ('10.30.139.94', 61724) to None: 42 bytes
+4594.0  35 | 2018-08-16T13:29:40+0000 [stdout#info] A query: b'notifications.google.com'
+4594.1  35 | 2018-08-16T13:29:40+0000 [stdout#info] Result for b'notifications.google.com' is ['74.125.24.139', '74.125.24.100', '74.125.24.138', '74.125.24.113', '74.125.24.101', '74.125.24.102']
+4603.8 TEL | (proxy checking local liveness)
+4603.9  35 | 2018-08-16T13:29:49+0000 [Poll#info] Checkpoint
+4608.5  43 | c : Accept TCP: 10.30.139.94:56279 -> 10.63.252.208:3000.
+4633.2  43 |  s: SW#22:10.63.252.208:3000: uwrite: got EPIPE
+4633.7 TEL | (proxy checking local liveness)
+4633.7  35 | 2018-08-16T13:30:19+0000 [Poll#info] Checkpoint
+4641.2  43 | c : SW#16:10.30.139.94:55944: deleting (13 remain)
+4641.2  43 | c : SW'unknown':Mux#439: deleting (12 remain)
+4641.2  43 | c : DNS request from ('10.30.139.94', 1252) to None: 42 bytes
+4641.2  35 | 2018-08-16T13:30:27+0000 [stdout#info] Updated query of type 1 from b'taliwang.id.seagroup.com' to b'taliwang'
+4641.2  35 | 2018-08-16T13:30:27+0000 [stdout#info] A query: b'taliwang'
+4641.2  35 | 2018-08-16T13:30:27+0000 [stdout#info] Result for b'taliwang.id.seagroup.com' is ['10.63.252.208']
+4641.2  43 | c : Accept TCP: 10.30.139.94:56389 -> 10.63.252.208:3000.
+4644.1  43 |  s: SW#25:10.63.252.208:3000: uwrite: got EPIPE
+4658.8  43 |  s: SW#26:10.63.252.208:3000: uwrite: got EPIPE
+4659.3  43 |  s: SW#6:10.63.252.208:3000: uwrite: got EPIPE
+4663.6 TEL | (proxy checking local liveness)
+4663.6  35 | 2018-08-16T13:30:49+0000 [Poll#info] Checkpoint
+4973.7  43 | c : DNS request from ('10.30.139.94', 1425) to None: 42 bytes
+4973.7  43 | c : SW#13:10.30.139.94:56006: deleting (13 remain)
+4973.7  43 | c : SW'unknown':Mux#445: deleting (12 remain)
+4973.9  43 | c : DNS request from ('10.30.139.94', 13350) to None: 42 bytes
+4974.0  43 | c : DNS request from ('10.30.139.94', 50769) to None: 43 bytes
+4974.1  43 | c : DNS request from ('10.30.139.94', 51978) to None: 34 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 50096) to None: 58 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 53240) to None: 49 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 58913) to None: 31 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 50143) to None: 61 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 59044) to None: 53 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 59037) to None: 30 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 61577) to None: 27 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 61340) to None: 38 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 61979) to None: 38 bytes
+4974.6  43 | c : DNS request from ('10.30.139.94', 52922) to None: 41 bytes
+4974.6  43 | c : SW#10:10.30.139.94:55953: deleting (11 remain)
+4974.6  43 | c : SW'unknown':Mux#443: deleting (10 remain)
+4974.6  43 | c : SW#12:10.30.139.94:56003: deleting (9 remain)
+4974.6  43 | c : SW'unknown':Mux#444: deleting (8 remain)
+4975.0  43 | c : DNS request from ('10.30.139.94', 64031) to None: 58 bytes
+4975.0  43 | c : DNS request from ('10.30.139.94', 54296) to None: 49 bytes
+4975.0  43 | c : DNS request from ('10.30.139.94', 55465) to None: 43 bytes
+4975.0  43 | c : DNS request from ('10.30.139.94', 50622) to None: 34 bytes
+4975.1  43 | c : DNS request from ('10.30.139.94', 51538) to None: 31 bytes
+4975.1  43 | c : DNS request from ('10.30.139.94', 52316) to None: 50 bytes
+4975.1  43 | c : DNS request from ('10.30.139.94', 52006) to None: 30 bytes
+4975.1  43 | c : DNS request from ('10.30.139.94', 64941) to None: 42 bytes
+4975.1  43 | c : DNS request from ('10.30.139.94', 62841) to None: 27 bytes
+4975.1  43 | c : DNS request from ('10.30.139.94', 57311) to None: 47 bytes
+4975.2  43 | c : DNS request from ('10.30.139.94', 55621) to None: 43 bytes
+4975.6  43 | c : DNS request from ('10.30.139.94', 55114) to None: 43 bytes
+4975.6  43 | c : DNS request from ('10.30.139.94', 8752) to None: 34 bytes
+4975.6  43 | c : DNS request from ('10.30.139.94', 26022) to None: 32 bytes
+4975.6  43 | c : DNS request from ('10.30.139.94', 28828) to None: 42 bytes
+4975.6  43 | c : DNS request from ('10.30.139.94', 62566) to None: 35 bytes
+4975.7  43 | c : DNS request from ('10.30.139.94', 19618) to None: 35 bytes
+4975.7  43 | c : DNS request from ('10.30.139.94', 50175) to None: 43 bytes
+4975.7  43 | c : DNS request from ('10.30.139.94', 61143) to None: 32 bytes
+4975.7  43 | c : DNS request from ('10.30.139.94', 51314) to None: 39 bytes
+4976.0  43 | c : DNS request from ('10.30.139.94', 64031) to None: 58 bytes
+4976.0  43 | c : DNS request from ('10.30.139.94', 54296) to None: 49 bytes
+4976.0  43 | c : DNS request from ('10.30.139.94', 50622) to None: 34 bytes
+4976.1  43 | c : DNS request from ('10.30.139.94', 51538) to None: 31 bytes
+4976.1  43 | c : DNS request from ('10.30.139.94', 52316) to None: 50 bytes
+4976.1  43 | c : DNS request from ('10.30.139.94', 52006) to None: 30 bytes
+4976.1  43 | c : DNS request from ('10.30.139.94', 64941) to None: 42 bytes
+4976.1  43 | c : DNS request from ('10.30.139.94', 62841) to None: 27 bytes
+4976.1  43 | c : DNS request from ('10.30.139.94', 57311) to None: 47 bytes
+4976.6  43 | c : DNS request from ('10.30.139.94', 55114) to None: 43 bytes
+4976.6  43 | c : DNS request from ('10.30.139.94', 59626) to None: 43 bytes
+4976.6  43 | c : DNS request from ('10.30.139.94', 62566) to None: 35 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 28558) to None: 34 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 12272) to None: 32 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 35519) to None: 42 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 14583) to None: 48 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 65149) to None: 49 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 62225) to None: 38 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 53486) to None: 38 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 61143) to None: 32 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 12335) to None: 35 bytes
+4976.7  43 | c : DNS request from ('10.30.139.94', 51314) to None: 39 bytes
+4977.6  43 | c : DNS request from ('10.30.139.94', 59626) to None: 43 bytes
+4977.7  43 | c : DNS request from ('10.30.139.94', 62225) to None: 38 bytes
+4977.7  43 | c : DNS request from ('10.30.139.94', 53486) to None: 38 bytes
+4977.8  43 | c : DNS request from ('10.30.139.94', 56887) to None: 34 bytes
+4977.8  43 | c : DNS request from ('10.30.139.94', 16981) to None: 32 bytes
+4977.8  43 | c : DNS request from ('10.30.139.94', 41640) to None: 42 bytes
+4977.8  43 | c : DNS request from ('10.30.139.94', 49754) to None: 48 bytes
+4977.8  43 | c : DNS request from ('10.30.139.94', 32538) to None: 49 bytes
+4977.8  43 | c : DNS request from ('10.30.139.94', 12159) to None: 35 bytes
+4978.8  43 | c : DNS request from ('10.30.139.94', 21513) to None: 48 bytes
+4978.8  43 | c : DNS request from ('10.30.139.94', 63115) to None: 49 bytes
+4979.7  43 | c : DNS request from ('10.30.139.94', 52492) to None: 85 bytes
+4979.7  43 | c : DNS request from ('10.30.139.94', 65338) to None: 85 bytes
+4979.7  43 | c : DNS request from ('10.30.139.94', 40076) to None: 33 bytes
+4979.8  43 | c : DNS request from ('10.30.139.94', 52511) to None: 34 bytes
+4979.8  43 | c : DNS request from ('10.30.139.94', 64823) to None: 32 bytes
+4979.8  43 | c : DNS request from ('10.30.139.94', 16506) to None: 42 bytes
+4979.8  43 | c : DNS request from ('10.30.139.94', 32569) to None: 35 bytes
+4980.1  43 | c : DNS request from ('10.30.139.94', 54333) to None: 40 bytes
+4980.7  43 | c : DNS request from ('10.30.139.94', 52492) to None: 85 bytes
+4980.7  43 | c : DNS request from ('10.30.139.94', 65338) to None: 85 bytes
+4980.8  43 | c : DNS request from ('10.30.139.94', 28082) to None: 48 bytes
+4980.8  43 | c : DNS request from ('10.30.139.94', 39190) to None: 49 bytes
+4981.0  43 | c : DNS request from ('10.30.139.94', 50622) to None: 34 bytes
+4981.1  43 | c : DNS request from ('10.30.139.94', 54333) to None: 40 bytes
+4981.1  43 | c : DNS request from ('10.30.139.94', 51538) to None: 31 bytes
+4981.1  43 | c : DNS request from ('10.30.139.94', 52316) to None: 50 bytes
+4981.1  43 | c : DNS request from ('10.30.139.94', 52006) to None: 30 bytes
+4981.1  43 | c : DNS request from ('10.30.139.94', 64941) to None: 42 bytes
+4981.1  43 | c : DNS request from ('10.30.139.94', 62841) to None: 27 bytes
+4981.1  43 | c : DNS request from ('10.30.139.94', 57311) to None: 47 bytes
+4981.6  43 | c : DNS request from ('10.30.139.94', 55114) to None: 43 bytes
+4981.6  43 | c : DNS request from ('10.30.139.94', 62566) to None: 35 bytes
+4981.7  43 | c : DNS request from ('10.30.139.94', 61143) to None: 32 bytes
+4981.7  43 | c : DNS request from ('10.30.139.94', 51314) to None: 39 bytes
+4981.8  43 | c : DNS request from ('10.30.139.94', 49390) to None: 34 bytes
+4981.8  43 | c : DNS request from ('10.30.139.94', 62735) to None: 32 bytes
+4981.8  43 | c : DNS request from ('10.30.139.94', 56634) to None: 42 bytes
+4981.8  43 | c : DNS request from ('10.30.139.94', 53758) to None: 35 bytes
+4982.6  43 | c : DNS request from ('10.30.139.94', 59626) to None: 43 bytes
+4982.7  43 | c : DNS request from ('10.30.139.94', 62225) to None: 38 bytes
+4982.7  43 | c : DNS request from ('10.30.139.94', 53486) to None: 38 bytes
+4982.8  43 | c : DNS request from ('10.30.139.94', 49390) to None: 34 bytes
+4982.8  43 | c : DNS request from ('10.30.139.94', 62735) to None: 32 bytes
+4982.8  43 | c : DNS request from ('10.30.139.94', 56634) to None: 42 bytes
+4982.8  43 | c : DNS request from ('10.30.139.94', 53758) to None: 35 bytes
+4982.9  43 | c : DNS request from ('10.30.139.94', 62101) to None: 48 bytes
+4982.9  43 | c : DNS request from ('10.30.139.94', 65110) to None: 49 bytes
+4983.7  43 | Connection to localhost closed by remote host.
+4983.7  43 | >> pfctl -a sshuttle6-12300 -F all
+4983.7  43 | >> pfctl -X 4953593092180534791
+4983.7  43 | >> pfctl -a sshuttle-12300 -F all
+4983.7  43 | >> pfctl -X 4953593092180540359
+4983.7  43 | c : fatal: server died with error code 255
+4983.7  43 | c : SW'unknown':Mux#451: deleting (7 remain)
+4983.7  43 | c : SW'unknown':Mux#446: deleting (6 remain)
+4983.7  43 | c : SW#14:10.30.139.94:56091: deleting (5 remain)
+4983.7  43 | c : SW#17:10.30.139.94:56176: deleting (4 remain)
+4983.7  43 | c : SW#16:10.30.139.94:56389: deleting (3 remain)
+4983.7  43 | c : SW'unknown':Mux#457: deleting (2 remain)
+4983.7  43 | c : SW#15:10.30.139.94:56279: deleting (1 remain)
+4983.7  43 | c : SW'unknown':Mux#459: deleting (0 remain)
+4983.7 TEL | [43] exit 99
+4984.1 TEL | A subprocess (['ssh', '-N', '-oServerAliveInterval=1', '-oServerAliveCountMax=10', '-F', '/dev/null', '-q', '-oStrictHostKeyChecking=no', '-oUserKnownHostsFile=/dev/null', '-p', '49409', 'telepresence@localhost', '-L127.0.0.1:49422:127.0.0.1:9050', '-R9055:127.0.0.1:49423']) died with code 255, killed all processes...
+4984.1 TEL | END SPAN cleanup.py:98(wait_for_exit) 4961.0s
+4984.1 TEL | Shutting down local process...
+4984.1 TEL | Killing local process...
+4985.1 TEL | [55] Capturing: umount -f /tmp/tmpbfsgbjnt
+4985.1  55 | umount: /tmp/tmpbfsgbjnt: not currently mounted
+4985.1 TEL | [55] exit 1 in 0.00 secs.
+4985.1 TEL | [56] Capturing: kubectl --context gke_spid-non-prod_asia-southeast1-a_spid-non-prod-cluster --namespace helmon delete --ignore-not-found svc,deploy --selector=telepresence=7a590098-077b-45bd-b206-c0e317478b4f
+4986.5 TEL | [56] captured in 1.40 secs.
+4986.5 TEL | END SPAN main.py:51(main) 4985.7s
